@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- saved from url=(0143)https://js.stripe.com/v2/channel.html?stripe_xdm_e=https%3A%2F%2Fapp.nimbo-x.com&stripe_xdm_c=default452226&stripe_xdm_p=1#__stripe_transport__ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Stripe Internal Communication Channel</title>
+<script>
+if ('postMessage' in window) {
+  var stripeTrack = function(type) {
+    var timestamp = Math.round(new Date().getTime() / 1000);
+    var report = (new Image()).src = "https://q.stripe.com?event=stripejs-error&type=" +
+      encodeURIComponent(type) +
+      "&timestamp=" + timestamp +
+      "&payment_user_agent=channel.html";
+  };
+
+  if (window.parent === window) {
+    stripeTrack('ChannelParentError');
+    window.Stripe = {earlyError: true};
+  }
+  else {
+    window.onload = function() {
+      var matches = window.location.search.match(/(\?|&)stripe_xdm_e=([^&]+)/);
+      if (matches && matches.length >= 3) {
+        var outerdomain = decodeURIComponent(matches[2]);
+        try {
+          window.parent.postMessage('stripe:ack', outerdomain);
+        }
+        catch(e) {
+          stripeTrack('ChannelAckError-' + e.toString());
+        }
+      }
+      else {
+        stripeTrack('ChannelUrlError');
+      }
+    }
+  }
+}
+</script>
+<script src="chrome-extension://doocmbmlcnbbdohogchldhlikjpndpng/yts-controls.js" extensionbaseurl="chrome-extension://doocmbmlcnbbdohogchldhlikjpndpng"></script><script src="data:text/javascript;base64,KGZ1bmN0aW9uIGV2ZW50dWFsbHlTZXRDb25maWcoKSB7CiAgICAgICAgICAgIGlmICh3aW5kb3cuWW91dHViZVNlZWspIHdpbmRvdy5Zb3V0dWJlU2Vlay5zZXRDb25maWcoeyJjdHJsLmxlZnRBcnJvdyI6MywiY3RybC5yaWdodEFycm93IjozLCJjdHJsLnNoaWZ0LmxlZnRBcnJvdyI6MTUsImN0cmwuc2hpZnQucmlnaHRBcnJvdyI6MTUsImVuYWJsZU5vbllvdXR1YmVDb21Ib3RrZXlzIjp0cnVlLCJlbmFibGVUaW1lUG9zaXRpb25NZW1vcnlGb3JDbGlja2VkU2Vla0JhciI6ZmFsc2UsImVuYWJsZVRpbWVQb3NpdGlvbk1lbW9yeUZvclBhZ2VSZWxvYWRzIjpmYWxzZSwiZW5hYmxlWW91dHViZUNvbUhvdGtleXMiOnRydWUsInNob3dMb25nRm9yd2FyZEJ1dHRvbiI6dHJ1ZSwic2hvd0xvbmdSZXdpbmRCdXR0b24iOnRydWUsInNob3dTZWVrQnV0dG9uVG9vbHRpcHMiOnRydWUsInNob3dTaG9ydEZvcndhcmRCdXR0b24iOnRydWUsInNob3dTaG9ydFJld2luZEJ1dHRvbiI6dHJ1ZSwidXNlUmVjdGFuZ3VsYXJTdHlsZUJ1dHRvbnMiOmZhbHNlLCJvcyI6IndpbiJ9KTsKICAgICAgICAgICAgZWxzZSBzZXRUaW1lb3V0KGV2ZW50dWFsbHlTZXRDb25maWcsIDUwMCk7CiAgICAgICAgfSkoKTs="></script></head>
+<body data-new-gr-c-s-check-loaded="14.1147.0" data-gr-ext-installed="">
+<script src="./saved_resource"></script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
