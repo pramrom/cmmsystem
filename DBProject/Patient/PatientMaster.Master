@@ -34,20 +34,11 @@
 
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css"/>
 
-
-
-
-
-
     <!-- Head Content Place Holder -->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
 </head>
-
-
-
-
 
 <body>
     <form id="form1" runat="server">
@@ -96,77 +87,12 @@
 
                    </div>
             </nav>
-            <!--Navigation Bar ends here -->
 
-
-
-
-
-           
-         <!-- Body Content Place Holder -->
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
 
         </div>
-
-
-
-
-
-
-        <!--- Footer starts here -->
-        <footer class="footer-distributed"  >
-
-			<div class="footer-left">
-
-				<h3>MedicX<span>4</span></h3>
-
-				<p class="footer-company-name">MedicX4 Health Care &copy; 2017</p>
-			</div>
-
-
-			<div class="footer-center">
-
-				<div>
-					<i class="fa fa-map-marker"></i>
-					<p><span>Milaad St Block B</span> Faisal Town, Lahore</p>
-				</div>
-
-				<div>
-					<i class="fa fa-phone"></i>
-					<p>0322 - 7561001</p>
-				</div>
-
-				<div>
-					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@medicx4.com">support@medicx4.com</a></p>
-				</div>
-
-			</div>
-
-			<div class="footer-right">
-
-				<p class="footer-company-about">
-					<span>About the company</span>
-					Our mission is to provide quality health services to all in a comfortable and cozy environment.
-                    The clinic primarily offers consultations and is not equipped to take emergencies.
-				</p>
-
-    			<div class="footer-icons">
-
-    				<a href="#"><i class="fa fa-facebook"></i></a>
-
-    			</div>
-
-			</div>
-
-		</footer>
-
-        <!--- Footer ends here -->
-
-
-
     </form>
 </body>
 </html>

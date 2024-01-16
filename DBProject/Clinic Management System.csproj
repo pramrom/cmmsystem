@@ -46,9 +46,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DayPilot, Version=5.0.303.0, Culture=neutral, PublicKeyToken=ce5d34538e20ef65, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\TutorialAspnetDoctorAppointment\TutorialCS\Bin\DayPilot.dll</HintPath>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
@@ -81,6 +80,12 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="OfficeIMO.Word, Version=0.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OfficeIMO.Word.0.12.0\lib\net48\OfficeIMO.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.3\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -101,6 +106,9 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -115,6 +123,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AddStaff.aspx" />
@@ -140,10 +149,33 @@
     <Content Include="Doctor\PreviousHistory.aspx" />
     <Content Include="index.html" />
     <Content Include="media\avatar-placeholder-large.png" />
+    <Content Include="media\body_mass.svg" />
+    <Content Include="media\cerrar.svg" />
     <Content Include="media\custom.css" />
+    <Content Include="media\diastole.svg" />
+    <Content Include="media\fontawesome-webfont.svg" />
+    <Content Include="media\fontawesome-webfont3e6e.svg" />
+    <Content Include="media\galeria-ico-descarga.svg" />
+    <Content Include="media\glyphicons-halflings-regular.svg" />
+    <Content Include="media\heart_rate.svg" />
+    <Content Include="media\height.svg" />
+    <Content Include="media\icon-operadora.svg" />
     <Content Include="media\layout.css" />
+    <Content Include="media\li.svg" />
+    <Content Include="media\menu.svg" />
     <Content Include="media\nimbox.css" />
+    <Content Include="media\photoswipe-controls.svg" />
+    <Content Include="media\redes-facebook-o.svg" />
+    <Content Include="media\redes-instagram-o.svg" />
+    <Content Include="media\redes-twitter-o.svg" />
+    <Content Include="media\redes-youtube-o.svg" />
+    <Content Include="media\respiratory_rate.svg" />
+    <Content Include="media\systole.svg" />
+    <Content Include="media\telefono-o.svg" />
     <Content Include="media\vendor.css" />
+    <Content Include="media\weight.svg" />
+    <Content Include="OfficeIMO.ico" />
+    <Content Include="Patient\Agenda.aspx" />
     <Content Include="Patient\AppointmentRequestSent.aspx" />
     <Content Include="Patient\AppointmentTaker.aspx" />
     <Content Include="Doctor\Bill.aspx" />
@@ -166,14 +198,20 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
-    <Content Include="Scheduller\Default.aspx" />
-    <Content Include="Scheduller\Doctor.aspx" />
-    <Content Include="Scheduller\Manager.aspx" />
     <Content Include="Scheduller\Scheduller.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="TemplatesWord\ABORTO INCOMPLETO EDITAR.docx" />
+    <Content Include="TemplatesWord\AMEU PARA EDITAR.docx" />
+    <Content Include="TemplatesWord\CIUDAD DE MÉXICO A 31^G DE octubre^G DEL 2023.docx" />
+    <Content Include="TemplatesWord\CONS IMPLANTE IMPLANON.docx" />
+    <Content Include="TemplatesWord\CONSENTIMIENTO mini silver.docx" />
+    <Content Include="TemplatesWord\CONSENTIMIENTOS DIUS DE COBRE.docx" />
+    <Content Include="TemplatesWord\hoja enfermeria.docx" />
+    <Content Include="TemplatesWord\implante 2 varillas.docx" />
+    <Content Include="Temp-TemplateWord\CONSENTIMIENTO mini silver.docx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -235,6 +273,12 @@
     </Compile>
     <Compile Include="Doctor\PreviousHistory.aspx.designer.cs">
       <DependentUpon>PreviousHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\Agenda.aspx.cs">
+      <DependentUpon>Agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\Agenda.aspx.designer.cs">
+      <DependentUpon>Agenda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Patient\AppointmentRequestSent.aspx.cs">
       <DependentUpon>AppointmentRequestSent.aspx</DependentUpon>
@@ -359,27 +403,6 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Scheduller\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Scheduller\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Scheduller\Doctor.aspx.cs">
-      <DependentUpon>Doctor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Scheduller\Doctor.aspx.designer.cs">
-      <DependentUpon>Doctor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Scheduller\Manager.aspx.cs">
-      <DependentUpon>Manager.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Scheduller\Manager.aspx.designer.cs">
-      <DependentUpon>Manager.aspx</DependentUpon>
     </Compile>
     <Compile Include="Scheduller\Scheduller.Master.cs">
       <DependentUpon>Scheduller.Master</DependentUpon>
