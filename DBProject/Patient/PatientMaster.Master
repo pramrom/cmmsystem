@@ -1,97 +1,84 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PatientMaster.master.cs" Inherits="DBProject.PatientMaster" %>
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-
-
     <!--------------------------------- Styling -------------------------------->
-
     <!-- Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'/>
-	
+
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-
-
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <!-- Patient Style -->
     <link rel="stylesheet" href="/assets/css/patient-style.css"/>
-   
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-
+	<script src="/assets/js/jquery-3.7.1.min.js"></script>
     <!------------------------------------Styling for Footer-------------------------------------->
     <meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<meta name="keywords" content="footer, address, phone, icons" />
-   
 	<link rel="stylesheet" href="/assets/css/demo.css"/>
 	<link rel="stylesheet" href="/assets/css/footer-distributed-with-address-and-phones.css"/>
-	
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
-
-	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css"/>
-
+	<link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css"/>
     <!-- Head Content Place Holder -->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
-
 <body>
     <form id="form1" runat="server">
-    
         <div>
-
             <!-- Navigation Bar starts from here -->
              <nav class="navbar navbar-inverse">
                     <div class="container-fluid" style="background-color:#4c4f51">
-           
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/SignUp.aspx"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                            <li><a href="/SignUp.aspx"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="PatientFeedback.aspx"><span class="glyphicon glyphicon-thumbs-up	Try it"></span> Feedback</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="TreatmentHistory.aspx"><span class="glyphicon glyphicon-info-sign"></span> Treatment History</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="BillsHistory.aspx"><span class="glyphicon glyphicon-usd"></span> Bills History</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="TakeAppointment.aspx"><span class="glyphicon glyphicon-plus"></span> Take Appointment</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="CurrentAppointment.aspx"><span class="glyphicon glyphicon-search"></span> Current Appointment</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="PatientNotifications.aspx"><span class="	glyphicon glyphicon-flag"></span> Notifications</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="Pacientes.aspx"><span class="	glyphicon glyphicon-plus"></span> Pacientes</a></li>
+                            <li><a href="Pacientes.aspx"><span class="	glyphicon glyphicon-plus"></span> Agregar Paciente</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="PatientHome.aspx"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                            <li><a href="../Admin/AdminHome.aspx"><span class="glyphicon glyphicon-home"></span> Administración</a></li>
                         </ul>
-
                    </div>
             </nav>
-
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
         </asp:ContentPlaceHolder>
-
+        <!--- Footer starts here -->
+        <footer class="footer-distributed"  >
+			<div class="footer-left">
+				<img class="brand-logo-light" src="/assets/images/clinica-para-abortar-legal-en-cdmx.png" alt="Clinica de aborto legal en CDMX">
+			</div>
+			<div class="footer-center">
+				<p class="footer-company-about">
+					<span>Acerca de CCM:</span>					
+				</p>
+			</div>
+			<div class="footer-right">
+    			<div class="unit flex-row align-items-center unit-spacing-sm">
+                    <a class="icon icon-xxs icon-primary fa fa-facebook" href="https://www.facebook.com/CentroMedicoMujer" target="_blank" title="Facebook"></a>
+                    <a class="icon icon-xxs icon-primary fa fa-twitter" href="https://twitter.com/C_MedicoMujer" target="_blank" title="Twitter"></a>
+                    <a class="icon icon-xxs icon-primary fa fa-instagram" href="https://www.instagram.com/centromdicomujer/" target="_blank" title="Instagram"></a>
+                    <a class="icon icon-xxs icon-primary fa fa-youtube" href="https://youtube.com/@centromedicomujerCDMX" target="_blank" title="Youtube"></a>                            
+    			</div>
+			</div>
+		</footer>
+        <!--- Footer ends here -->
         </div>
     </form>
 </body>

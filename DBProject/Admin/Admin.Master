@@ -1,172 +1,81 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="DBProject.Admin" %>
-
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
-
-
-    
     <!--------------------------------- Styling -------------------------------->
-
     <!-- Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'/>
-	
+
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-
-
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <!-- Patient Style -->
     <link rel="stylesheet" href="/assets/css/patient-style.css"/>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-
-
+	<script src="/assets/js/jquery-3.7.1.min.js"></script>
     <!------------------------------------Styling for Footer-------------------------------------->
     <meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<meta name="keywords" content="footer, address, phone, icons" />
-
 	<link rel="stylesheet" href="/assets/css/demo.css"/>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.css"/>
 	<link rel="stylesheet" href="/assets/css/footer-distributed-with-address-and-phones.css"/>
-	
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
-
-	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css"/>
-
-
-
-
-
-
-
-
+	<link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css"/>
     <!-- Head Content Place Holder -->
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
     </asp:ContentPlaceHolder>
-
-
-
-
-
     <title>Home</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-
-
-
 <body>
-    
-    
-        <div>
-
+        
+            <img class="brand-logo-light" src="/assets/images/clinica-para-abortar-legal-en-cdmx.png" alt="CMM">
             <!-- Navigation Bar starts from here -->
              <nav class="navbar navbar-inverse">
                     <div class="container-fluid" style="background-color:#4c4f51">
-           
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/SignUp.aspx"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                            <li><a href="/SignUp.aspx"><span class="glyphicon glyphicon-log-in"></span> Cerrar sesión</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="AddStaff.aspx"><span class="glyphicon glyphicon-plus"></span> Add Staff</a></li>
+                            <li><a href="AddStaff.aspx"><span class="glyphicon glyphicon-plus"></span> Agregar personal</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="DoctorRegistrationForm.aspx"><span class="glyphicon glyphicon-plus"></span> Add Doctor</a></li>
+                            <li><a href="DoctorRegistrationForm.aspx"><span class="glyphicon glyphicon-plus"></span> Agregar doctor</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/Patient/PatientHome.aspx"><span class="glyphicon glyphicon-plus"></span> Agregar Paciente</a></li>
+                            <li><a href="/Patient/PatientHome.aspx"><span class="glyphicon glyphicon-plus"></span> Agregar Consulta</a></li>
                         </ul>
-
-
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="ManageClinic.aspx"><span class="glyphicon glyphicon-cog"></span> Manage Clinic</a></li>
+                            <li><a href="ManageClinic.aspx"><span class="glyphicon glyphicon-cog"></span> Administrar clínica</a></li>
                         </ul>
-
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="AdminHome.aspx"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                         </ul>
-
                    </div>
             </nav>
             <!--Navigation Bar ends here -->
-
-
-
-
-
-           
          <!-- Body Content Place Holder -->
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
         </asp:ContentPlaceHolder>
-
-        </div>
-
-
-
-
-
-
+        
         <!--- Footer starts here -->
         <footer class="footer-distributed"  >
-
 			<div class="footer-left">
-
-				<h3>MedicX<span>4</span></h3>
-
-				<p class="footer-company-name">MedicX4 Health Care &copy; 2017</p>
+				<img class="brand-logo-light" src="/assets/images/clinica-para-abortar-legal-en-cdmx.png" alt="Clinica de aborto legal en CDMX">
 			</div>
-
-
 			<div class="footer-center">
-
-				<div>
-					<i class="fa fa-map-marker"></i>
-					<p><span>Milaad St Block B</span> Faisal Town, Lahore</p>
-				</div>
-
-				<div>
-					<i class="fa fa-phone"></i>
-					<p>0322 - 7561001</p>
-				</div>
-
-				<div>
-					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@medicx4.com">support@medicx4.com</a></p>
-				</div>
-
-			</div>
-
-			<div class="footer-right">
-
 				<p class="footer-company-about">
-					<span>About the company</span>
-					Our mission is to provide quality health services to all in a comfortable and cozy environment.
-                    The clinic primarily offers consultations and is not equipped to take emergencies.
+					<span>Acerca de CCM:</span>					
 				</p>
-
-    			<div class="footer-icons">
-
-    				<a href="#"><i class="fa fa-facebook"></i></a>
-
-    			</div>
-
 			</div>
-
+			<div class="footer-right">
+    			<div class="unit flex-row align-items-center unit-spacing-sm">
+                    <a class="icon icon-xxs icon-primary fa fa-facebook" href="https://www.facebook.com/CentroMedicoMujer" target="_blank" title="Facebook"></a>
+                    <a class="icon icon-xxs icon-primary fa fa-twitter" href="https://twitter.com/C_MedicoMujer" target="_blank" title="Twitter"></a>
+                    <a class="icon icon-xxs icon-primary fa fa-instagram" href="https://www.instagram.com/centromdicomujer/" target="_blank" title="Instagram"></a>
+                    <a class="icon icon-xxs icon-primary fa fa-youtube" href="https://youtube.com/@centromedicomujerCDMX" target="_blank" title="Youtube"></a>                            
+    			</div>
+			</div>
 		</footer>
-
         <!--- Footer ends here -->
-
-
-
-  
 </body>
-
 </html>

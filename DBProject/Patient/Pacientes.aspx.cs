@@ -52,11 +52,8 @@ namespace DBProject.Patient
 
             newObj.Name = personfirstname.Value;
             newObj.Apellidos = personlastname.Value;
-            //newObj.BirthDate = personbornat.Value;
-            newObj.Email = personemail.Value;
-            newObj.Teléfono_móvil = personmobile.Value;
-            newObj.Phone = persontelephone.Value;
-            newObj.CURP =personidentitynumber.Value;
+            //newObj.BirthDate = personbornat.Value;                        
+            newObj.Phone = persontelephone.Value;            
             newObj.Address = personaddress.Value;
             newObj.Ciudad = personcity.Value;
             newObj.CP = personzipcode.Value;
@@ -64,6 +61,8 @@ namespace DBProject.Patient
             newObj.Número_interior = addressinternalnumber.Value;
 
             newObj.Save();
+
+            Response.Redirect("YourPage.aspx");
         }
     }
 }

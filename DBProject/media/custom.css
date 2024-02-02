@@ -567,22 +567,27 @@
         display: none;
     }
 }
-div.grammarly-desktop-integration {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+p.title {
+    text-align: center;
+    font-size: 45px;
+    color: #efdeff;
 }
 
-    div.grammarly-desktop-integration:before {
-        content: attr(data-content);
-    }
+b {
+    color: #FFFFFF;
+    font-size: 55px;
+}
+
+p.remarks, a {
+    text-align: center;
+    margin-top: 100px;
+    color: #FFFFFF;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 0 5vh;
+}

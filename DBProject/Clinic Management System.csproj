@@ -128,22 +128,112 @@
   <ItemGroup>
     <Content Include="Admin\AddStaff.aspx" />
     <Content Include="Admin\AdminHome.aspx" />
+    <Content Include="assets\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="assets\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\bootstrap\js\npm.js" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\datatables.min.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="assets\css\demo.css" />
+    <Content Include="assets\css\footer-distributed-with-address-and-phones.css" />
+    <Content Include="assets\css\form-elements.css" />
+    <Content Include="assets\css\grid-view.css" />
+    <Content Include="assets\css\patient-style.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\Doctor.jpg" />
+    <Content Include="assets\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\fonts\proximanova-black.svg" />
+    <Content Include="assets\fonts\proximanova-bold.svg" />
+    <Content Include="assets\fonts\proximanova-boldit.svg" />
+    <Content Include="assets\fonts\proximanova-extrabold.svg" />
+    <Content Include="assets\fonts\proximanova-light.svg" />
+    <Content Include="assets\fonts\proximanova-regitalic.svg" />
+    <Content Include="assets\fonts\proximanova-regular.svg" />
+    <Content Include="assets\fonts\proximanova-regularitalic.svg" />
+    <Content Include="assets\fonts\proximanova-semibold.svg" />
+    <Content Include="assets\fonts\proximanova-semibolditalic.svg" />
+    <Content Include="assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="assets\ico\favicon.png" />
+    <Content Include="assets\images\apple-touch-icon-114-precomposed.png" />
+    <Content Include="assets\images\apple-touch-icon-144-precomposed.png" />
+    <Content Include="assets\images\apple-touch-icon-57-precomposed.png" />
+    <Content Include="assets\images\apple-touch-icon-72-precomposed.png" />
+    <Content Include="assets\images\avatar-placeholder-large-b21c7a23e82b1f068eb966e32f8efdac.png" />
+    <Content Include="assets\images\avatar-placeholder-large.png" />
+    <Content Include="assets\images\clinica-para-abortar-legal-en-cdmx.png" />
+    <Content Include="assets\images\clinicas-de-aborto-en-mexico-df.png" />
+    <Content Include="assets\images\contacto-telefono-promedicamujer.png" />
+    <Content Include="assets\images\controls.png" />
+    <Content Include="assets\images\dotnet.png" />
+    <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\icon-clinica-aborto-cdmx.png" />
+    <Content Include="assets\images\icon-clinica-ile-cdmx.png" />
+    <Content Include="assets\images\icon-ile-cdmx.png" />
+    <Content Include="assets\images\icon-mail.png" />
+    <Content Include="assets\images\icon-phone.png" />
+    <Content Include="assets\images\Icon.png" />
+    <Content Include="assets\images\Icono-DIU-Hormonal.png" />
+    <Content Include="assets\images\Icono-ILE-para-pacientes-de-provincia.png" />
+    <Content Include="assets\images\Icono-ILE-por-medicamentos.png" />
+    <Content Include="assets\images\Icono-ILE-quirúrgico-o-AMEU.png" />
+    <Content Include="assets\images\Icono-Implante-subdermico.png" />
+    <Content Include="assets\images\Icono-Papanicolaou.png" />
+    <Content Include="assets\images\isotope-loader.png" />
+    <Content Include="assets\images\modal-cerrar.png" />
+    <Content Include="assets\images\packageIcon.png" />
+    <Content Include="assets\images\photoswipe-controls.png" />
+    <Content Include="assets\images\telefono.png" />
+    <Content Include="assets\images\ui-icons_444444_256x240.png" />
+    <Content Include="assets\images\ui-icons_555555_256x240.png" />
+    <Content Include="assets\images\ui-icons_777620_256x240.png" />
+    <Content Include="assets\images\ui-icons_777777_256x240.png" />
+    <Content Include="assets\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="assets\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\img\backgrounds\1.jpg" />
+    <Content Include="assets\img\backgrounds\PatientHome.jpg" />
     <Content Include="assets\js\datatables.min.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="assets\js\jquery-1.11.1.js" />
+    <Content Include="assets\js\jquery-1.11.1.min.js" />
     <Content Include="assets\js\jquery-3.7.1.min.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="assets\js\jquery.backstretch.js" />
+    <Content Include="assets\js\jquery.backstretch.min.js" />
     <Content Include="assets\js\jquery.dataTables.min.js" />
-    <Content Include="DB\cmmsystem_desa.mdf" />
-    <Content Include="DB\cmmsystem_desa_log.ldf">
-      <DependentUpon>cmmsystem_desa.mdf</DependentUpon>
-    </Content>
+    <Content Include="assets\js\placeholder.js" />
+    <Content Include="assets\js\scripts.js" />
+    <Content Include="assets\js\speedtest.js" />
+    <Content Include="assets\Staff.jpg" />
+    <Content Include="assets\staff2.jpg" />
+    <Content Include="assets\staff3.jpg" />
+    <Content Include="assets\staff6.jpg" />
+    <Content Include="assets\staff7.jpg" />
+    <Content Include="assets\staff8.jpg" />
+    <Content Include="assets\staff9.jpg" />
+    <Content Include="assets\stff10.jpg" />
+    <Content Include="backend\getIP.php" />
+    <Content Include="favicon.ico" />
+    <Content Include="media\avatar-placeholder-large-b21c7a23e82b1f068eb966e32f8efdac.png" />
+    <Content Include="media\channels4_banner.jpg" />
+    <Content Include="media\cmm.jpg" />
+    <Content Include="media\tui-editor-70a91e0b3f50be9088a532da062da7bc.png" />
+    <Content Include="speedtest_worker.js" />
     <Content Include="Doctor\PatientHistory.aspx" />
     <Content Include="Doctor\PendingAppointment.aspx" />
     <Content Include="Doctor\PreviousHistory.aspx" />
@@ -163,7 +253,7 @@
     <Content Include="media\layout.css" />
     <Content Include="media\li.svg" />
     <Content Include="media\menu.svg" />
-    <Content Include="media\nimbox.css" />
+    <Content Include="media\Chaft.css" />
     <Content Include="media\photoswipe-controls.svg" />
     <Content Include="media\redes-facebook-o.svg" />
     <Content Include="media\redes-instagram-o.svg" />
@@ -172,7 +262,7 @@
     <Content Include="media\respiratory_rate.svg" />
     <Content Include="media\systole.svg" />
     <Content Include="media\telefono-o.svg" />
-    <Content Include="media\vendor.css" />
+    <Content Include="media\Chaft2.css" />
     <Content Include="media\weight.svg" />
     <Content Include="OfficeIMO.ico" />
     <Content Include="Patient\Agenda.aspx" />
@@ -197,6 +287,81 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="assets\bootstrap\css\bootstrap.css.map" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="assets\font-awesome\less\animated.less" />
+    <Content Include="assets\font-awesome\less\bordered-pulled.less" />
+    <Content Include="assets\font-awesome\less\core.less" />
+    <Content Include="assets\font-awesome\less\fixed-width.less" />
+    <Content Include="assets\font-awesome\less\font-awesome.less" />
+    <Content Include="assets\font-awesome\less\icons.less" />
+    <Content Include="assets\font-awesome\less\larger.less" />
+    <Content Include="assets\font-awesome\less\list.less" />
+    <Content Include="assets\font-awesome\less\mixins.less" />
+    <Content Include="assets\font-awesome\less\path.less" />
+    <Content Include="assets\font-awesome\less\rotated-flipped.less" />
+    <Content Include="assets\font-awesome\less\stacked.less" />
+    <Content Include="assets\font-awesome\less\variables.less" />
+    <Content Include="assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="assets\font-awesome\scss\_animated.scss" />
+    <Content Include="assets\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="assets\font-awesome\scss\_core.scss" />
+    <Content Include="assets\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="assets\font-awesome\scss\_icons.scss" />
+    <Content Include="assets\font-awesome\scss\_larger.scss" />
+    <Content Include="assets\font-awesome\scss\_list.scss" />
+    <Content Include="assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="assets\font-awesome\scss\_path.scss" />
+    <Content Include="assets\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="assets\font-awesome\scss\_stacked.scss" />
+    <Content Include="assets\font-awesome\scss\_variables.scss" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\proximanova-black.eot" />
+    <Content Include="assets\fonts\proximanova-black.ttf" />
+    <Content Include="assets\fonts\proximanova-black.woff" />
+    <Content Include="assets\fonts\proximanova-bold.eot" />
+    <Content Include="assets\fonts\proximanova-bold.ttf" />
+    <Content Include="assets\fonts\proximanova-bold.woff" />
+    <Content Include="assets\fonts\proximanova-boldit.eot" />
+    <Content Include="assets\fonts\proximanova-boldit.ttf" />
+    <Content Include="assets\fonts\proximanova-boldit.woff" />
+    <Content Include="assets\fonts\proximanova-extrabold.eot" />
+    <Content Include="assets\fonts\proximanova-extrabold.ttf" />
+    <Content Include="assets\fonts\proximanova-extrabold.woff" />
+    <Content Include="assets\fonts\proximanova-light.eot" />
+    <Content Include="assets\fonts\proximanova-light.ttf" />
+    <Content Include="assets\fonts\proximanova-light.woff" />
+    <Content Include="assets\fonts\proximanova-light.woff2" />
+    <Content Include="assets\fonts\proximanova-regitalic.eot" />
+    <Content Include="assets\fonts\proximanova-regitalic.ttf" />
+    <Content Include="assets\fonts\proximanova-regitalic.woff" />
+    <Content Include="assets\fonts\proximanova-regular.eot" />
+    <Content Include="assets\fonts\proximanova-regular.ttf" />
+    <Content Include="assets\fonts\proximanova-regular.woff" />
+    <Content Include="assets\fonts\proximanova-regular.woff2" />
+    <Content Include="assets\fonts\proximanova-regularitalic.eot" />
+    <Content Include="assets\fonts\proximanova-regularitalic.ttf" />
+    <Content Include="assets\fonts\proximanova-regularitalic.woff" />
+    <Content Include="assets\fonts\proximanova-semibold.eot" />
+    <Content Include="assets\fonts\proximanova-semibold.ttf" />
+    <Content Include="assets\fonts\proximanova-semibold.woff" />
+    <Content Include="assets\fonts\proximanova-semibold.woff2" />
+    <Content Include="assets\fonts\proximanova-semibolditalic.eot" />
+    <Content Include="assets\fonts\proximanova-semibolditalic.ttf" />
+    <Content Include="assets\fonts\proximanova-semibolditalic.woff" />
+    <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
     <Content Include="Scheduller\Scheduller.Master" />
     <None Include="Properties\Settings.settings">
@@ -204,14 +369,20 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="TemplatesWord\ABORTO INCOMPLETO EDITAR.docx" />
-    <Content Include="TemplatesWord\AMEU PARA EDITAR.docx" />
-    <Content Include="TemplatesWord\CIUDAD DE MÉXICO A 31^G DE octubre^G DEL 2023.docx" />
-    <Content Include="TemplatesWord\CONS IMPLANTE IMPLANON.docx" />
     <Content Include="TemplatesWord\CONSENTIMIENTO mini silver.docx" />
-    <Content Include="TemplatesWord\CONSENTIMIENTOS DIUS DE COBRE.docx" />
-    <Content Include="TemplatesWord\hoja enfermeria.docx" />
-    <Content Include="TemplatesWord\implante 2 varillas.docx" />
-    <Content Include="Temp-TemplateWord\CONSENTIMIENTO mini silver.docx" />
+    <Content Include="TemplatesWord\Consentimiento Aborto Incompleto local.docx" />
+    <Content Include="TemplatesWord\Consentimiento Aborto Incompleto Sedacion.docx" />
+    <Content Include="TemplatesWord\Consentimiento Ameu local lcc.docx" />
+    <Content Include="TemplatesWord\Consentimiento Ameu local sg.docx" />
+    <Content Include="TemplatesWord\Consentimiento Ameu sedacion lcc.docx" />
+    <Content Include="TemplatesWord\Consentimiento Ameu sedacion sg.docx" />
+    <Content Include="TemplatesWord\consentimiento DKT.docx" />
+    <Content Include="TemplatesWord\consentimiento implanon.docx" />
+    <Content Include="TemplatesWord\consentimiento mia care.docx" />
+    <Content Include="TemplatesWord\consentimiento Nulipara.docx" />
+    <Content Include="TemplatesWord\consentimiento silver.docx" />
+    <Content Include="TemplatesWord\consentimiento T de cobre.docx" />
+    <Content Include="TemplatesWord\consentimiento Tde cobre emergencia.docx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -252,6 +423,7 @@
     <Compile Include="Admin\AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DatosConsulta.cs" />
     <Compile Include="DAL\Patient.cs" />
     <Compile Include="Doctor\PatientHistory.aspx.cs">
       <DependentUpon>PatientHistory.aspx</DependentUpon>
@@ -330,6 +502,7 @@
     <Compile Include="Doctor\DoctorMaster.Master.designer.cs">
       <DependentUpon>DoctorMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="Patient\DatosConsulta.cs" />
     <Compile Include="Patient\DoctorProfile.aspx.cs">
       <DependentUpon>DoctorProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -448,10 +621,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\bootstrap\" />
-    <Folder Include="assets\font-awesome\" />
-    <Folder Include="assets\ico\" />
-    <Folder Include="assets\img\" />
+    <Folder Include="DB\" />
+    <Folder Include="Temp-TemplateWord\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

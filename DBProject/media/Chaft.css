@@ -1,7 +1,55 @@
-/*!
- *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
- *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
- */
+.container-accordion {
+    width: 100%;
+    max-width: 650px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 0 5vh;
+}
+
+/* accordion-1 */
+.accordion-1 {
+    position: relative;
+    box-shadow: 0px 1px 7px #DBDBDB;
+}
+
+    .accordion-1 .head {
+        background-color: #FFFFFF;
+        color: #563e6e;
+        padding: 20px 30px;
+        cursor: pointer;
+        transition: 0.2s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .accordion-1 .arrow {
+        color: #563e6e;
+        font-size: 60px;
+        transition: 0.25s ease;
+        opacity: 0.3;
+        transform: rotate(-90deg);
+    }
+
+    .accordion-1 .head:hover .arrow {
+        opacity: 1;
+    }
+
+    .accordion-1 .head:hover, #accordion-1 .active {
+        background-color: #FFE77AFF;
+    }
+
+    .accordion-1 .arrow-animate {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    .accordion-1 .content {
+        background-color: #FFFFFF;
+        display: none;
+        padding: 20px 30px;
+        color: #333333;
+    }
 
 .fa.fa-pull-left, .fa.pull-left {
     margin-right: .3em
@@ -2961,95 +3009,6 @@
     box-sizing: inherit
 }
 
-@font-face {
-    font-family: nimbo;
-    src: url(../assets/fonts/nimbo.eot);
-    src: url(../assets/fonts/nimbo.eot?#iefix) format("embedded-opentype"),url(../assets/fonts/nimbo.ttf) format("truetype"),url(../assets/fonts/nimbo.woff) format("woff"),url(../assets/fonts/nimbo.svg#nimbo) format("svg");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url(../assets/fonts/ProximaNova-Regular.eot);
-    src: url(../assets/fonts/ProximaNova-Regular.eot?#iefix) format("embedded-opentype"),url(../assets/fonts/ProximaNova-Regular.woff2) format("woff2"),url(../assets/fonts/ProximaNova-Regular.woff) format("woff"),url(../assets/fonts/ProximaNova-Regular.ttf) format("truetype"),url(../assets/fonts/ProximaNova-Regular.svg#ProximaNova-Regular) format("svg");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url(../assets/fonts/ProximaNova-Extrabold.otf) format("opentype");
-    font-weight: 900;
-    font-style: bolder
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url(../assets/fonts/ProximaNova-Semibold.eot);
-    src: url(../assets/fonts/ProximaNova-Semibold.eot?#iefix) format("embedded-opentype"),url(../assets/fonts/ProximaNova-Semibold.woff2) format("woff2"),url(../assets/fonts/ProximaNova-Semibold.woff) format("woff"),url(../assets/fonts/ProximaNova-Semibold.ttf) format("truetype"),url(../assets/fonts/ProximaNova-Semibold.svg#ProximaNova-Semibold) format("svg");
-    font-weight: 800;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url(../assets/fonts/ProximaNova-Semibold.eot);
-    src: url(../assets/fonts/ProximaNova-Semibold.eot?#iefix) format("embedded-opentype"),url(../assets/fonts/ProximaNova-Semibold.woff2) format("woff2"),url(../assets/fonts/ProximaNova-Semibold.woff) format("woff"),url(../assets/fonts/ProximaNova-Semibold.ttf) format("truetype"),url(../assets/fonts/ProximaNova-Semibold.svg#ProximaNova-Semibold) format("svg");
-    font-weight: 700;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url(../assets/fonts/ProximaNova-Semibold.eot);
-    src: url(../assets/fonts/ProximaNova-Semibold.eot?#iefix) format("embedded-opentype"),url(../assets/fonts/ProximaNova-Semibold.woff2) format("woff2"),url(../assets/fonts/ProximaNova-Semibold.woff) format("woff"),url(../assets/fonts/ProximaNova-Semibold.ttf) format("truetype"),url(../assets/fonts/ProximaNova-Semibold.svg#ProximaNova-Semibold) format("svg");
-    font-weight: 600;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url(../assets/fonts/ProximaNova-Light.eot);
-    src: url(../assets/fonts/ProximaNova-Light.eot?#iefix) format("embedded-opentype"),url(../assets/fonts/ProximaNova-Light.woff2) format("woff2"),url(../assets/fonts/ProximaNova-Light.woff) format("woff"),url(../assets/fonts/ProximaNova-Light.ttf) format("truetype"),url(../assets/fonts/ProximaNova-Light.svg#ProximaNova-Light) format("svg");
-    font-weight: 300;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Dancing Script';
-    src: url(../assets/fonts/DancingScript-Regular.ttf) format("truetype");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Myriad Pro';
-    src: url(../assets/fonts/MyriadPro-Regular.ttf) format("truetype"),url(../assets/fonts/MyriadPro-Regular.ttf) format("truetype");
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Dancing Script';
-    src: url(../assets/fonts/DancingScript-Bold.ttf) format("truetype");
-    font-weight: 600;
-    font-style: normal
-}
-
-@font-face {
-    font-family: gobCL;
-    src: url(../assets/fonts/gobCL_Regular.otf) format("opentype");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    font-family: gobCL;
-    src: url(../assets/fonts/gobCL_Bold.otf) format("opentype");
-    font-weight: 900;
-    font-style: bolder
-}
-
 .img--responsive {
     display: block;
     max-width: 100%;
@@ -4445,12 +4404,6 @@ a {
     padding: 0
 }
 
-.expired-notification {
-    height: 100%;
-    position: relative;
-    background: url(../assets/images/nimbox-pattern-bg-70a91e0b3f50be9088a532da062da7bc.png)
-}
-
 .expired-notification__box {
     position: absolute;
     top: 0;
@@ -4501,18 +4454,6 @@ a {
         font-size: 16px;
         font-weight: 600;
         line-height: 1.5em
-    }
-
-    .expired-notification__title:before {
-        position: absolute;
-        top: -15px;
-        left: 0;
-        display: block;
-        content: '';
-        width: 120px;
-        height: 120px;
-        background: url(../assets/images/trophy-white.svg) center center no-repeat #eedc00;
-        border-radius: 100%
     }
 
 .expired-notification__demo-link {
@@ -7136,19 +7077,6 @@ a._add-integration-action_rxtwsm {
     position: relative
 }
 
-    ._payment-method_1azyg3:after {
-        position: absolute;
-        top: -2px;
-        right: -45px;
-        width: 34px;
-        height: 22px;
-        content: '';
-        background-image: url(/assets/images/credit-cards.svg);
-        background-size: 160px;
-        background-position: -3px;
-        background-repeat: no-repeat
-    }
-
     ._payment-method_1azyg3.mastercard:after {
         background-position: -44px
     }
@@ -9223,11 +9151,6 @@ span._partial_qgvcaq {
     padding-left: 20px
 }
 
-._date_b0sgn7 {
-    min-width: 140px;
-    background: url(../assets/images/calendar-icon-70a91e0b3f50be9088a532da062da7bc.png) top 12px right 10px no-repeat #fff
-}
-
 ._location-select_b0sgn7 {
     width: 100%
 }
@@ -9492,11 +9415,6 @@ span._partial_qgvcaq {
     ._label_1fav1g {
         padding-left: 20px
     }
-}
-
-._date_1fav1g {
-    background: url(../assets/images/calendar-icon-70a91e0b3f50be9088a532da062da7bc.png) top 12px right 10px no-repeat #fff;
-    min-width: 140px
 }
 
 ._location-select_1fav1g {
@@ -11448,11 +11366,6 @@ div.pagination-links {
     padding-right: 10px
 }
 
-._date_7va29l {
-    min-width: 140px;
-    background: url(../assets/images/calendar-icon-70a91e0b3f50be9088a532da062da7bc.png) top 12px right 10px no-repeat #fff
-}
-
 ._configure-schedule_mmw38z {
     width: 60%;
     height: 75%
@@ -12651,11 +12564,6 @@ input[type=number]._pediatric-patient-age_19q0qu {
     }
 }
 
-._date_82j8ou {
-    min-width: 140px;
-    background: url(../assets/images/calendar-icon-70a91e0b3f50be9088a532da062da7bc.png) top 12px right 10px no-repeat #fff
-}
-
 ._location-select_82j8ou {
     width: 100%
 }
@@ -13194,15 +13102,6 @@ input[type=number]._pediatric-patient-age_16kdtf {
         border-bottom: 1px solid #d9e3eb;
         flex-wrap: wrap
     }
-
-        ._consultation-cause_n333cw li:before {
-            margin-right: 10px;
-            content: '';
-            width: 20px;
-            height: 20px;
-            background: url(../assets/icons/star-check.svg) center center no-repeat;
-            background-size: 18px
-        }
 
         ._consultation-cause_n333cw li:last-child {
             border-bottom: none
@@ -17346,10 +17245,6 @@ span._label-consultation-status_1mxc6a {
     background-color: #f9fbfc
 }
 
-.trial-survey .ember-application__body {
-    background: url(../assets/images/nimbox-pattern-bg-70a91e0b3f50be9088a532da062da7bc.png)
-}
-
 @media screen and (max-width:768px) {
     .trial-survey .ember-application__body {
         padding: 0
@@ -17545,18 +17440,6 @@ span._label-consultation-status_1mxc6a {
     color: #fff
 }
 
-    .button--google:before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: '';
-        width: 45px;
-        height: 40px;
-        background: url(/assets/images/google-favicon.svg) center center no-repeat #fff;
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px
-    }
-
 .button--danger {
     background-color: #F82B57 !important;
     border: 1px solid #F82B57 !important
@@ -17634,13 +17517,6 @@ input[type=checkbox], input[type=radio] {
     cursor: pointer;
     position: relative;
     -webkit-appearance: none
-}
-
-.input\--search-box {
-    float: left;
-    background: url(../assets/images/icon-search-70a91e0b3f50be9088a532da062da7bc.png) right 10px center no-repeat #fff;
-    padding-right: 40px !important;
-    max-width: 720px
 }
 
 @media screen and (max-width:992px) {
@@ -17895,10 +17771,6 @@ a::-moz-selection, div::-moz-selection, h1::-moz-selection, h2::-moz-selection, 
     color: #ccc
 }
 
-#active-drugs, #allergies-search {
-    background: url(../assets/images/icon-search-70a91e0b3f50be9088a532da062da7bc.png) calc(100% - 10px) center no-repeat #fff
-}
-
 @after-modile './modules/elements/form';
 
 ._chart-people_10ofab .c3-chart-arcs-title {
@@ -18113,11 +17985,6 @@ a::-moz-selection, div::-moz-selection, h1::-moz-selection, h2::-moz-selection, 
         display: flex;
         flex-direction: column
     }
-}
-
-input[type=text]._date_7xvsbv {
-    background: url(../assets/images/calendar-icon-70a91e0b3f50be9088a532da062da7bc.png) top 12px right 10px no-repeat #fff;
-    width: 140px
 }
 
 @media screen and (min-width:993px) {
@@ -21184,14 +21051,6 @@ svg._physiotherapy-body_1l5red {
         font-weight: 400;
         color: #ccc
     }
-
-._feature-ad_wpgc0k {
-    height: 100%;
-    display: flex;
-    background: url(../assets/images/nimbox-pattern-bg-70a91e0b3f50be9088a532da062da7bc.png);
-    justify-content: center;
-    align-items: center
-}
 
 @media screen and (max-width:768px) {
     ._feature-ad_wpgc0k {
@@ -24547,21 +24406,6 @@ input._social_1q2l7t {
     padding-right: 35px
 }
 
-    input._social_1q2l7t._facebook_1q2l7t {
-        background: url(../assets/images/facebook-icon.svg) top 8px right 11px no-repeat #FFF;
-        background-size: 25px 25px
-    }
-
-    input._social_1q2l7t._twitter_1q2l7t {
-        background: url(../assets/images/twitter-icon.svg) top 8px right 11px no-repeat #FFF;
-        background-size: 25px 25px
-    }
-
-    input._social_1q2l7t._instagram_1q2l7t {
-        background: url(../assets/images/instagram-icon.svg) top 8px right 11px no-repeat #FFF;
-        background-size: 25px 25px
-    }
-
 ._label-color_1q2l7t {
     vertical-align: middle;
     width: 115px
@@ -25450,18 +25294,6 @@ input._social_1q2l7t {
     padding-right: 45px
 }
 
-._credit-card-input_1sa74o:after {
-    position: absolute;
-    top: 9px;
-    right: 7px;
-    width: 35px;
-    height: 22px;
-    background-image: url(/assets/images/credit-cards.svg);
-    background-size: 155px;
-    background-position: 0;
-    background-repeat: no-repeat
-}
-
 ._credit-card-input_1sa74o.mastercard:after {
     background-position: -42px
 }
@@ -25555,11 +25387,6 @@ input._social_1q2l7t {
     font-size: 16px;
     width: 100%;
     background: #fff
-}
-
-._card-icons_1g2yu7, ._existing-card_1g2yu7:after {
-    background-image: url(/assets/images/credit-cards.svg);
-    background-repeat: no-repeat
 }
 
 input.InputElement {
@@ -25831,16 +25658,6 @@ input.InputElement {
 
     ._need-invoice_1eq4n2 p {
         font-size: 13px
-    }
-
-    ._need-invoice_1eq4n2:before {
-        position: absolute;
-        top: 25px;
-        left: 20px;
-        background-image: url(../assets/images/factura.svg);
-        background-repeat: no-repeat;
-        width: 42px;
-        height: 39px
     }
 
 ._continue-steps-button_1eq4n2, ._previous-steps-button_1eq4n2 {
@@ -27042,12 +26859,6 @@ input[type=text]._search_7seudl {
     }
 }
 
-._date_14be4y {
-    background: url(../assets/images/calendar-icon-70a91e0b3f50be9088a532da062da7bc.png) top 12px right 10px no-repeat #fff;
-    min-width: 140px;
-    max-width: 10%
-}
-
 ._intervalOptions-select_14be4y {
     width: 100%
 }
@@ -27612,11 +27423,6 @@ input[type=text]._search_7seudl {
     ._label_15br7u {
         padding-left: 0
     }
-}
-
-._date_15br7u {
-    min-width: 140px;
-    background: url(../assets/images/calendar-icon-70a91e0b3f50be9088a532da062da7bc.png) top 12px right 10px no-repeat #fff
 }
 
 ._location-select_15br7u {
@@ -28296,11 +28102,6 @@ input[type=text]._search_7seudl {
     justify-content: space-between
 }
 
-    ._print-date-range_divaj6 input[type=text].date {
-        width: 85%;
-        background: url(../assets/images/calendar-icon-70a91e0b3f50be9088a532da062da7bc.png) top 12px right 10px no-repeat #fff
-    }
-
 ._members_divaj6 ._members-select_divaj6 {
     width: 100%;
     height: 42px;
@@ -28517,10 +28318,6 @@ input[type=text]._search_7seudl {
 ._logo_86qt73 {
     margin-bottom: 25px
 }
-
-    ._logo_86qt73 > a {
-        background: url(../assets/images/n.svg) center center no-repeat #fff !important
-    }
 
         ._logo_86qt73 > a.active:before {
             background-color: #fff
@@ -37429,11 +37226,6 @@ td._non-editable_15pqm3 {
     flex-wrap: wrap
 }
 
-input._date_1getv4 {
-    min-width: 140px;
-    background: url(../assets/images/calendar-icon-70a91e0b3f50be9088a532da062da7bc.png) top 11px right 11px no-repeat #FFF
-}
-
 @media print {
     ._responsible-attributes_1xble0 > div {
         display: flex;
@@ -37560,11 +37352,6 @@ input[type=checkbox]._no-margin_1tsslg {
     ._button-right_v7rmyf {
         margin-right: 50px
     }
-}
-
-._date_v7rmyf {
-    min-width: 140px;
-    background: url(../assets/images/calendar-icon-70a91e0b3f50be9088a532da062da7bc.png) top 12px right 10px no-repeat #fff
 }
 
 ._verify-cellphone_yxjnxe {

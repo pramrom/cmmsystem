@@ -40,18 +40,17 @@ namespace DBProject.Patient
             if (newObj.LoadAll())
             {
                 newObj.Rewind();
-                while (newObj.MoveNext())
+                do
                 {
                     var paciente = new PatientReporte()
                     {
                         ID = newObj.PatientID.ToString(),
                         Name = newObj.Name.Trim() + " " + newObj.Apellidos.Trim(),
-                        dateOfBirth = newObj.BirthDate,
-                        gender = newObj.Sexo.Trim()
+                        //dateOfBirth = newObj.BirthDate,                        
                     };
 
                     pacientes.Add(paciente);
-                }
+                } while (newObj.MoveNext());
 
                 StringBuilder sb = new StringBuilder();
                 using (StringWriter sw = new StringWriter(sb))

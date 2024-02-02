@@ -33,33 +33,6 @@ namespace DBProject.Patient
         protected global::System.Web.UI.HtmlControls.HtmlInputText personlastname;
 
         /// <summary>
-        /// personbornat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText personbornat;
-
-        /// <summary>
-        /// personemail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl personemail;
-
-        /// <summary>
-        /// personmobile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl personmobile;
-
-        /// <summary>
         /// persontelephone control.
         /// </summary>
         /// <remarks>
@@ -69,13 +42,22 @@ namespace DBProject.Patient
         protected global::System.Web.UI.HtmlControls.HtmlInputText persontelephone;
 
         /// <summary>
-        /// personidentitynumber control.
+        /// txtPais control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText personidentitynumber;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPais;
+
+        /// <summary>
+        /// txtEstado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEstado;
 
         /// <summary>
         /// personaddress control.
@@ -85,24 +67,6 @@ namespace DBProject.Patient
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText personaddress;
-
-        /// <summary>
-        /// personcity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText personcity;
-
-        /// <summary>
-        /// personzipcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText personzipcode;
 
         /// <summary>
         /// personaddressexternalnumber control.
@@ -121,6 +85,24 @@ namespace DBProject.Patient
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText addressinternalnumber;
+
+        /// <summary>
+        /// personcity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText personcity;
+
+        /// <summary>
+        /// personzipcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText personzipcode;
 
         /// <summary>
         /// ember6454 control.
