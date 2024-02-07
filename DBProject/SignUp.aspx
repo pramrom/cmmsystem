@@ -76,7 +76,7 @@
                         <div class="row">
                             <div class="col-sm-8 col-sm-offset-2 text">
                                 <h1><strong>Centro Médico Mujer</strong></h1>
-                                <h2>Consentimientos</h2>
+                                <h2><strong style="color: white;">Consentimientos</strong></h2>
                             </div>
                         </div>
                         <div class="col-sm-8 col-sm-offset-2 text">

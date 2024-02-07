@@ -48,7 +48,7 @@ namespace DBProject
 
             if (status == -1)
             {
-                Response.Write("<script>alert('There was some error in retrieving the Doctor's Info.');</script>");
+                Response.Write("<script>alert('There was some error in retrieving the DoctorEF's Info.');</script>");
             }
 
             else if (status == 0)

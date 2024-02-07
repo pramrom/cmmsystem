@@ -36,7 +36,7 @@ namespace DBProject
 
             if (status == -1)
             {
-                Notify.Text = "There was some error in retrieving the Patient's notifications.";
+                Notify.Text = "There was some error in retrieving the PatientEF's notifications.";
             }
 
             else if (status == 0)
@@ -48,21 +48,21 @@ namespace DBProject
             {
                 if (status == 1)
                 {
-                    NDoctor.Text = "Your requested appointment with Doctor " + dName + " has been accepted by him! :)";
+                    NDoctor.Text = "Your requested appointment with DoctorEF " + dName + " has been accepted by him! :)";
                     NTimings.Text = "The Appointment Timings are : " + timings;
                     return;
                 }
 
                 else if (status == 2)
                 {
-                    NDoctor.Text = "Your requested appointment with Doctor " + dName + " has been rejected by him! :(";
+                    NDoctor.Text = "Your requested appointment with DoctorEF " + dName + " has been rejected by him! :(";
                     NTimings.Text = "The Appointment Timings were : " + timings;
                     return;
                 }
 
                 else if (status == 3)
                 {
-                    NDoctor.Text = "Your appointment with Doctor " + dName + " has been completed now. We hope you are feeling better now!";
+                    NDoctor.Text = "Your appointment with DoctorEF " + dName + " has been completed now. We hope you are feeling better now!";
                     NTimings.Text = "The Appointment Timings were : " + timings;
                     return;
                 }

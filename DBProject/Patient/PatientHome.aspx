@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Patient/PatientMaster.Master" AutoEventWireup="true" CodeBehind="PatientHome.aspx.cs" Inherits="DBProject.Patient.PatientHome" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Patient/PatientMaster.Master" AutoEventWireup="true" CodeBehind="PatientHome.aspx.cs" Inherits="DBProject.PatientMG.PatientHome" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../assets/js/jquery-3.7.1.min.js"></script>  
     <script src="../assets/js/jquery.dataTables.min.js"></script>  
@@ -46,8 +46,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <br />
-        <h1><strong style="margin:42%">Pacientes</strong></h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif; border-radius: 5px; text-decoration: underline; background-color: #CCCCCC">
+            <strong style="margin: 45%">Pacientes</strong>
+        </h1>        
         <br /><br />
         <div style="margin-left: 20px">
             <table id="example" class="display" width="100%">
@@ -63,4 +64,15 @@
             </table>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 </asp:Content>

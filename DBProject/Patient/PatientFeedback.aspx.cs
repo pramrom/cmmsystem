@@ -55,7 +55,7 @@ namespace DBProject
             {
                 Session["aID"] = aID;
 
-                FDoctor.Text = "Your feedback for the appointment with Doctor " + dName + " is pending. Kindly give it.";
+                FDoctor.Text = "Your feedback for the appointment with DoctorEF " + dName + " is pending. Kindly give it.";
                 FTimings.Text = "The Appointment Timings were : " + timings;
 
                 //Make the things visible -- Magic O.O --

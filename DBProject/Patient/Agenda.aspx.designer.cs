@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DBProject.Patient
+namespace DBProject.PatientMG
 {
 
 
@@ -22,6 +22,51 @@ namespace DBProject.Patient
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label nombrePaciente;
+
+        /// <summary>
+        /// edadPaciente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label edadPaciente;
+
+        /// <summary>
+        /// DoctorActual control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DoctorActual;
+
+        /// <summary>
+        /// DropDownDoctors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownDoctors;
+
+        /// <summary>
+        /// btnGuardarConsulta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarConsulta;
+
+        /// <summary>
+        /// DivINeedToAddStuffTo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivINeedToAddStuffTo;
 
         /// <summary>
         /// Otrasalergias control.
@@ -312,6 +357,15 @@ namespace DBProject.Patient
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3220;
 
         /// <summary>
+        /// btnAP2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAP2;
+
+        /// <summary>
         /// chavo3274 control.
         /// </summary>
         /// <remarks>
@@ -420,6 +474,15 @@ namespace DBProject.Patient
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3311;
 
         /// <summary>
+        /// btnANP2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnANP2;
+
+        /// <summary>
         /// chavo3338 control.
         /// </summary>
         /// <remarks>
@@ -526,6 +589,15 @@ namespace DBProject.Patient
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3375;
+
+        /// <summary>
+        /// btnAHF2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAHF2;
 
         /// <summary>
         /// chavo3420 control.
@@ -654,12 +726,12 @@ namespace DBProject.Patient
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3482;
 
         /// <summary>
-        /// DropDownDoctors control.
+        /// btnAGO2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownDoctors;
+        protected global::System.Web.UI.WebControls.Button btnAGO2;
     }
 }

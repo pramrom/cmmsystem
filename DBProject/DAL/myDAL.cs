@@ -266,14 +266,14 @@ namespace DBProject.DAL
             if (SearchQuery == "")
             {
                 cmd = new SqlCommand(
-                "SELECT Doctor.DoctorID as ID , Doctor.Name , D.DeptName as Department FROM Doctor JOIN Department D ON D.DeptNo = Doctor.DeptNo" +
-                " WHERE Doctor.Status = 1",
+                "SELECT DoctorEF.DoctorID as ID , DoctorEF.Name , D.DeptName as Department FROM DoctorEF JOIN Department D ON D.DeptNo = DoctorEF.DeptNo" +
+                " WHERE DoctorEF.Status = 1",
                 con);
             }
             else
             {
                 cmd = new SqlCommand(
-                "SELECT a.DoctorID as ID,  a.Name, D.DeptName as Department FROM department D join (SELECT * FROM Doctor WHERE Doctor.Status = 1 AND Doctor.Name like  '%' + @DName + '%')  a ON a.DeptNo = D.DeptNo",
+                "SELECT a.DoctorID as ID,  a.Name, D.DeptName as Department FROM department D join (SELECT * FROM DoctorEF WHERE DoctorEF.Status = 1 AND DoctorEF.Name like  '%' + @DName + '%')  a ON a.DeptNo = D.DeptNo",
                 con);
                 cmd.Parameters.AddWithValue("@DName", SearchQuery);
             }
@@ -294,7 +294,7 @@ namespace DBProject.DAL
             }
             else
             {
-                cmd = new SqlCommand("SELECT Patient.PatientID, Patient.Name, Patient.Phone from Patient" +
+                cmd = new SqlCommand("SELECT PatientEF.PatientID, PatientEF.Name, PatientEF.Phone from PatientEF" +
                 " WHERE patient.name like '%' + @SName + '%' ", con);
                 cmd.Parameters.AddWithValue("@SName", SearchQuery.Trim());
             }
@@ -1216,7 +1216,7 @@ namespace DBProject.DAL
             da.Fill(dt);
             return dt;
         }
-        public static DataRow LoadDoctor(int id)
+        public DataRow LoadDoctor(int id)
         {
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Doctor] WHERE [DoctorId] = @id", connString);
             da.SelectCommand.Parameters.AddWithValue("id", id);

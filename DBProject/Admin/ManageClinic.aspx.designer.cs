@@ -13,7 +13,7 @@ namespace DBProject {
     public partial class ManageClinic {
         
         /// <summary>
-        /// Doctor control.
+        /// DoctorEF control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -22,7 +22,7 @@ namespace DBProject {
         protected global::System.Web.UI.WebControls.RadioButton Doctor;
         
         /// <summary>
-        /// Patient control.
+        /// PatientEF control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

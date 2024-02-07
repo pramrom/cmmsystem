@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace DBProject.Patient
+namespace DBProject.PatientMG
 {
-    public class Patient : _Patient
+    public class PatientMG : _Patient
     {
 
     }

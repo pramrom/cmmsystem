@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DBProject.Patient
+namespace DBProject.PatientMG
 {
 
 

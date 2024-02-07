@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Patient/PatientMaster.Master" AutoEventWireup="true" CodeBehind="Pacientes.aspx.cs" Inherits="DBProject.Patient.Pacientes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Patient/PatientMaster.Master" AutoEventWireup="true" CodeBehind="Pacientes.aspx.cs" Inherits="DBProject.PatientMG.Pacientes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Pacientes</title>
     <style data-styles="">
@@ -32,19 +32,26 @@
                                         <label for="person-first-name" class="_required_1mkkpr">
                                             Nombre(s)
                                         </label>
-                                        <input id="personfirstname" data-autoid="person-first-name" type="text" class="ember-view" runat="server" />
+                                        <input id="personfirstname" data-autoid="person-first-name" type="text" class="ember-view" runat="server" maxlength="30" />
                                     </div>
                                     <div id="ember6348" class="_field_1mkkpr ember-view">
                                         <label for="person-last-name" class="_required_1mkkpr">
                                             Apellido(s)
                                         </label>
-                                        <input id="personlastname" data-autoid="person-last-name" type="text" class="ember-view" runat="server" />
+                                        <input id="personlastname" data-autoid="person-last-name" type="text" class="ember-view" runat="server" maxlength="30"/>
                                     </div>
                                 </div>
+
+                                <div id="ember6349" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
+                                    <div id="ember6350" class="_field_1mkkpr ember-view">  
+                                        <label for="person-born-at" class="_required_1mkkpr">Fecha de nacimiento</label>
+                                        <input id="personbornat" placeholder="dd-mm-yyyy" data-autoid="person-born-at" type="date" class="ember-view" runat="server" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}"/>
+                                        <input placeholder="DD-MM-AAAA" id="Date1" data-autoid="person-born-at" type="text" class="ember-view" runat="server" readonly/>
+                                    </div>
                             <div id="ember6383" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
                                 <div id="ember6384" class="_field_1mkkpr ember-view">  
                                     <label for="person-telephone">Teléfono</label>
-                                    <input id="persontelephone" data-autoid="person-telephone" type="text" class="ember-view" runat="server"/>
+                                    <input id="persontelephone" data-autoid="person-telephone" type="text" class="ember-view" runat="server" maxlength="11"/>
                                 </div>
                             </div>
                             <br />

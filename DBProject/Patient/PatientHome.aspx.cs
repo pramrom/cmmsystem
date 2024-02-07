@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Text;
 
-namespace DBProject.Patient
+namespace DBProject.PatientMG
 {
     class PatientReporte
     {
@@ -23,7 +23,7 @@ namespace DBProject.Patient
     public partial class PatientHome : System.Web.UI.Page
     {
 
-        Patient newObj = new Patient();
+        PatientMG newObj = new PatientMG();
 
         public string AgentOptInStatus;
 
@@ -46,7 +46,7 @@ namespace DBProject.Patient
                     {
                         ID = newObj.PatientID.ToString(),
                         Name = newObj.Name.Trim() + " " + newObj.Apellidos.Trim(),
-                        //dateOfBirth = newObj.BirthDate,                        
+                        dateOfBirth = newObj.BirthDate,                        
                     };
 
                     pacientes.Add(paciente);
@@ -94,7 +94,7 @@ namespace DBProject.Patient
 
         //    if (status == -1)
         //    {
-        //        Response.Write("<script>alert('There was some error in retrieving the Patient's Info.');</script>");
+        //        Response.Write("<script>alert('There was some error in retrieving the PatientEF's Info.');</script>");
         //    }
 
         //    else if (status == 0)

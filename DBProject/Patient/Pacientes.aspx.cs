@@ -8,11 +8,11 @@ using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using DBProject.DAL;
 
-namespace DBProject.Patient
+namespace DBProject.PatientMG
 {
     public partial class Pacientes : System.Web.UI.Page
     {
-        Patient newObj = new Patient();
+        PatientMG newObj = new PatientMG();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,14 +21,14 @@ namespace DBProject.Patient
 
         public string getallJSON()
         {
-            var pacientes = new List<Patient>();
+            var pacientes = new List<PatientMG>();
 
             if (newObj.LoadAll())
             {
                 newObj.Rewind();
                 while (newObj.MoveNext())
                 {
-                    var paciente = new Patient()
+                    var paciente = new PatientMG()
                     {
                         Name = newObj.Name + " " + newObj.Apellidos,
                         BirthDate = newObj.BirthDate,
@@ -48,21 +48,35 @@ namespace DBProject.Patient
 
         protected void ember6454_ServerClick(object sender, EventArgs e)
         {                        
-            newObj.AddNew();
+            using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
+            {
+                Patient oPaciente = new Patient
+                {
+                    Name = personfirstname.Value,
+                    Apellidos = personlastname.Value,
+                    BirthDate = Convert.ToDateTime(personbornat.Value),
+                    Phone = persontelephone.Value,
+                    Address = personaddress.Value,
+                    Ciudad = personcity.Value,
+                    CP = personzipcode.Value,
+                    Número_exterior = personaddressexternalnumber.Value,
+                    Número_interior = addressinternalnumber.Value
+                };
+                baseDatos.Patients.Add(oPaciente);
+                baseDatos.SaveChanges();
 
-            newObj.Name = personfirstname.Value;
-            newObj.Apellidos = personlastname.Value;
-            //newObj.BirthDate = personbornat.Value;                        
-            newObj.Phone = persontelephone.Value;            
-            newObj.Address = personaddress.Value;
-            newObj.Ciudad = personcity.Value;
-            newObj.CP = personzipcode.Value;
-            newObj.Número_exterior = personaddressexternalnumber.Value;
-            newObj.Número_interior = addressinternalnumber.Value;
+                int newID = oPaciente.PatientID;
 
-            newObj.Save();
+                DBProject.DatosConsulta oDatosConsulta = new DBProject.DatosConsulta
+                {
+                    PatientID = newID
+                };
 
-            Response.Redirect("YourPage.aspx");
+                baseDatos.DatosConsultas.Add(oDatosConsulta);
+                baseDatos.SaveChanges();
+            }
+
+            Response.Redirect("PatientHome.aspx");
         }
     }
 }

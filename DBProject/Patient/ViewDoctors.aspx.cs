@@ -18,7 +18,7 @@ namespace DBProject
             deptDoctorInfo(sender, e);
         }
 
-        //---------------Function Called whenever a Doctor is selected from the Grid View----//
+        //---------------Function Called whenever a DoctorEF is selected from the Grid View----//
         protected void TDoctorGrid_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Select")

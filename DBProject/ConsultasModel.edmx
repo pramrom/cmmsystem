@@ -1,0 +1,1578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="cmmsystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointID" />
+          </Key>
+          <Property Name="AppointID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DoctorID" Type="int" />
+          <Property Name="PatientID" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Appointment_Status" Type="int" />
+          <Property Name="Bill_Amount" Type="float" />
+          <Property Name="Bill_Status" Type="varchar" MaxLength="10" />
+          <Property Name="DoctorNotification" Type="int" />
+          <Property Name="PatientNotification" Type="int" />
+          <Property Name="FeedbackStatus" Type="int" />
+          <Property Name="Disease" Type="varchar" MaxLength="100" />
+          <Property Name="Progress" Type="varchar" MaxLength="100" />
+          <Property Name="Prescription" Type="varchar" MaxLength="100" />
+          <Property Name="AppointmentStart" Type="datetime" />
+          <Property Name="AppointmentEnd" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DatosConsulta">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="palergia" Type="nchar" MaxLength="10" />
+          <Property Name="palergiadec" Type="nchar" MaxLength="100" />
+          <Property Name="phospre" Type="bit" />
+          <Property Name="pcirpre" Type="bit" />
+          <Property Name="pdia" Type="bit" />
+          <Property Name="penftiro" Type="bit" />
+          <Property Name="phipart" Type="bit" />
+          <Property Name="pcardio" Type="bit" />
+          <Property Name="ptrauma" Type="bit" />
+          <Property Name="pcancer" Type="bit" />
+          <Property Name="ptuber" Type="bit" />
+          <Property Name="ppatores" Type="bit" />
+          <Property Name="ppatogas" Type="bit" />
+          <Property Name="penftrans" Type="bit" />
+          <Property Name="penfrenal" Type="bit" />
+          <Property Name="potrospat" Type="bit" />
+          <Property Name="pactfis" Type="bit" />
+          <Property Name="ptab" Type="bit" />
+          <Property Name="palco" Type="bit" />
+          <Property Name="pdroga" Type="bit" />
+          <Property Name="pvacuna" Type="bit" />
+          <Property Name="potronopat" Type="bit" />
+          <Property Name="pdiaah" Type="bit" />
+          <Property Name="pcardioah" Type="bit" />
+          <Property Name="phipartah" Type="bit" />
+          <Property Name="penftiroah" Type="bit" />
+          <Property Name="penfrenalah" Type="bit" />
+          <Property Name="potroanther" Type="bit" />
+          <Property Name="pfpmens" Type="nchar" MaxLength="4" />
+          <Property Name="pfumens" Type="nchar" MaxLength="20" />
+          <Property Name="pcarmens" Type="nchar" MaxLength="4" />
+          <Property Name="pgesta" Type="nchar" MaxLength="4" />
+          <Property Name="pp" Type="nchar" MaxLength="4" />
+          <Property Name="pc" Type="nchar" MaxLength="4" />
+          <Property Name="pa" Type="nchar" MaxLength="4" />
+          <Property Name="pile" Type="nchar" MaxLength="4" />
+          <Property Name="plcctam" Type="nchar" MaxLength="4" />
+          <Property Name="plccsem" Type="nchar" MaxLength="4" />
+          <Property Name="psgtam" Type="nchar" MaxLength="4" />
+          <Property Name="psgsem" Type="nchar" MaxLength="4" />
+          <Property Name="pai" Type="nchar" MaxLength="4" />
+          <Property Name="pacienteusg" Type="nchar" MaxLength="4" />
+          <Property Name="pembgine" Type="bit" />
+          <Property Name="pcancer2" Type="bit" />
+          <Property Name="puter" Type="bit" />
+          <Property Name="pcanma" Type="bit" />
+          <Property Name="pactsex" Type="bit" />
+          <Property Name="pmetplani" Type="bit" />
+          <Property Name="pterhormo" Type="bit" />
+          <Property Name="pultpapa" Type="nchar" MaxLength="11" />
+          <Property Name="pultmasto" Type="nchar" MaxLength="11" />
+          <Property Name="potroagine" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DeptNo" />
+          </Key>
+          <Property Name="DeptNo" Type="int" Nullable="false" />
+          <Property Name="DeptName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="LoginTable">
+          <Key>
+            <PropertyRef Name="LoginID" />
+          </Key>
+          <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherStaff">
+          <Key>
+            <PropertyRef Name="StaffID" />
+          </Key>
+          <Property Name="StaffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Phone" Type="char" MaxLength="11" />
+          <Property Name="Address" Type="varchar" MaxLength="30" />
+          <Property Name="Designation" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Gender" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="Highest_Qualification" Type="varchar" MaxLength="50" />
+          <Property Name="Salary" Type="float" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Phone" Type="char" MaxLength="11" />
+          <Property Name="Address" Type="varchar" MaxLength="40" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="Gender" Type="char" MaxLength="1" />
+          <Property Name="Nombres" Type="nchar" MaxLength="30" />
+          <Property Name="Apellidos" Type="nchar" MaxLength="30" />
+          <Property Name="Sexo" Type="nchar" MaxLength="10" />
+          <Property Name="Email" Type="nchar" MaxLength="10" />
+          <Property Name="Teléfono_móvil" Type="nchar" MaxLength="10" />
+          <Property Name="Sin_celular" Type="nchar" MaxLength="10" />
+          <Property Name="Teléfono" Type="nchar" MaxLength="10" />
+          <Property Name="CURP" Type="nchar" MaxLength="10" />
+          <Property Name="Dirección" Type="nchar" MaxLength="10" />
+          <Property Name="País" Type="nchar" MaxLength="10" />
+          <Property Name="Estado" Type="nchar" MaxLength="10" />
+          <Property Name="Ciudad" Type="nchar" MaxLength="10" />
+          <Property Name="CP" Type="nchar" MaxLength="10" />
+          <Property Name="Número_exterior" Type="nchar" MaxLength="10" />
+          <Property Name="Número_interior" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'cmmsystem.dbo.Appointment_view' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Appointment_view">
+          <Key>
+            <PropertyRef Name="AppointID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="AppointID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'cmmsystem.dbo.Department_View' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Department_View">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Number of Doctors" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'cmmsystem.dbo.deptInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="deptInfo">
+          <Key>
+            <PropertyRef Name="DeptName" />
+          </Key>
+          <Property Name="DeptName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Number of Doctors" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'cmmsystem.dbo.Income' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Income">
+          <Property Name="Income" Type="float" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'cmmsystem.dbo.PATIENT_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PATIENT_VIEW">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Phone" Type="char" MaxLength="11" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="STAFF_VIEW">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Designation" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Designation" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'cmmsystem.dbo.Total_Doctors' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Total_Doctors">
+          <Property Name="Total Doctors" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Total_Patient">
+          <Property Name="Total Patients" Type="int" />
+        </EntityType>-->
+        <Association Name="FK__Appointme__Patie__32E0915F">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="Appointment">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatosConsulta_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="DatosConsulta" Type="Self.DatosConsulta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="DatosConsulta">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="AddDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="BirthDate" Type="date" Mode="In" />
+          <Parameter Name="dept" Type="int" Mode="In" />
+          <Parameter Name="gender" Type="char" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="Exp" Type="int" Mode="In" />
+          <Parameter Name="Salary" Type="int" Mode="In" />
+          <Parameter Name="spec" Type="varchar" Mode="In" />
+          <Parameter Name="phone" Type="varchar" Mode="In" />
+          <Parameter Name="charges" Type="int" Mode="In" />
+          <Parameter Name="qual" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="APPROVE_APPOINTMENT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="APPOINT_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CheckDoctorEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="delete_APPOINTMENT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="APPOINT_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DELETESTAFF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Doctor_Information_By_ID1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="finishedPaid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="docId" Type="int" Mode="In" />
+          <Parameter Name="appointid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="finishedUnpaid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="docId" Type="int" Mode="In" />
+          <Parameter Name="appointid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="generate_bill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="did" Type="int" Mode="In" />
+        </Function>
+        <Function Name="get_appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="APPOINT_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GET_DOCTOR_PROFILE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dID" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="InOut" />
+          <Parameter Name="phone" Type="char" Mode="InOut" />
+          <Parameter Name="gender" Type="varchar" Mode="InOut" />
+          <Parameter Name="charges" Type="float" Mode="InOut" />
+          <Parameter Name="RI" Type="float" Mode="InOut" />
+          <Parameter Name="PTreated" Type="int" Mode="InOut" />
+          <Parameter Name="qualification" Type="varchar" Mode="InOut" />
+          <Parameter Name="specialization" Type="varchar" Mode="InOut" />
+          <Parameter Name="workE" Type="int" Mode="InOut" />
+          <Parameter Name="age" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="GET_STAFF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="InOut" />
+          <Parameter Name="phone" Type="char" Mode="InOut" />
+          <Parameter Name="gender" Type="varchar" Mode="InOut" />
+          <Parameter Name="address" Type="varchar" Mode="InOut" />
+          <Parameter Name="desig" Type="varchar" Mode="InOut" />
+          <Parameter Name="sal" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="InOut" />
+          <Parameter Name="ID" Type="int" Mode="InOut" />
+          <Parameter Name="type" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="PatientDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PatientInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientID" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Phone" Type="char" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="BirthDate" Type="date" Mode="In" />
+          <Parameter Name="Gender" Type="char" Mode="In" />
+          <Parameter Name="Nombres" Type="nchar" Mode="In" />
+          <Parameter Name="Apellidos" Type="nchar" Mode="In" />
+          <Parameter Name="Sexo" Type="nchar" Mode="In" />
+          <Parameter Name="Email" Type="nchar" Mode="In" />
+          <Parameter Name="Teléfono_móvil" Type="nchar" Mode="In" />
+          <Parameter Name="Sin_celular" Type="nchar" Mode="In" />
+          <Parameter Name="Teléfono" Type="nchar" Mode="In" />
+          <Parameter Name="CURP" Type="nchar" Mode="In" />
+          <Parameter Name="Dirección" Type="nchar" Mode="In" />
+          <Parameter Name="País" Type="nchar" Mode="In" />
+          <Parameter Name="Estado" Type="nchar" Mode="In" />
+          <Parameter Name="Ciudad" Type="nchar" Mode="In" />
+          <Parameter Name="CP" Type="nchar" Mode="In" />
+          <Parameter Name="Número_exterior" Type="nchar" Mode="In" />
+          <Parameter Name="Número_interior" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="PatientUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientID" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Phone" Type="char" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="BirthDate" Type="date" Mode="In" />
+          <Parameter Name="Gender" Type="char" Mode="In" />
+          <Parameter Name="Nombres" Type="nchar" Mode="In" />
+          <Parameter Name="Apellidos" Type="nchar" Mode="In" />
+          <Parameter Name="Sexo" Type="nchar" Mode="In" />
+          <Parameter Name="Email" Type="nchar" Mode="In" />
+          <Parameter Name="Teléfono_móvil" Type="nchar" Mode="In" />
+          <Parameter Name="Sin_celular" Type="nchar" Mode="In" />
+          <Parameter Name="Teléfono" Type="nchar" Mode="In" />
+          <Parameter Name="CURP" Type="nchar" Mode="In" />
+          <Parameter Name="Dirección" Type="nchar" Mode="In" />
+          <Parameter Name="País" Type="nchar" Mode="In" />
+          <Parameter Name="Estado" Type="nchar" Mode="In" />
+          <Parameter Name="Ciudad" Type="nchar" Mode="In" />
+          <Parameter Name="CP" Type="nchar" Mode="In" />
+          <Parameter Name="Número_exterior" Type="nchar" Mode="In" />
+          <Parameter Name="Número_interior" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="PENDING_APPOINTMENTS2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DOCTOR_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="proc_PatientDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="proc_PatientInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientID" Type="int" Mode="InOut" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Phone" Type="char" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="BirthDate" Type="date" Mode="In" />
+          <Parameter Name="Gender" Type="char" Mode="In" />
+          <Parameter Name="Nombres" Type="nchar" Mode="In" />
+          <Parameter Name="Apellidos" Type="nchar" Mode="In" />
+          <Parameter Name="Sexo" Type="nchar" Mode="In" />
+          <Parameter Name="Email" Type="nchar" Mode="In" />
+          <Parameter Name="Teléfono_móvil" Type="nchar" Mode="In" />
+          <Parameter Name="Sin_celular" Type="nchar" Mode="In" />
+          <Parameter Name="Teléfono" Type="nchar" Mode="In" />
+          <Parameter Name="CURP" Type="nchar" Mode="In" />
+          <Parameter Name="Dirección" Type="nchar" Mode="In" />
+          <Parameter Name="País" Type="nchar" Mode="In" />
+          <Parameter Name="Estado" Type="nchar" Mode="In" />
+          <Parameter Name="Ciudad" Type="nchar" Mode="In" />
+          <Parameter Name="CP" Type="nchar" Mode="In" />
+          <Parameter Name="Número_exterior" Type="nchar" Mode="In" />
+          <Parameter Name="Número_interior" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="proc_PatientLoadAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_PatientLoadByPrimaryKey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="proc_PatientUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientID" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Phone" Type="char" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="BirthDate" Type="date" Mode="In" />
+          <Parameter Name="Gender" Type="char" Mode="In" />
+          <Parameter Name="Nombres" Type="nchar" Mode="In" />
+          <Parameter Name="Apellidos" Type="nchar" Mode="In" />
+          <Parameter Name="Sexo" Type="nchar" Mode="In" />
+          <Parameter Name="Email" Type="nchar" Mode="In" />
+          <Parameter Name="Teléfono_móvil" Type="nchar" Mode="In" />
+          <Parameter Name="Sin_celular" Type="nchar" Mode="In" />
+          <Parameter Name="Teléfono" Type="nchar" Mode="In" />
+          <Parameter Name="CURP" Type="nchar" Mode="In" />
+          <Parameter Name="Dirección" Type="nchar" Mode="In" />
+          <Parameter Name="País" Type="nchar" Mode="In" />
+          <Parameter Name="Estado" Type="nchar" Mode="In" />
+          <Parameter Name="Ciudad" Type="nchar" Mode="In" />
+          <Parameter Name="CP" Type="nchar" Mode="In" />
+          <Parameter Name="Número_exterior" Type="nchar" Mode="In" />
+          <Parameter Name="Número_interior" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="RetrieveBillHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pID" Type="int" Mode="In" />
+          <Parameter Name="count" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="RetrieveCurrentAppointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pID" Type="int" Mode="In" />
+          <Parameter Name="dName" Type="varchar" Mode="InOut" />
+          <Parameter Name="timings" Type="varchar" Mode="InOut" />
+          <Parameter Name="count" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="RetrieveDeptDoctorInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="deptName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="RetrieveDoctorData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dID" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="InOut" />
+          <Parameter Name="phone" Type="char" Mode="InOut" />
+          <Parameter Name="gender" Type="varchar" Mode="InOut" />
+          <Parameter Name="charges" Type="float" Mode="InOut" />
+          <Parameter Name="RI" Type="float" Mode="InOut" />
+          <Parameter Name="PTreated" Type="int" Mode="InOut" />
+          <Parameter Name="qualification" Type="varchar" Mode="InOut" />
+          <Parameter Name="specialization" Type="varchar" Mode="InOut" />
+          <Parameter Name="workE" Type="int" Mode="InOut" />
+          <Parameter Name="age" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="RetrieveFreeSlots" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dID" Type="int" Mode="In" />
+          <Parameter Name="pID" Type="int" Mode="In" />
+          <Parameter Name="count" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="RetrievePatientData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="InOut" />
+          <Parameter Name="phone" Type="char" Mode="InOut" />
+          <Parameter Name="address" Type="varchar" Mode="InOut" />
+          <Parameter Name="birthDate" Type="varchar" Mode="InOut" />
+          <Parameter Name="age" Type="int" Mode="InOut" />
+          <Parameter Name="gender" Type="char" Mode="InOut" />
+        </Function>
+        <Function Name="RetrievePatientNotifications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pID" Type="int" Mode="In" />
+          <Parameter Name="dName" Type="varchar" Mode="InOut" />
+          <Parameter Name="timings" Type="varchar" Mode="InOut" />
+          <Parameter Name="count" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="retrievePendingFeedback" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pID" Type="int" Mode="In" />
+          <Parameter Name="dName" Type="varchar" Mode="InOut" />
+          <Parameter Name="timings" Type="varchar" Mode="InOut" />
+          <Parameter Name="aID" Type="int" Mode="InOut" />
+          <Parameter Name="count" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="retrievePHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RetrieveTreatmentHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pID" Type="int" Mode="In" />
+          <Parameter Name="count" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="storeFeedback" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="aID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TODAYS_APPOINTMENTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DOC_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdatePrescription" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="docId" Type="int" Mode="In" />
+          <Parameter Name="appointid" Type="int" Mode="In" />
+          <Parameter Name="Disease" Type="varchar" Mode="In" />
+          <Parameter Name="Progress" Type="varchar" Mode="In" />
+          <Parameter Name="Prescription" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="cmmsystemModelStoreContainer">
+          <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DatosConsulta" EntityType="Self.DatosConsulta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginTable" EntityType="Self.LoginTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtherStaff" EntityType="Self.OtherStaff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Appointment_view" EntityType="Self.Appointment_view" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Appointment_view].[AppointID] AS [AppointID], 
+    [Appointment_view].[Name] AS [Name], 
+    [Appointment_view].[PatientID] AS [PatientID], 
+    [Appointment_view].[Date] AS [Date]
+    FROM [dbo].[Appointment_view] AS [Appointment_view]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Department_View" EntityType="Self.Department_View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Department_View].[ID] AS [ID], 
+    [Department_View].[Name] AS [Name], 
+    [Department_View].[Description] AS [Description], 
+    [Department_View].[Number of Doctors] AS [Number of Doctors]
+    FROM [dbo].[Department_View] AS [Department_View]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="deptInfo" EntityType="Self.deptInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [deptInfo].[DeptName] AS [DeptName], 
+    [deptInfo].[Description] AS [Description], 
+    [deptInfo].[Number of Doctors] AS [Number of Doctors]
+    FROM [dbo].[deptInfo] AS [deptInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PATIENT_VIEW" EntityType="Self.PATIENT_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PATIENT_VIEW].[ID] AS [ID], 
+    [PATIENT_VIEW].[Name] AS [Name], 
+    [PATIENT_VIEW].[Phone] AS [Phone]
+    FROM [dbo].[PATIENT_VIEW] AS [PATIENT_VIEW]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="STAFF_VIEW" EntityType="Self.STAFF_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [STAFF_VIEW].[ID] AS [ID], 
+    [STAFF_VIEW].[Name] AS [Name], 
+    [STAFF_VIEW].[Designation] AS [Designation]
+    FROM [dbo].[STAFF_VIEW] AS [STAFF_VIEW]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Appointme__Patie__32E0915F" Association="Self.FK__Appointme__Patie__32E0915F">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Appointment" EntitySet="Appointment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatosConsulta_Patient" Association="Self.FK_DatosConsulta_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="DatosConsulta" EntitySet="DatosConsulta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cmmsystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointID" />
+          </Key>
+          <Property Name="AppointID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorID" Type="Int32" />
+          <Property Name="PatientID" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Appointment_Status" Type="Int32" />
+          <Property Name="Bill_Amount" Type="Double" />
+          <Property Name="Bill_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DoctorNotification" Type="Int32" />
+          <Property Name="PatientNotification" Type="Int32" />
+          <Property Name="FeedbackStatus" Type="Int32" />
+          <Property Name="Disease" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Progress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Prescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AppointmentStart" Type="DateTime" Precision="3" />
+          <Property Name="AppointmentEnd" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__Appointme__Patie__32E0915F" FromRole="Appointment" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="DatosConsulta">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="palergia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="palergiadec" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="phospre" Type="Boolean" />
+          <Property Name="pcirpre" Type="Boolean" />
+          <Property Name="pdia" Type="Boolean" />
+          <Property Name="penftiro" Type="Boolean" />
+          <Property Name="phipart" Type="Boolean" />
+          <Property Name="pcardio" Type="Boolean" />
+          <Property Name="ptrauma" Type="Boolean" />
+          <Property Name="pcancer" Type="Boolean" />
+          <Property Name="ptuber" Type="Boolean" />
+          <Property Name="ppatores" Type="Boolean" />
+          <Property Name="ppatogas" Type="Boolean" />
+          <Property Name="penftrans" Type="Boolean" />
+          <Property Name="penfrenal" Type="Boolean" />
+          <Property Name="potrospat" Type="Boolean" />
+          <Property Name="pactfis" Type="Boolean" />
+          <Property Name="ptab" Type="Boolean" />
+          <Property Name="palco" Type="Boolean" />
+          <Property Name="pdroga" Type="Boolean" />
+          <Property Name="pvacuna" Type="Boolean" />
+          <Property Name="potronopat" Type="Boolean" />
+          <Property Name="pdiaah" Type="Boolean" />
+          <Property Name="pcardioah" Type="Boolean" />
+          <Property Name="phipartah" Type="Boolean" />
+          <Property Name="penftiroah" Type="Boolean" />
+          <Property Name="penfrenalah" Type="Boolean" />
+          <Property Name="potroanther" Type="Boolean" />
+          <Property Name="pfpmens" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pfumens" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="pcarmens" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pgesta" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pp" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pc" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pa" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pile" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="plcctam" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="plccsem" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="psgtam" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="psgsem" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pai" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pacienteusg" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pembgine" Type="Boolean" />
+          <Property Name="pcancer2" Type="Boolean" />
+          <Property Name="puter" Type="Boolean" />
+          <Property Name="pcanma" Type="Boolean" />
+          <Property Name="pactsex" Type="Boolean" />
+          <Property Name="pmetplani" Type="Boolean" />
+          <Property Name="pterhormo" Type="Boolean" />
+          <Property Name="pultpapa" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="pultmasto" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="potroagine" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_DatosConsulta_Patient" FromRole="DatosConsulta" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DeptNo" />
+          </Key>
+          <Property Name="DeptNo" Type="Int32" Nullable="false" />
+          <Property Name="DeptName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LoginTable">
+          <Key>
+            <PropertyRef Name="LoginID" />
+          </Key>
+          <Property Name="LoginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherStaff">
+          <Key>
+            <PropertyRef Name="StaffID" />
+          </Key>
+          <Property Name="StaffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="Highest_Qualification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Salary" Type="Double" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Nombres" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Apellidos" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Sexo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Teléfono_móvil" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Sin_celular" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Teléfono" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CURP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Dirección" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="País" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ciudad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Número_exterior" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Número_interior" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Patie__32E0915F" FromRole="Patient" ToRole="Appointment" />
+          <NavigationProperty Name="DatosConsulta" Relationship="Self.FK_DatosConsulta_Patient" FromRole="Patient" ToRole="DatosConsulta" />
+        </EntityType>
+        <EntityType Name="Appointment_view">
+          <Key>
+            <PropertyRef Name="AppointID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="AppointID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Department_View">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Number_of_Doctors" Type="Int32" />
+        </EntityType>
+        <EntityType Name="deptInfo">
+          <Key>
+            <PropertyRef Name="DeptName" />
+          </Key>
+          <Property Name="DeptName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Number_of_Doctors" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PATIENT_VIEW">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="STAFF_VIEW">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Designation" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Designation" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Appointme__Patie__32E0915F">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="Appointment">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatosConsulta_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="DatosConsulta" Type="Self.DatosConsulta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="DatosConsulta">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="cmmsystemEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Appointments" EntityType="Self.Appointment" />
+          <EntitySet Name="DatosConsultas" EntityType="Self.DatosConsulta" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="LoginTables" EntityType="Self.LoginTable" />
+          <EntitySet Name="OtherStaffs" EntityType="Self.OtherStaff" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+          <EntitySet Name="Appointment_view" EntityType="Self.Appointment_view" />
+          <EntitySet Name="Department_View" EntityType="Self.Department_View" />
+          <EntitySet Name="deptInfoes" EntityType="Self.deptInfo" />
+          <EntitySet Name="PATIENT_VIEW" EntityType="Self.PATIENT_VIEW" />
+          <EntitySet Name="STAFF_VIEW" EntityType="Self.STAFF_VIEW" />
+          <AssociationSet Name="FK__Appointme__Patie__32E0915F" Association="Self.FK__Appointme__Patie__32E0915F">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Appointment" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatosConsulta_Patient" Association="Self.FK_DatosConsulta_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="DatosConsulta" EntitySet="DatosConsultas" />
+          </AssociationSet>
+          <FunctionImport Name="AddDoctor">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="BirthDate" Mode="In" Type="DateTime" />
+            <Parameter Name="dept" Mode="In" Type="Int32" />
+            <Parameter Name="gender" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Exp" Mode="In" Type="Int32" />
+            <Parameter Name="Salary" Mode="In" Type="Int32" />
+            <Parameter Name="spec" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="charges" Mode="In" Type="Int32" />
+            <Parameter Name="qual" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="APPROVE_APPOINTMENT">
+            <Parameter Name="APPOINT_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CheckDoctorEmail">
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="delete_APPOINTMENT">
+            <Parameter Name="APPOINT_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteDoctor">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DELETESTAFF">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Doctor_Information_By_ID1" ReturnType="Collection(cmmsystemModel.Doctor_Information_By_ID1_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="finishedPaid">
+            <Parameter Name="docId" Mode="In" Type="Int32" />
+            <Parameter Name="appointid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="finishedUnpaid">
+            <Parameter Name="docId" Mode="In" Type="Int32" />
+            <Parameter Name="appointid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="generate_bill" ReturnType="Collection(Double)">
+            <Parameter Name="did" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="get_appointment" ReturnType="Collection(cmmsystemModel.get_appointment_Result)">
+            <Parameter Name="APPOINT_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GET_DOCTOR_PROFILE" ReturnType="Collection(cmmsystemModel.GET_DOCTOR_PROFILE_Result)">
+            <Parameter Name="dID" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="InOut" Type="String" />
+            <Parameter Name="phone" Mode="InOut" Type="String" />
+            <Parameter Name="gender" Mode="InOut" Type="String" />
+            <Parameter Name="charges" Mode="InOut" Type="Double" />
+            <Parameter Name="RI" Mode="InOut" Type="Double" />
+            <Parameter Name="PTreated" Mode="InOut" Type="Int32" />
+            <Parameter Name="qualification" Mode="InOut" Type="String" />
+            <Parameter Name="specialization" Mode="InOut" Type="String" />
+            <Parameter Name="workE" Mode="InOut" Type="Int32" />
+            <Parameter Name="age" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GET_STAFF">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="InOut" Type="String" />
+            <Parameter Name="phone" Mode="InOut" Type="String" />
+            <Parameter Name="gender" Mode="InOut" Type="String" />
+            <Parameter Name="address" Mode="InOut" Type="String" />
+            <Parameter Name="desig" Mode="InOut" Type="String" />
+            <Parameter Name="sal" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Login">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="InOut" Type="Int32" />
+            <Parameter Name="ID" Mode="InOut" Type="Int32" />
+            <Parameter Name="type" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PatientDelete">
+            <Parameter Name="PatientID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PatientInsert">
+            <Parameter Name="PatientID" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="BirthDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="Nombres" Mode="In" Type="String" />
+            <Parameter Name="Apellidos" Mode="In" Type="String" />
+            <Parameter Name="Sexo" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Teléfono_móvil" Mode="In" Type="String" />
+            <Parameter Name="Sin_celular" Mode="In" Type="String" />
+            <Parameter Name="Teléfono" Mode="In" Type="String" />
+            <Parameter Name="CURP" Mode="In" Type="String" />
+            <Parameter Name="Dirección" Mode="In" Type="String" />
+            <Parameter Name="País" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="String" />
+            <Parameter Name="Ciudad" Mode="In" Type="String" />
+            <Parameter Name="CP" Mode="In" Type="String" />
+            <Parameter Name="Número_exterior" Mode="In" Type="String" />
+            <Parameter Name="Número_interior" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PatientUpdate">
+            <Parameter Name="PatientID" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="BirthDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="Nombres" Mode="In" Type="String" />
+            <Parameter Name="Apellidos" Mode="In" Type="String" />
+            <Parameter Name="Sexo" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Teléfono_móvil" Mode="In" Type="String" />
+            <Parameter Name="Sin_celular" Mode="In" Type="String" />
+            <Parameter Name="Teléfono" Mode="In" Type="String" />
+            <Parameter Name="CURP" Mode="In" Type="String" />
+            <Parameter Name="Dirección" Mode="In" Type="String" />
+            <Parameter Name="País" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="String" />
+            <Parameter Name="Ciudad" Mode="In" Type="String" />
+            <Parameter Name="CP" Mode="In" Type="String" />
+            <Parameter Name="Número_exterior" Mode="In" Type="String" />
+            <Parameter Name="Número_interior" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PENDING_APPOINTMENTS2" ReturnType="Collection(cmmsystemModel.PENDING_APPOINTMENTS2_Result)">
+            <Parameter Name="DOCTOR_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="proc_PatientDelete">
+            <Parameter Name="PatientID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="proc_PatientInsert">
+            <Parameter Name="PatientID" Mode="InOut" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="BirthDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="Nombres" Mode="In" Type="String" />
+            <Parameter Name="Apellidos" Mode="In" Type="String" />
+            <Parameter Name="Sexo" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Teléfono_móvil" Mode="In" Type="String" />
+            <Parameter Name="Sin_celular" Mode="In" Type="String" />
+            <Parameter Name="Teléfono" Mode="In" Type="String" />
+            <Parameter Name="CURP" Mode="In" Type="String" />
+            <Parameter Name="Dirección" Mode="In" Type="String" />
+            <Parameter Name="País" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="String" />
+            <Parameter Name="Ciudad" Mode="In" Type="String" />
+            <Parameter Name="CP" Mode="In" Type="String" />
+            <Parameter Name="Número_exterior" Mode="In" Type="String" />
+            <Parameter Name="Número_interior" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_PatientLoadAll" ReturnType="Collection(cmmsystemModel.proc_PatientLoadAll_Result)" />
+          <FunctionImport Name="proc_PatientLoadByPrimaryKey" ReturnType="Collection(cmmsystemModel.proc_PatientLoadByPrimaryKey_Result)">
+            <Parameter Name="PatientID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="proc_PatientUpdate">
+            <Parameter Name="PatientID" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="BirthDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="Nombres" Mode="In" Type="String" />
+            <Parameter Name="Apellidos" Mode="In" Type="String" />
+            <Parameter Name="Sexo" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Teléfono_móvil" Mode="In" Type="String" />
+            <Parameter Name="Sin_celular" Mode="In" Type="String" />
+            <Parameter Name="Teléfono" Mode="In" Type="String" />
+            <Parameter Name="CURP" Mode="In" Type="String" />
+            <Parameter Name="Dirección" Mode="In" Type="String" />
+            <Parameter Name="País" Mode="In" Type="String" />
+            <Parameter Name="Estado" Mode="In" Type="String" />
+            <Parameter Name="Ciudad" Mode="In" Type="String" />
+            <Parameter Name="CP" Mode="In" Type="String" />
+            <Parameter Name="Número_exterior" Mode="In" Type="String" />
+            <Parameter Name="Número_interior" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RetrieveBillHistory" ReturnType="Collection(cmmsystemModel.RetrieveBillHistory_Result)">
+            <Parameter Name="pID" Mode="In" Type="Int32" />
+            <Parameter Name="count" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RetrieveCurrentAppointment">
+            <Parameter Name="pID" Mode="In" Type="Int32" />
+            <Parameter Name="dName" Mode="InOut" Type="String" />
+            <Parameter Name="timings" Mode="InOut" Type="String" />
+            <Parameter Name="count" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RetrieveDeptDoctorInfo" ReturnType="Collection(cmmsystemModel.RetrieveDeptDoctorInfo_Result)">
+            <Parameter Name="deptName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RetrieveDoctorData">
+            <Parameter Name="dID" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="InOut" Type="String" />
+            <Parameter Name="phone" Mode="InOut" Type="String" />
+            <Parameter Name="gender" Mode="InOut" Type="String" />
+            <Parameter Name="charges" Mode="InOut" Type="Double" />
+            <Parameter Name="RI" Mode="InOut" Type="Double" />
+            <Parameter Name="PTreated" Mode="InOut" Type="Int32" />
+            <Parameter Name="qualification" Mode="InOut" Type="String" />
+            <Parameter Name="specialization" Mode="InOut" Type="String" />
+            <Parameter Name="workE" Mode="InOut" Type="Int32" />
+            <Parameter Name="age" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RetrieveFreeSlots">
+            <Parameter Name="dID" Mode="In" Type="Int32" />
+            <Parameter Name="pID" Mode="In" Type="Int32" />
+            <Parameter Name="count" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RetrievePatientData">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="InOut" Type="String" />
+            <Parameter Name="phone" Mode="InOut" Type="String" />
+            <Parameter Name="address" Mode="InOut" Type="String" />
+            <Parameter Name="birthDate" Mode="InOut" Type="String" />
+            <Parameter Name="age" Mode="InOut" Type="Int32" />
+            <Parameter Name="gender" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RetrievePatientNotifications">
+            <Parameter Name="pID" Mode="In" Type="Int32" />
+            <Parameter Name="dName" Mode="InOut" Type="String" />
+            <Parameter Name="timings" Mode="InOut" Type="String" />
+            <Parameter Name="count" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="retrievePendingFeedback">
+            <Parameter Name="pID" Mode="In" Type="Int32" />
+            <Parameter Name="dName" Mode="InOut" Type="String" />
+            <Parameter Name="timings" Mode="InOut" Type="String" />
+            <Parameter Name="aID" Mode="InOut" Type="Int32" />
+            <Parameter Name="count" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="retrievePHistory" ReturnType="Collection(cmmsystemModel.retrievePHistory_Result)">
+            <Parameter Name="dID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RetrieveTreatmentHistory" ReturnType="Collection(cmmsystemModel.RetrieveTreatmentHistory_Result)">
+            <Parameter Name="pID" Mode="In" Type="Int32" />
+            <Parameter Name="count" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="storeFeedback">
+            <Parameter Name="aID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TODAYS_APPOINTMENTS" ReturnType="Collection(cmmsystemModel.TODAYS_APPOINTMENTS_Result)">
+            <Parameter Name="DOC_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdatePrescription">
+            <Parameter Name="docId" Mode="In" Type="Int32" />
+            <Parameter Name="appointid" Mode="In" Type="Int32" />
+            <Parameter Name="Disease" Mode="In" Type="String" />
+            <Parameter Name="Progress" Mode="In" Type="String" />
+            <Parameter Name="Prescription" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Doctor_Information_By_ID1_Result">
+          <Property Type="Int32" Name="DoctorID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="40" />
+          <Property Type="DateTime" Name="BirthDate" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="DeptNo" Nullable="false" />
+          <Property Type="Double" Name="Charges_Per_Visit" Nullable="false" />
+          <Property Type="Double" Name="MonthlySalary" Nullable="true" />
+          <Property Type="Double" Name="ReputeIndex" Nullable="true" />
+          <Property Type="Int32" Name="Patients_Treated" Nullable="false" />
+          <Property Type="String" Name="Qualification" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Specialization" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="Work_Experience" Nullable="true" />
+          <Property Type="Int32" Name="status" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="get_appointment_Result">
+          <Property Type="Int32" Name="Appointid" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Appointment_Status" Nullable="true" />
+          <Property Type="Double" Name="Bill_Amount" Nullable="true" />
+          <Property Type="String" Name="Bill_Status" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Disease" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Progress" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Prescription" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GET_DOCTOR_PROFILE_Result">
+          <Property Type="Int32" Name="StaffID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Designation" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Gender" Nullable="false" MaxLength="1" />
+          <Property Type="DateTime" Name="BirthDate" Nullable="true" />
+          <Property Type="String" Name="Highest_Qualification" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Salary" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PENDING_APPOINTMENTS2_Result">
+          <Property Type="Int32" Name="AppointID" Nullable="false" />
+          <Property Type="String" Name="Patient_s_Name" Nullable="false" MaxLength="30" />
+          <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Appointment_Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="proc_PatientLoadAll_Result">
+          <Property Type="Int32" Name="PatientID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="40" />
+          <Property Type="DateTime" Name="BirthDate" Nullable="true" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Nombres" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Apellidos" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Sexo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Teléfono_móvil" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Sin_celular" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Teléfono" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CURP" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Dirección" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="País" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Ciudad" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CP" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Número_exterior" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Número_interior" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="proc_PatientLoadByPrimaryKey_Result">
+          <Property Type="Int32" Name="PatientID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="40" />
+          <Property Type="DateTime" Name="BirthDate" Nullable="true" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Nombres" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Apellidos" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Sexo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Teléfono_móvil" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Sin_celular" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Teléfono" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CURP" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Dirección" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="País" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Ciudad" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CP" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Número_exterior" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Número_interior" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="RetrieveBillHistory_Result">
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Doctor_s_Name" Nullable="false" MaxLength="30" />
+          <Property Type="Double" Name="Bill_Amount" Nullable="true" />
+          <Property Type="String" Name="Bill_Status" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="RetrieveDeptDoctorInfo_Result">
+          <Property Type="Int32" Name="DoctorID" Nullable="false" />
+          <Property Type="String" Name="Doctor_s_Name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Specialization" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DeptName" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="retrievePHistory_Result">
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Disease" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Progress" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Prescription" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="RetrieveTreatmentHistory_Result">
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Doctor_s_Name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Diagnosed_Disease" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Progress_Made" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Prescription" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="TODAYS_APPOINTMENTS_Result">
+          <Property Type="Int32" Name="AppointID" Nullable="false" />
+          <Property Type="String" Name="Patient_s_Name" Nullable="false" MaxLength="30" />
+          <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Bill_Amount" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="Bill_Status" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="Disease" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="Progress" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="Prescription" Nullable="false" MaxLength="2" />
+          <Property Type="Int32" Name="Appointment_Status" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cmmsystemModelStoreContainer" CdmEntityContainer="cmmsystemEntities1">
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="cmmsystemModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="AppointID" ColumnName="AppointID" />
+                <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+                <ScalarProperty Name="Bill_Amount" ColumnName="Bill_Amount" />
+                <ScalarProperty Name="Bill_Status" ColumnName="Bill_Status" />
+                <ScalarProperty Name="DoctorNotification" ColumnName="DoctorNotification" />
+                <ScalarProperty Name="PatientNotification" ColumnName="PatientNotification" />
+                <ScalarProperty Name="FeedbackStatus" ColumnName="FeedbackStatus" />
+                <ScalarProperty Name="Disease" ColumnName="Disease" />
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="Prescription" ColumnName="Prescription" />
+                <ScalarProperty Name="AppointmentStart" ColumnName="AppointmentStart" />
+                <ScalarProperty Name="AppointmentEnd" ColumnName="AppointmentEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DatosConsultas">
+            <EntityTypeMapping TypeName="cmmsystemModel.DatosConsulta">
+              <MappingFragment StoreEntitySet="DatosConsulta">
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="palergia" ColumnName="palergia" />
+                <ScalarProperty Name="palergiadec" ColumnName="palergiadec" />
+                <ScalarProperty Name="phospre" ColumnName="phospre" />
+                <ScalarProperty Name="pcirpre" ColumnName="pcirpre" />
+                <ScalarProperty Name="pdia" ColumnName="pdia" />
+                <ScalarProperty Name="penftiro" ColumnName="penftiro" />
+                <ScalarProperty Name="phipart" ColumnName="phipart" />
+                <ScalarProperty Name="pcardio" ColumnName="pcardio" />
+                <ScalarProperty Name="ptrauma" ColumnName="ptrauma" />
+                <ScalarProperty Name="pcancer" ColumnName="pcancer" />
+                <ScalarProperty Name="ptuber" ColumnName="ptuber" />
+                <ScalarProperty Name="ppatores" ColumnName="ppatores" />
+                <ScalarProperty Name="ppatogas" ColumnName="ppatogas" />
+                <ScalarProperty Name="penftrans" ColumnName="penftrans" />
+                <ScalarProperty Name="penfrenal" ColumnName="penfrenal" />
+                <ScalarProperty Name="potrospat" ColumnName="potrospat" />
+                <ScalarProperty Name="pactfis" ColumnName="pactfis" />
+                <ScalarProperty Name="ptab" ColumnName="ptab" />
+                <ScalarProperty Name="palco" ColumnName="palco" />
+                <ScalarProperty Name="pdroga" ColumnName="pdroga" />
+                <ScalarProperty Name="pvacuna" ColumnName="pvacuna" />
+                <ScalarProperty Name="potronopat" ColumnName="potronopat" />
+                <ScalarProperty Name="pdiaah" ColumnName="pdiaah" />
+                <ScalarProperty Name="pcardioah" ColumnName="pcardioah" />
+                <ScalarProperty Name="phipartah" ColumnName="phipartah" />
+                <ScalarProperty Name="penftiroah" ColumnName="penftiroah" />
+                <ScalarProperty Name="penfrenalah" ColumnName="penfrenalah" />
+                <ScalarProperty Name="potroanther" ColumnName="potroanther" />
+                <ScalarProperty Name="pfpmens" ColumnName="pfpmens" />
+                <ScalarProperty Name="pfumens" ColumnName="pfumens" />
+                <ScalarProperty Name="pcarmens" ColumnName="pcarmens" />
+                <ScalarProperty Name="pgesta" ColumnName="pgesta" />
+                <ScalarProperty Name="pp" ColumnName="pp" />
+                <ScalarProperty Name="pc" ColumnName="pc" />
+                <ScalarProperty Name="pa" ColumnName="pa" />
+                <ScalarProperty Name="pile" ColumnName="pile" />
+                <ScalarProperty Name="plcctam" ColumnName="plcctam" />
+                <ScalarProperty Name="plccsem" ColumnName="plccsem" />
+                <ScalarProperty Name="psgtam" ColumnName="psgtam" />
+                <ScalarProperty Name="psgsem" ColumnName="psgsem" />
+                <ScalarProperty Name="pai" ColumnName="pai" />
+                <ScalarProperty Name="pacienteusg" ColumnName="pacienteusg" />
+                <ScalarProperty Name="pembgine" ColumnName="pembgine" />
+                <ScalarProperty Name="pcancer2" ColumnName="pcancer2" />
+                <ScalarProperty Name="puter" ColumnName="puter" />
+                <ScalarProperty Name="pcanma" ColumnName="pcanma" />
+                <ScalarProperty Name="pactsex" ColumnName="pactsex" />
+                <ScalarProperty Name="pmetplani" ColumnName="pmetplani" />
+                <ScalarProperty Name="pterhormo" ColumnName="pterhormo" />
+                <ScalarProperty Name="pultpapa" ColumnName="pultpapa" />
+                <ScalarProperty Name="pultmasto" ColumnName="pultmasto" />
+                <ScalarProperty Name="potroagine" ColumnName="potroagine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="cmmsystemModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DeptNo" ColumnName="DeptNo" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginTables">
+            <EntityTypeMapping TypeName="cmmsystemModel.LoginTable">
+              <MappingFragment StoreEntitySet="LoginTable">
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherStaffs">
+            <EntityTypeMapping TypeName="cmmsystemModel.OtherStaff">
+              <MappingFragment StoreEntitySet="OtherStaff">
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Highest_Qualification" ColumnName="Highest_Qualification" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="cmmsystemModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Teléfono_móvil" ColumnName="Teléfono_móvil" />
+                <ScalarProperty Name="Sin_celular" ColumnName="Sin_celular" />
+                <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
+                <ScalarProperty Name="CURP" ColumnName="CURP" />
+                <ScalarProperty Name="Dirección" ColumnName="Dirección" />
+                <ScalarProperty Name="País" ColumnName="País" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Número_exterior" ColumnName="Número_exterior" />
+                <ScalarProperty Name="Número_interior" ColumnName="Número_interior" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appointment_view">
+            <EntityTypeMapping TypeName="cmmsystemModel.Appointment_view">
+              <MappingFragment StoreEntitySet="Appointment_view">
+                <ScalarProperty Name="AppointID" ColumnName="AppointID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department_View">
+            <EntityTypeMapping TypeName="cmmsystemModel.Department_View">
+              <MappingFragment StoreEntitySet="Department_View">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Number_of_Doctors" ColumnName="Number of Doctors" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deptInfoes">
+            <EntityTypeMapping TypeName="cmmsystemModel.deptInfo">
+              <MappingFragment StoreEntitySet="deptInfo">
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Number_of_Doctors" ColumnName="Number of Doctors" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PATIENT_VIEW">
+            <EntityTypeMapping TypeName="cmmsystemModel.PATIENT_VIEW">
+              <MappingFragment StoreEntitySet="PATIENT_VIEW">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STAFF_VIEW">
+            <EntityTypeMapping TypeName="cmmsystemModel.STAFF_VIEW">
+              <MappingFragment StoreEntitySet="STAFF_VIEW">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddDoctor" FunctionName="cmmsystemModel.Store.AddDoctor" />
+          <FunctionImportMapping FunctionImportName="APPROVE_APPOINTMENT" FunctionName="cmmsystemModel.Store.APPROVE_APPOINTMENT" />
+          <FunctionImportMapping FunctionImportName="CheckDoctorEmail" FunctionName="cmmsystemModel.Store.CheckDoctorEmail" />
+          <FunctionImportMapping FunctionImportName="delete_APPOINTMENT" FunctionName="cmmsystemModel.Store.delete_APPOINTMENT" />
+          <FunctionImportMapping FunctionImportName="DeleteDoctor" FunctionName="cmmsystemModel.Store.DeleteDoctor" />
+          <FunctionImportMapping FunctionImportName="DELETESTAFF" FunctionName="cmmsystemModel.Store.DELETESTAFF" />
+          <FunctionImportMapping FunctionImportName="Doctor_Information_By_ID1" FunctionName="cmmsystemModel.Store.Doctor_Information_By_ID1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.Doctor_Information_By_ID1_Result">
+                <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DeptNo" ColumnName="DeptNo" />
+                <ScalarProperty Name="Charges_Per_Visit" ColumnName="Charges_Per_Visit" />
+                <ScalarProperty Name="MonthlySalary" ColumnName="MonthlySalary" />
+                <ScalarProperty Name="ReputeIndex" ColumnName="ReputeIndex" />
+                <ScalarProperty Name="Patients_Treated" ColumnName="Patients_Treated" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+                <ScalarProperty Name="Work_Experience" ColumnName="Work_Experience" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="finishedPaid" FunctionName="cmmsystemModel.Store.finishedPaid" />
+          <FunctionImportMapping FunctionImportName="finishedUnpaid" FunctionName="cmmsystemModel.Store.finishedUnpaid" />
+          <FunctionImportMapping FunctionImportName="generate_bill" FunctionName="cmmsystemModel.Store.generate_bill" />
+          <FunctionImportMapping FunctionImportName="get_appointment" FunctionName="cmmsystemModel.Store.get_appointment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.get_appointment_Result">
+                <ScalarProperty Name="Appointid" ColumnName="Appointid" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+                <ScalarProperty Name="Bill_Amount" ColumnName="Bill_Amount" />
+                <ScalarProperty Name="Bill_Status" ColumnName="Bill_Status" />
+                <ScalarProperty Name="Disease" ColumnName="Disease" />
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="Prescription" ColumnName="Prescription" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GET_DOCTOR_PROFILE" FunctionName="cmmsystemModel.Store.GET_DOCTOR_PROFILE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.GET_DOCTOR_PROFILE_Result">
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Highest_Qualification" ColumnName="Highest_Qualification" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GET_STAFF" FunctionName="cmmsystemModel.Store.GET_STAFF" />
+          <FunctionImportMapping FunctionImportName="Login" FunctionName="cmmsystemModel.Store.Login" />
+          <FunctionImportMapping FunctionImportName="PatientDelete" FunctionName="cmmsystemModel.Store.PatientDelete" />
+          <FunctionImportMapping FunctionImportName="PatientInsert" FunctionName="cmmsystemModel.Store.PatientInsert" />
+          <FunctionImportMapping FunctionImportName="PatientUpdate" FunctionName="cmmsystemModel.Store.PatientUpdate" />
+          <FunctionImportMapping FunctionImportName="PENDING_APPOINTMENTS2" FunctionName="cmmsystemModel.Store.PENDING_APPOINTMENTS2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.PENDING_APPOINTMENTS2_Result">
+                <ScalarProperty Name="AppointID" ColumnName="AppointID" />
+                <ScalarProperty Name="Patient_s_Name" ColumnName="Patient's Name" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_PatientDelete" FunctionName="cmmsystemModel.Store.proc_PatientDelete" />
+          <FunctionImportMapping FunctionImportName="proc_PatientInsert" FunctionName="cmmsystemModel.Store.proc_PatientInsert" />
+          <FunctionImportMapping FunctionImportName="proc_PatientLoadAll" FunctionName="cmmsystemModel.Store.proc_PatientLoadAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.proc_PatientLoadAll_Result">
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Teléfono_móvil" ColumnName="Teléfono_móvil" />
+                <ScalarProperty Name="Sin_celular" ColumnName="Sin_celular" />
+                <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
+                <ScalarProperty Name="CURP" ColumnName="CURP" />
+                <ScalarProperty Name="Dirección" ColumnName="Dirección" />
+                <ScalarProperty Name="País" ColumnName="País" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Número_exterior" ColumnName="Número_exterior" />
+                <ScalarProperty Name="Número_interior" ColumnName="Número_interior" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_PatientLoadByPrimaryKey" FunctionName="cmmsystemModel.Store.proc_PatientLoadByPrimaryKey">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.proc_PatientLoadByPrimaryKey_Result">
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Teléfono_móvil" ColumnName="Teléfono_móvil" />
+                <ScalarProperty Name="Sin_celular" ColumnName="Sin_celular" />
+                <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
+                <ScalarProperty Name="CURP" ColumnName="CURP" />
+                <ScalarProperty Name="Dirección" ColumnName="Dirección" />
+                <ScalarProperty Name="País" ColumnName="País" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Número_exterior" ColumnName="Número_exterior" />
+                <ScalarProperty Name="Número_interior" ColumnName="Número_interior" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_PatientUpdate" FunctionName="cmmsystemModel.Store.proc_PatientUpdate" />
+          <FunctionImportMapping FunctionImportName="RetrieveBillHistory" FunctionName="cmmsystemModel.Store.RetrieveBillHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.RetrieveBillHistory_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Doctor_s_Name" ColumnName="Doctor's Name" />
+                <ScalarProperty Name="Bill_Amount" ColumnName="Bill Amount" />
+                <ScalarProperty Name="Bill_Status" ColumnName="Bill Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RetrieveCurrentAppointment" FunctionName="cmmsystemModel.Store.RetrieveCurrentAppointment" />
+          <FunctionImportMapping FunctionImportName="RetrieveDeptDoctorInfo" FunctionName="cmmsystemModel.Store.RetrieveDeptDoctorInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.RetrieveDeptDoctorInfo_Result">
+                <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+                <ScalarProperty Name="Doctor_s_Name" ColumnName="Doctor's Name" />
+                <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RetrieveDoctorData" FunctionName="cmmsystemModel.Store.RetrieveDoctorData" />
+          <FunctionImportMapping FunctionImportName="RetrieveFreeSlots" FunctionName="cmmsystemModel.Store.RetrieveFreeSlots" />
+          <FunctionImportMapping FunctionImportName="RetrievePatientData" FunctionName="cmmsystemModel.Store.RetrievePatientData" />
+          <FunctionImportMapping FunctionImportName="RetrievePatientNotifications" FunctionName="cmmsystemModel.Store.RetrievePatientNotifications" />
+          <FunctionImportMapping FunctionImportName="retrievePendingFeedback" FunctionName="cmmsystemModel.Store.retrievePendingFeedback" />
+          <FunctionImportMapping FunctionImportName="retrievePHistory" FunctionName="cmmsystemModel.Store.retrievePHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.retrievePHistory_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Disease" ColumnName="Disease" />
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="Prescription" ColumnName="Prescription" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RetrieveTreatmentHistory" FunctionName="cmmsystemModel.Store.RetrieveTreatmentHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.RetrieveTreatmentHistory_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Doctor_s_Name" ColumnName="Doctor's Name" />
+                <ScalarProperty Name="Diagnosed_Disease" ColumnName="Diagnosed Disease" />
+                <ScalarProperty Name="Progress_Made" ColumnName="Progress Made" />
+                <ScalarProperty Name="Prescription" ColumnName="Prescription" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="storeFeedback" FunctionName="cmmsystemModel.Store.storeFeedback" />
+          <FunctionImportMapping FunctionImportName="TODAYS_APPOINTMENTS" FunctionName="cmmsystemModel.Store.TODAYS_APPOINTMENTS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cmmsystemModel.TODAYS_APPOINTMENTS_Result">
+                <ScalarProperty Name="AppointID" ColumnName="AppointID" />
+                <ScalarProperty Name="Patient_s_Name" ColumnName="Patient's Name" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Bill_Amount" ColumnName="Bill Amount" />
+                <ScalarProperty Name="Bill_Status" ColumnName="Bill Status" />
+                <ScalarProperty Name="Disease" ColumnName="Disease" />
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="Prescription" ColumnName="Prescription" />
+                <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdatePrescription" FunctionName="cmmsystemModel.Store.UpdatePrescription" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
