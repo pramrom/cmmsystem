@@ -94,7 +94,7 @@ namespace DBProject.PatientMG
 
         //    if (status == -1)
         //    {
-        //        Response.Write("<script>alert('There was some error in retrieving the PatientEF's Info.');</script>");
+        //        Response.Write("<script>alert('There was some error in retrieving the Patient's Info.');</script>");
         //    }
 
         //    else if (status == 0)

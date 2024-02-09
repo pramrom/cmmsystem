@@ -34,7 +34,7 @@ namespace DBProject
 
             if (status == -1)
             {
-                Appointment.Text = "There was some error in retrieving the PatientEF's appointment.";
+                Appointment.Text = "There was some error in retrieving the Patient's appointment.";
             }
 
             else if (status == 0)
@@ -46,19 +46,19 @@ namespace DBProject
             {
                 if (status == 3)
                 {
-                    ADoctor.Text = "You had an outdated appointment with DoctorEF " + dName + " to which he didn't respond. So that appointment is discarded.";
+                    ADoctor.Text = "You had an outdated appointment with Doctor " + dName + " to which he didn't respond. So that appointment is discarded.";
                     ATimings.Text = "The Appointment Timings were : " + timings;
                     return;
                 }
 
                 else if (status == 2)
                 {
-                    ADoctor.Text = "You have sent an appointment request to DoctorEF " + dName + " which isn't approved by him yet.";
+                    ADoctor.Text = "You have sent an appointment request to Doctor " + dName + " which isn't approved by him yet.";
                 }
 
                 else
                 {
-                    ADoctor.Text = "Today you have an appointment with DoctorEF " + dName;
+                    ADoctor.Text = "Today you have an appointment with Doctor " + dName;
                 }
 
                 ATimings.Text = "The Appointment Timings are : " + timings;

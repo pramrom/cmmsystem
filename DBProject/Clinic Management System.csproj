@@ -727,6 +727,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DB\" />
+    <Folder Include="media\10\" />
+    <Folder Include="media\11\" />
+    <Folder Include="media\12\" />
+    <Folder Include="media\13\" />
+    <Folder Include="media\1\" />
+    <Folder Include="media\2\" />
+    <Folder Include="media\3\" />
+    <Folder Include="media\4\" />
+    <Folder Include="media\5\" />
+    <Folder Include="media\6\" />
+    <Folder Include="media\7\" />
+    <Folder Include="media\8\" />
+    <Folder Include="media\9\" />
     <Folder Include="Temp-TemplateWord\" />
   </ItemGroup>
   <ItemGroup>

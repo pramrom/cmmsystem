@@ -52,7 +52,7 @@ namespace DBProject.PatientMG
                     System.Web.UI.WebControls.ListItem listItem = new System.Web.UI.WebControls.ListItem("Item 1");
                     listItem.Attributes.Add("id", "ListItem-1");
 
-                    DropDownDoctors.Items.Add(new System.Web.UI.WebControls.ListItem("--- Seleccione un Doctor ---","0"));
+                    DropDownDoctors.Items.Add(new System.Web.UI.WebControls.ListItem("--- Seleccione un Doctor ---", "0"));
 
                     for (int i = 0; i < theTable.Rows.Count; i++)
                     {
@@ -62,6 +62,7 @@ namespace DBProject.PatientMG
                     }
 
                     WordConsent = getallWords();
+                    Session["WordConsent"] = WordConsent;
 
                     StringBuilder sb = new StringBuilder();
                     string strDoctorActual = string.Empty;
@@ -71,8 +72,8 @@ namespace DBProject.PatientMG
                         Appointment oAppointments = new Appointment();
                         Pacientes oPacientes = new Pacientes();
 
-                        var lst = baseDatos.Appointments.Where(app => app.PatientID == idPaciente).OrderByDescending (app => app.AppointID).ToList();        
-                        
+                        var lst = baseDatos.Appointments.Where(app => app.PatientID == idPaciente).OrderBy(app => app.AppointID).ToList();
+
                         if (lst.Count() == 0)
                         {
                             sb.AppendLine("<div class='_consultation-schedule-item_vrqzle _consultation-item_yh26d4'><div style='width: 130px;border:1px;'>");
@@ -102,10 +103,10 @@ namespace DBProject.PatientMG
                                 sb.AppendLine("<br />");
                                 sb.AppendLine(strDoctor);
                                 sb.AppendLine("<br /><button class='button _delete_16c14z ember-tooltip-target'><i class='fa fa-trash-o'></i></button></div></div></div>");
-                                
+
                             }
                         }
-                    }                                
+                    }
 
                     nombrePaciente.Text = newPaciente.Name + " " + newPaciente.Apellidos;
                     edadPaciente.Text = age.ToString();
@@ -118,12 +119,31 @@ namespace DBProject.PatientMG
                         var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == idPaciente);
                         if (result != null)
                         {
-                            Otrasalergias.Value = result.palergiadec;                                
+                            Otrasalergias.Value = result.palergiadec;
+
+                            chavo3401.Value = result.pfpmens;
+                            chavo3407.Value = result.pfumens;
+                            chavo34131a.Value = result.pgesta;
+                            chavo34132b.Value = result.pp;
+                            chavo34133b.Value = result.pc;
+                            chavo34134b.Value = result.pa;
+                            chavo34135b.Value = result.pile;
+                            chavo34137a.Value = result.plcctam;
+                            chavo34138c.Value = result.plccsem;
+                            chavo34139b.Value = result.psgtam;
+                            chavo34130b.Value = result.psgsem;
+                            chavo3413ab.Value = result.pai;
+                            chavo3413b.Value = result.pacienteusg;
                         }
                     }
-                    
+
                 }
             }
+            else
+            {
+                WordConsent = Session["WordConsent"].ToString();
+            }
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "Func()", true);
         }
 
         public string getallWords()
@@ -180,28 +200,56 @@ namespace DBProject.PatientMG
             using (WordDocument document = WordDocument.Load(copyToPath))
             {                
                 var replacedCount = document.FindAndReplace("$pacientenombre", newPaciente.Name);
+                replacedCount = document.FindAndReplace("$pacientecalle", newPaciente.Dirección);
                 Console.WriteLine("Replaced (should be 2): " + replacedCount);
 
                 TimeSpan timeSpan = (TimeSpan)(DateTime.Now - newPaciente.BirthDate);
                 int age = new DateTime(timeSpan.Ticks).Year - 1;
 
-                replacedCount = document.FindAndReplace("$pacienteedad", age.ToString()); 
+                replacedCount = document.FindAndReplace("$pacienteedad", age.ToString());
 
-                // should be 2 because it stretches over 2 paragraphs
-                var replacedCount1 = document.FindAndReplace("$doctoranombre", doctor);
-                Console.WriteLine("Replaced (should be 2): " + replacedCount1);
+                replacedCount = document.FindAndReplace("$pacientenombre", newPaciente.Name);
+                replacedCount = document.FindAndReplace("$pacienteapellidos", newPaciente.Apellidos);
+                replacedCount = document.FindAndReplace("$pacientenacimiento", newPaciente.BirthDate.ToString());                
+                replacedCount = document.FindAndReplace("$pacientesexo", newPaciente.Sexo);
+                replacedCount = document.FindAndReplace("$pacientemail", newPaciente.Email);
+                replacedCount = document.FindAndReplace("$pacientecel", newPaciente.Teléfono_móvil);
+                replacedCount = document.FindAndReplace("$pacientetel", newPaciente.Phone);
+                replacedCount = document.FindAndReplace("$pacientecurp", newPaciente.CURP);
+                //replacedCount = document.FindAndReplace("$pacienteservi", newPaciente.serv);
+                replacedCount = document.FindAndReplace("$pacientecalle", newPaciente.Dirección);
+                replacedCount = document.FindAndReplace("$pacientenumero", newPaciente.Número_exterior);
+                replacedCount = document.FindAndReplace("$pacientenumeroint", newPaciente.Número_interior);
+                //replacedCount = document.FindAndReplace("$pacientecolonia", newPaciente.);
+                replacedCount = document.FindAndReplace("$pacientecp", newPaciente.CP);
+                replacedCount = document.FindAndReplace("$pacientecd", newPaciente.Ciudad);
+                replacedCount = document.FindAndReplace("$pacientepais", newPaciente.País);
+
+
+                replacedCount = document.FindAndReplace("$doctoranombre", doctor);
+
+                using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
+                {
+                    var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == newPaciente.PatientID);
+                    if (result != null)
+                    {
+                        replacedCount = document.FindAndReplace("$pfpmens", result.pfpmens);
+                        replacedCount = document.FindAndReplace("$pfumens", result.pfumens);
+                        replacedCount = document.FindAndReplace("$pgesta", result.pgesta);
+                        replacedCount = document.FindAndReplace("$pp", result.pp);
+                        replacedCount = document.FindAndReplace("$pc", result.pc);
+                        replacedCount = document.FindAndReplace("$pa", result.pa);
+                        replacedCount = document.FindAndReplace("$pile", result.pile);
+                        replacedCount = document.FindAndReplace("$plcctam", result.plcctam);
+                        replacedCount = document.FindAndReplace("$plccsem", result.plccsem);
+                        replacedCount = document.FindAndReplace("$psgtam", result.psgtam);
+                        replacedCount = document.FindAndReplace("$psgsem", result.psgsem);
+                        replacedCount = document.FindAndReplace("$pai", result.pai);
+                        replacedCount = document.FindAndReplace("$pacienteusg", result.pacienteusg);
+                    }
+                }
 
                 document.CleanupDocument();
-
-                // cleanup should merge paragraphs making it easier to find and replace text
-                // this only works for same formatting though
-                // may require improvement in the future to ignore formatting completely, but then it's a bit tricky which formatting to apply
-                var replacedCount2 = document.FindAndReplace("This is a text more text", "Shorter text");
-                Console.WriteLine("Replaced (should be 0): " + replacedCount2);
-
-                var replacedCount3 = document.FindAndReplace("even longer", "not longer");
-                Console.WriteLine("Replaced (should be 4): " + replacedCount3);
-
                 document.Save(false);
             }
 
@@ -511,6 +559,22 @@ namespace DBProject.PatientMG
         protected void btnAGO2_Click(object sender, EventArgs e)
         {
             string strOtA = Otrasalergias.Value;
+
+            string pfpmens = chavo3401.Value;
+            string pfumens = chavo3407.Value;
+            string pgesta = chavo34131a.Value;
+            string pp = chavo34132b.Value;
+            string pc = chavo34133b.Value;
+            string pa = chavo34134b.Value;
+            string pile = chavo34135b.Value;
+            string plcctam = chavo34137a.Value;
+            string plccsem = chavo34138c.Value;
+            string psgtam = chavo34139b.Value;
+            string psgsem = chavo34130b.Value;
+            string pai = chavo3413ab.Value;
+            string pacienteusg = chavo3413b.Value;
+
+
             int intPaciente = Convert.ToInt32(Request.QueryString["Id"]);
 
             using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
@@ -518,7 +582,19 @@ namespace DBProject.PatientMG
                 var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == intPaciente);
                 if (result != null)
                 {
-                    result.palergiadec = strOtA;
+                    result.pfpmens = pfpmens;
+                    result.pfumens = pfumens;
+                    result.pgesta = pgesta;
+                    result.pp = pp;
+                    result.pc = pc;
+                    result.pa = pa;
+                    result.pile = pile;
+                    result.plcctam = plcctam;
+                    result.plccsem = plccsem;
+                    result.psgtam = psgtam;
+                    result.psgsem = psgsem;
+                    result.pai = pai;
+                    result.pacienteusg = pacienteusg;
                     baseDatos.SaveChanges();
                 }
             }

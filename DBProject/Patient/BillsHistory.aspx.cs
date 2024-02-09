@@ -35,7 +35,7 @@ namespace DBProject
 
             if (status == -1)
             {
-                BHistory.Text = "There was some error in retrieving the PatientEF's Bill History.";
+                BHistory.Text = "There was some error in retrieving the Patient's Bill History.";
             }
 
             else if (status == 0)

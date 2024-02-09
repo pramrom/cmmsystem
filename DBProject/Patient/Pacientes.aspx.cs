@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Script.Serialization;
@@ -48,32 +50,67 @@ namespace DBProject.PatientMG
 
         protected void ember6454_ServerClick(object sender, EventArgs e)
         {                        
-            using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
+
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            try
             {
-                Patient oPaciente = new Patient
+                int newID = 0;
+
+                using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
                 {
-                    Name = personfirstname.Value,
-                    Apellidos = personlastname.Value,
-                    BirthDate = Convert.ToDateTime(personbornat.Value),
-                    Phone = persontelephone.Value,
-                    Address = personaddress.Value,
-                    Ciudad = personcity.Value,
-                    CP = personzipcode.Value,
-                    Número_exterior = personaddressexternalnumber.Value,
-                    Número_interior = addressinternalnumber.Value
-                };
-                baseDatos.Patients.Add(oPaciente);
-                baseDatos.SaveChanges();
+                    Patient oPaciente = new Patient
+                    {
+                        Name = personfirstname.Value,
+                        Apellidos = personlastname.Value,
+                        BirthDate = Convert.ToDateTime(personbornat.Value),
+                        Phone = persontelephone.Value,                        
+                        País = personPais.Value,                        
+                        Estado = personEstado.Value,
+                        Address = personaddress.Value,
+                        CP = personzipcode.Value,
+                        Número_interior = personaddressinternalnumber.Value,
+                        Número_exterior = personaddressexternalnumber.Value                        
+                    };
+                    baseDatos.Patients.Add(oPaciente);
+                    baseDatos.SaveChanges();
 
-                int newID = oPaciente.PatientID;
+                    newID = oPaciente.PatientID;
 
-                DBProject.DatosConsulta oDatosConsulta = new DBProject.DatosConsulta
+                    DBProject.DatosConsulta oDatosConsulta = new DBProject.DatosConsulta
+                    {
+                        PatientID = newID
+                    };
+
+                    baseDatos.DatosConsultas.Add(oDatosConsulta);
+                    baseDatos.SaveChanges();
+                }
+
+                string path = "../media/" + newID.ToString();
+                DirectoryInfo directoryInfo = new DirectoryInfo(Server.MapPath(path));
+
+                if(!directoryInfo.Exists)
                 {
-                    PatientID = newID
-                };
-
-                baseDatos.DatosConsultas.Add(oDatosConsulta);
-                baseDatos.SaveChanges();
+                    directoryInfo.Create();
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Value: \"{1}\", Error: \"{2}\"",
+                            ve.PropertyName,
+                            eve.Entry.CurrentValues.GetValue<object>(ve.PropertyName),
+                            ve.ErrorMessage);
+                    }
+                }
+                throw;
             }
 
             Response.Redirect("PatientHome.aspx");

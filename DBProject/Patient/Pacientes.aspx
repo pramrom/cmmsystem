@@ -12,6 +12,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <link rel="stylesheet" href="../media/Chaft2.css"/>
     <link rel="stylesheet" href="../media/Chaft.css"/>
+    <script>
+        // Validates that the input string is a valid date formatted as "mm/dd/yyyy"
+        function isValidDate(dateString)
+        {
+            // First check for the pattern
+            if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
+                return false;
+
+            // Parse the date parts to integers
+            var parts = dateString.split("/");
+            var day = parseInt(parts[1], 10);
+            var month = parseInt(parts[0], 10);
+            var year = parseInt(parts[2], 10);
+
+            // Check the ranges of month and year
+            if(year < 1000 || year > 3000 || month == 0 || month > 12)
+                return false;
+
+            var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+            // Adjust for leap years
+            if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+                monthLength[1] = 29;
+
+            // Check the range of the day
+            return day > 0 && day <= monthLength[month - 1];
+        };
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="notifications"></div>
@@ -44,9 +72,8 @@
 
                                 <div id="ember6349" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
                                     <div id="ember6350" class="_field_1mkkpr ember-view">  
-                                        <label for="person-born-at" class="_required_1mkkpr">Fecha de nacimiento</label>
-                                        <input id="personbornat" placeholder="dd-mm-yyyy" data-autoid="person-born-at" type="date" class="ember-view" runat="server" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}"/>
-                                        <input placeholder="DD-MM-AAAA" id="Date1" data-autoid="person-born-at" type="text" class="ember-view" runat="server" readonly/>
+                                        <label for="person-born-at" class="_required_1mkkpr">Fecha de nacimiento</label>                                        
+                                        <input placeholder="DD-MM-AAAA" id="personbornat" data-autoid="person-born-at" type="text" class="ember-view" runat="server" maxlength="10"/>
                                     </div>
                             <div id="ember6383" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
                                 <div id="ember6384" class="_field_1mkkpr ember-view">  
@@ -66,13 +93,13 @@
                                                 <label>
                                                     País
                                                 </label>
-                                                <input id="txtPais" type="text" class="ember-view" runat="server" />
+                                                <input id="personPais" type="text" class="ember-view" runat="server" maxlength="10"/>
                                             </div>
                                             <div id="ember6431" class="_field_1mkkpr ember-view">
                                                 <label>
                                                     Estado
                                                 </label>
-                                                <input id="txtEstado" type="text" class="ember-view" runat="server" />
+                                                <input id="personEstado" type="text" class="ember-view" runat="server" maxlength="10"/>
                                             </div>
                                         </div>
                                         <div id="ember6418" class="_fieldset_1kfu8s ember-view">
@@ -80,7 +107,7 @@
                                                 <label for="person-address">
                                                     Domicilio
                                                 </label>
-                                                <input id="personaddress" type="text" class="ember-view" runat="server" />
+                                                <input id="personaddress" type="text" class="ember-view" runat="server" maxlength="40"/>
                                             </div>
                                         </div>
                                         <div id="ember6443" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
@@ -88,13 +115,13 @@
                                                 <label for="person-address-external-number">
                                                     Número exterior
                                                 </label>
-                                                <input id="personaddressexternalnumber" type="text" class="ember-view" runat="server" />
+                                                <input id="personaddressexternalnumber" type="text" class="ember-view" runat="server" maxlength="10"/>
                                             </div>
                                             <div id="ember6447" class="_field_1mkkpr ember-view">
                                                 <label for="person-internal-number">
                                                     Número interior
                                                 </label>
-                                                <input id="addressinternalnumber" type="text" class="ember-view" runat="server" />
+                                                <input id="personaddressinternalnumber" type="text" class="ember-view" runat="server" maxlength="10"/>
                                             </div>
                                         </div>
                                         <div id="ember6439" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
@@ -102,13 +129,13 @@
                                                 <label for="person-city">
                                                     Colonia
                                                 </label>
-                                                <input id="personcity" type="text" class="ember-view" runat="server" />
+                                                <input id="personColonia" type="text" class="ember-view" runat="server" maxlength="30"/>
                                             </div>
                                             <div id="ember6442" class="_field_1mkkpr ember-view">
                                                 <label for="person-zipcode">
                                                     Código Postal
                                                 </label>
-                                                <input id="personzipcode" type="text" class="ember-view" runat="server" />
+                                                <input id="personzipcode" type="text" class="ember-view" runat="server" maxlength="5"/>
                                             </div>
                                         </div>
                                     </div>
@@ -120,12 +147,7 @@
                             <div data-autoid="employee-accordion" id="ember6451" class="ember-view"></div>
                             <div data-autoid="custom-forms-accordion" id="ember6452" class="ember-view"></div>
                             <div class="_actions_16ja5c">
-                                <button data-autoid="person-cancel" class="button--text" data-ember-action="" data-ember-action-6453="6453">
-                                    Cancelar
-                                </button>
-                                <button runat="server" onserverclick="ember6454_ServerClick" data-autoid="person-submit" type="submit" id="ember6454" class="button async-button default ember-view">
-                                    Guardar Paciente
-                                </button>
+                                <asp:Button ID="btnGuardarConsulta" runat="server" Text="Guardar Paciente" class="button button--tall _start-consultation_alrpq4 ember-tooltip-target" OnClientClick="return validaPaciente();" OnClick="Button1_Click1"/>
                             </div>
                         </div>
                     </div>
@@ -136,5 +158,70 @@
             <div id="ember1426" class="ember-view">
             </div>
         </div>
+    </div>
+    <script type="text/javascript">
+        function validaPaciente() {
+            var strNombre = document.getElementById("ContentPlaceHolder1_personfirstname").value;
+            if (strNombre.trim() == "") {
+                alert("Nombre del paciente es requerido");
+                return false;
+            }
+
+            var strNombre = document.getElementById("ContentPlaceHolder1_personlastname").value;
+            if (strNombre.trim() == "") {
+                alert("Apellido del paciente es requerido");
+                return false;
+            }
+
+            var strNombre = document.getElementById("ContentPlaceHolder1_personbornat").value;
+            if (strNombre.trim() == "") {
+                alert("La fecha de naciemiento es requerida");
+                return false;
+            }
+
+            if (isValidDate())
+                return true;
+            else
+                return false;
+            
+        }
+        // Validates that the input string is a valid date formatted as "mm/dd/yyyy"
+        function isValidDate() {
+            dateString = document.getElementById("ContentPlaceHolder1_personbornat").value;
+            // First check for the pattern
+            if (!/^\d{1,2}\-\d{1,2}\-\d{4}$/.test(dateString)) {
+                alert('Formato de fecha incorrecto, debe ser DD-MM-YYY')
+                return false;
+            }
+
+            // Parse the date parts to integers
+            var parts = dateString.split("-");
+            var day = parseInt(parts[0], 10);
+            var month = parseInt(parts[1], 10);
+            var year = parseInt(parts[2], 10);
+
+            // Check the ranges of month and year
+            if (year < 1000 || year > 3000 || month == 0 || month > 12) {
+                alert('Fecha invalida')
+                return false;
+            }
+
+            var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            // Adjust for leap years
+            if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+                monthLength[1] = 29;
+
+            // Check the range of the day
+            if (day > 0 && day <= monthLength[month - 1]) {
+                return true
+            }
+            else {
+                alert('Fecha invalida')
+                return false;
+            }
+        };
+    </script>
+    </div>
     </div>
 </asp:Content>

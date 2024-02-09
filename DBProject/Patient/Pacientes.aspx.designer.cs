@@ -39,16 +39,7 @@ namespace DBProject.PatientMG
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl personbornat;
-
-        /// <summary>
-        /// Date1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Date1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText personbornat;
 
         /// <summary>
         /// persontelephone control.
@@ -60,22 +51,22 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.HtmlControls.HtmlInputText persontelephone;
 
         /// <summary>
-        /// txtPais control.
+        /// personPais control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPais;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText personPais;
 
         /// <summary>
-        /// txtEstado control.
+        /// personEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEstado;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText personEstado;
 
         /// <summary>
         /// personaddress control.
@@ -96,22 +87,22 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.HtmlControls.HtmlInputText personaddressexternalnumber;
 
         /// <summary>
-        /// addressinternalnumber control.
+        /// personaddressinternalnumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText addressinternalnumber;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText personaddressinternalnumber;
 
         /// <summary>
-        /// personcity control.
+        /// personColonia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText personcity;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText personColonia;
 
         /// <summary>
         /// personzipcode control.
@@ -123,12 +114,12 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.HtmlControls.HtmlInputText personzipcode;
 
         /// <summary>
-        /// ember6454 control.
+        /// btnGuardarConsulta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton ember6454;
+        protected global::System.Web.UI.WebControls.Button btnGuardarConsulta;
     }
 }

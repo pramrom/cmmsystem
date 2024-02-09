@@ -41,7 +41,7 @@
                             <li><a href="DoctorRegistrationForm.aspx"><span class="glyphicon glyphicon-plus"></span> Agregar doctor</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/Patient/PatientHome.aspx"><span class="glyphicon glyphicon-plus"></span> Agregar Consulta</a></li>
+                            <li><a href="/Patient/PatientHome.aspx"><span class="glyphicon glyphicon-plus"></span> Ver Consultas</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="ManageClinic.aspx"><span class="glyphicon glyphicon-cog"></span> Administrar clínica</a></li>

@@ -624,7 +624,7 @@
                                                             Fecha de primera menstruación
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3401" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo3401" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3402" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3403" class="ember-view">
@@ -641,7 +641,7 @@
                                                             Fecha de última menstruación
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3407" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo3407" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3408" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3409" class="ember-view">
@@ -658,7 +658,7 @@
                                                             Características menstruación
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo3413" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415" class="ember-view">
@@ -680,7 +680,7 @@
                                                             Gestas
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413a" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo34131a" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414a" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo341a5" class="ember-view">
@@ -698,7 +698,7 @@
                                                             Parto
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo34132b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -716,7 +716,7 @@
                                                             CESAREA
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo34133b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -734,7 +734,7 @@
                                                             ABORTO
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo34134b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -752,7 +752,7 @@
                                                             ILE
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo34135b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -766,7 +766,7 @@
                                                     </li>
 
                                                     <div id="chavo8670a">
-                                                        <h4 data-autoid="record-title-gineco-obstetrics" id="chavo8671a" class="ember-view">REPORTE UTRASONIDO</h4>
+                                                        <h4 data-autoid="record-title-gineco-obstetrics" id="chavo86716a" class="ember-view">REPORTE UTRASONIDO</h4>
                                                     </div>
 
                                                     <li id="chavo3411a" class="_medical-record_1d3apu ember-view">
@@ -774,7 +774,7 @@
                                                             LCC TAMAÑO
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413a" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo34137a" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414a" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo341a5" class="ember-view">
@@ -792,7 +792,7 @@
                                                             LCC SEMANAS
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413a" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo34138c" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414a" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo341a5" class="ember-view">
@@ -810,7 +810,7 @@
                                                             SG TAMAÑO
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo34139b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -828,7 +828,7 @@
                                                             SG SEMANAS
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo34130b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -846,7 +846,7 @@
                                                             ABORTO INCOMPETO
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo3413ab" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -864,7 +864,7 @@
                                                             SEMANAS
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -1140,6 +1140,7 @@
             return false;
         }
         else {
+            $('#loading').hide();
             return true;
         }
     }
@@ -1236,8 +1237,11 @@
         }
     }
 
+
+    function Func() {
+        $('#loading').hide();
+    }
+
+
 </script>
-
-    </div>
-
 </asp:Content>

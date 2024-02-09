@@ -25,7 +25,7 @@ namespace DB_Project
 				args.IsValid = false;
 				Msg.Visible = false;
 				Msg.Text = "";
-				DoctorValidate.ErrorMessage = "This Email Already exist , kindly choose a different one !";
+				DoctorValidate.ErrorMessage = "Este correo electrónico ya existe, por favor elija uno diferente.";
 			}
 			else
 			{
@@ -46,12 +46,16 @@ namespace DB_Project
 				int salary = Convert.ToInt32(Salary.Text);
 				int chargesPerVisit = Convert.ToInt32(Charges_per_visit.Text);
 				int dept = Convert.ToInt32(Department.SelectedValue);
-				string gender = Request.Form["Gender"].ToString();
-
-				objmyDAL.AddDoctor(Name.Text, Email.Text, Password.Text, BirthDate.Text, dept, Phone.Text, gender[0], Address.Text, exp, salary, chargesPerVisit, spec.Text, Qualification.Text);
+                char gender;
+				if (Male.Checked)
+					gender = 'M';
+				else
+                    gender = 'H';
+                
+				objmyDAL.AddDoctor(Name.Text, Email.Text, Password.Text, BirthDate.Text, dept, Phone.Text, gender, Address.Text, exp, salary, chargesPerVisit, spec.Text, Qualification.Text);
 				Response.BufferOutput = true;
 				Msg.Visible = true;
-				Msg.Text = "doctor Added Succesfully";
+				Msg.Text = "Doctor agregado exitosamente";
 				flushInformation();
 
 
@@ -64,7 +68,7 @@ namespace DB_Project
 			Email.Text = "";
 			Password.Text = "";
 			BirthDate.Text = "";
-			Department.Text = "Select Depatment";
+			Department.Text = "Seleccione un Departamento";
 			Phone.Text = "";
 			Address.Text = "";
 			Exp.Text = "";
@@ -80,7 +84,7 @@ namespace DB_Project
 			int dept = Convert.ToInt32(Department.SelectedValue);
 			if (dept == 0)
 			{
-				DV.ErrorMessage = "Please Select Department";
+				DV.ErrorMessage = "Por favor seleccione departamento";
 				args.IsValid = false;
 			}
 		}

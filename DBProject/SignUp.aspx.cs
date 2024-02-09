@@ -38,14 +38,14 @@ namespace DBProject
                 if (type == 1)
                 {
                     Response.BufferOutput = true;
-                    Response.Redirect("~/PatientEF/PatientHome.aspx");
+                    Response.Redirect("~/Patient/PatientHome.aspx");
                     return;
                 }
 
                 else if (type == 2)
                 {
                     Response.BufferOutput = true;
-                    Response.Redirect("~/DoctorEF/DoctorHome.aspx");
+                    Response.Redirect("~/Doctor/DoctorHome.aspx");
                     return;
                 }
 

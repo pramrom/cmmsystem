@@ -44,7 +44,7 @@ namespace DBProject
 
             if (status == -1)
             {
-                Message.Text = "There was some error in sending appointment request to the DoctorEF.";
+                Message.Text = "There was some error in sending appointment request to the Doctor.";
             }
 
             else
