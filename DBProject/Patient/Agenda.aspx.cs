@@ -5,6 +5,7 @@ using OfficeIMO.Word;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Globalization;
 using System.IO;
@@ -23,7 +24,7 @@ namespace DBProject.PatientMG
     }
     public partial class Agenda : System.Web.UI.Page
     {
-        static PatientMG newPaciente = new PatientMG();
+        //static PatientMG newPaciente = new PatientMG();
         myDAL newmyDal = new myDAL();
         DatosConsulta newObj = new DatosConsulta();
 
@@ -36,16 +37,14 @@ namespace DBProject.PatientMG
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            idPaciente = Convert.ToInt32(Request.QueryString["Id"]);
+
             if (!IsPostBack)
             {
+                GenerateDownloadLinks();
+
                 if (Request.QueryString["Id"] != null)
-                {
-                    idPaciente = Convert.ToInt32(Request.QueryString["Id"]);
-                    newPaciente.LoadByPrimaryKey(idPaciente);
-
-                    TimeSpan timeSpan = (TimeSpan)(DateTime.Now - newPaciente.BirthDate);
-                    int age = new DateTime(timeSpan.Ticks).Year - 1;
-
+                {                   
                     DataTable theTable = new DataTable();
                     theTable = newmyDal.LoadDoctors();
 
@@ -71,6 +70,11 @@ namespace DBProject.PatientMG
                     {
                         Appointment oAppointments = new Appointment();
                         Pacientes oPacientes = new Pacientes();
+
+                        var newPaciente = baseDatos.Patients.Find(idPaciente);                        
+
+                        TimeSpan timeSpan = (TimeSpan)(DateTime.Now - newPaciente.BirthDate);
+                        int age = new DateTime(timeSpan.Ticks).Year - 1;
 
                         var lst = baseDatos.Appointments.Where(app => app.PatientID == idPaciente).OrderBy(app => app.AppointID).ToList();
 
@@ -106,11 +110,12 @@ namespace DBProject.PatientMG
 
                             }
                         }
-                    }
 
-                    nombrePaciente.Text = newPaciente.Name + " " + newPaciente.Apellidos;
-                    edadPaciente.Text = age.ToString();
-                    DoctorActual.Text = strDoctorActual;
+                        nombrePaciente.Text = newPaciente.Name + " " + newPaciente.Apellidos;
+                        edadPaciente.Text = age.ToString();
+                        DoctorActual.Text = strDoctorActual;
+                        lblIdPaciente.Text = newPaciente.PatientID.ToString();
+                    }
 
                     DivINeedToAddStuffTo.InnerHtml = sb.ToString();
 
@@ -183,8 +188,9 @@ namespace DBProject.PatientMG
         }
 
         [WebMethod]
-        public static string createConsentimiento(string docto, string doctor)
+        public static string createConsentimiento(string docto, string doctor, string paciente)
         {
+            int idPaciente = Convert.ToInt32(paciente);
             // Get the current app path:
             var currentApplicationPath = HttpContext.Current.Request.PhysicalApplicationPath;
 
@@ -197,39 +203,42 @@ namespace DBProject.PatientMG
             // Copy the file
             File.Copy(fullFilePath, copyToPath,true);
 
-            using (WordDocument document = WordDocument.Load(copyToPath))
-            {                
-                var replacedCount = document.FindAndReplace("$pacientenombre", newPaciente.Name);
-                replacedCount = document.FindAndReplace("$pacientecalle", newPaciente.Dirección);
-                Console.WriteLine("Replaced (should be 2): " + replacedCount);
+            using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
+            {
+                Pacientes oPacientes = new Pacientes();
+                var newPaciente = baseDatos.Patients.Find(idPaciente);
 
-                TimeSpan timeSpan = (TimeSpan)(DateTime.Now - newPaciente.BirthDate);
-                int age = new DateTime(timeSpan.Ticks).Year - 1;
-
-                replacedCount = document.FindAndReplace("$pacienteedad", age.ToString());
-
-                replacedCount = document.FindAndReplace("$pacientenombre", newPaciente.Name);
-                replacedCount = document.FindAndReplace("$pacienteapellidos", newPaciente.Apellidos);
-                replacedCount = document.FindAndReplace("$pacientenacimiento", newPaciente.BirthDate.ToString());                
-                replacedCount = document.FindAndReplace("$pacientesexo", newPaciente.Sexo);
-                replacedCount = document.FindAndReplace("$pacientemail", newPaciente.Email);
-                replacedCount = document.FindAndReplace("$pacientecel", newPaciente.Teléfono_móvil);
-                replacedCount = document.FindAndReplace("$pacientetel", newPaciente.Phone);
-                replacedCount = document.FindAndReplace("$pacientecurp", newPaciente.CURP);
-                //replacedCount = document.FindAndReplace("$pacienteservi", newPaciente.serv);
-                replacedCount = document.FindAndReplace("$pacientecalle", newPaciente.Dirección);
-                replacedCount = document.FindAndReplace("$pacientenumero", newPaciente.Número_exterior);
-                replacedCount = document.FindAndReplace("$pacientenumeroint", newPaciente.Número_interior);
-                //replacedCount = document.FindAndReplace("$pacientecolonia", newPaciente.);
-                replacedCount = document.FindAndReplace("$pacientecp", newPaciente.CP);
-                replacedCount = document.FindAndReplace("$pacientecd", newPaciente.Ciudad);
-                replacedCount = document.FindAndReplace("$pacientepais", newPaciente.País);
-
-
-                replacedCount = document.FindAndReplace("$doctoranombre", doctor);
-
-                using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
+                using (WordDocument document = WordDocument.Load(copyToPath))
                 {
+                    var replacedCount = document.FindAndReplace("$pacientenombre", newPaciente.Name);
+                    replacedCount = document.FindAndReplace("$pacientecalle", newPaciente.Dirección);
+                    Console.WriteLine("Replaced (should be 2): " + replacedCount);
+
+                    TimeSpan timeSpan = (TimeSpan)(DateTime.Now - newPaciente.BirthDate);
+                    int age = new DateTime(timeSpan.Ticks).Year - 1;
+
+                    replacedCount = document.FindAndReplace("$pacienteedad", age.ToString());
+
+                    replacedCount = document.FindAndReplace("$pacientenombre", newPaciente.Name);
+                    replacedCount = document.FindAndReplace("$pacienteapellidos", newPaciente.Apellidos);
+                    replacedCount = document.FindAndReplace("$pacientenacimiento", newPaciente.BirthDate.ToString());
+                    replacedCount = document.FindAndReplace("$pacientesexo", newPaciente.Sexo);
+                    replacedCount = document.FindAndReplace("$pacientemail", newPaciente.Email);
+                    replacedCount = document.FindAndReplace("$pacientecel", newPaciente.Teléfono_móvil);
+                    replacedCount = document.FindAndReplace("$pacientetel", newPaciente.Phone);
+                    replacedCount = document.FindAndReplace("$pacientecurp", newPaciente.CURP);
+                    //replacedCount = document.FindAndReplace("$pacienteservi", newPaciente.serv);
+                    replacedCount = document.FindAndReplace("$pacientecalle", newPaciente.Dirección);
+                    replacedCount = document.FindAndReplace("$pacientenumero", newPaciente.Número_exterior);
+                    replacedCount = document.FindAndReplace("$pacientenumeroint", newPaciente.Número_interior);
+                    //replacedCount = document.FindAndReplace("$pacientecolonia", newPaciente.);
+                    replacedCount = document.FindAndReplace("$pacientecp", newPaciente.CP);
+                    replacedCount = document.FindAndReplace("$pacientecd", newPaciente.Ciudad);
+                    replacedCount = document.FindAndReplace("$pacientepais", newPaciente.País);
+
+
+                    replacedCount = document.FindAndReplace("$doctoranombre", doctor);
+
                     var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == newPaciente.PatientID);
                     if (result != null)
                     {
@@ -247,10 +256,10 @@ namespace DBProject.PatientMG
                         replacedCount = document.FindAndReplace("$pai", result.pai);
                         replacedCount = document.FindAndReplace("$pacienteusg", result.pacienteusg);
                     }
+                    
+                    document.CleanupDocument();
+                    document.Save(false);
                 }
-
-                document.CleanupDocument();
-                document.Save(false);
             }
 
             return "The message" + docto;
@@ -486,38 +495,7 @@ namespace DBProject.PatientMG
                 var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == intPaciente);
                 if (result != null)
                 {
-                    string a = chavo3120.Value;
-
                     result.phospre = true;
-                    a = chavo3122.Value;
-                    a = chavo3127.Value;
-                    a = chavo3129.Value;
-                    a = chavo3134.Value;
-                    a = chavo3136.Value;
-                    a = chavo3141.Value;
-                    a = chavo3143.Value;
-                    a = chavo3148.Value;
-                    a = chavo3150.Value;
-                    a = chavo3155.Value;
-                    a = chavo3157.Value;
-                    a = chavo3162.Value;
-                    a = chavo3164.Value;
-                    a = chavo3169.Value;
-                    a = chavo3171.Value;
-                    a = chavo3176.Value;
-                    a = chavo3178.Value;
-                    a = chavo3183.Value;
-                    a = chavo3185.Value;
-                    a = chavo3190.Value;
-                    a = chavo3192.Value;
-                    a = chavo3197.Value;
-                    a = chavo3199.Value;
-                    a = chavo3204.Value;
-                    a = chavo3206.Value;
-                    a = chavo3211.Value;
-                    a = chavo3213.Value;
-                    a = chavo3218.Value;
-                    a = chavo3220.Value;
 
                     baseDatos.SaveChanges();
                 }
@@ -597,6 +575,93 @@ namespace DBProject.PatientMG
                     result.pacienteusg = pacienteusg;
                     baseDatos.SaveChanges();
                 }
+            }
+        }
+
+        protected void btnUpload_Click(object sender, EventArgs e)
+        {
+            //string folderPath = Server.MapPath("~/media/" + idPaciente);
+            string folderPath = Server.MapPath("~/media/" + idPaciente + "/");
+
+            //Check whether Directory (Folder) exists.
+            if (!Directory.Exists(folderPath))
+            {
+                //If Directory (Folder) does not exists. Create it.
+                Directory.CreateDirectory(folderPath);
+            }
+
+            //Save the File to the Directory (Folder).
+            //FileUpload1.PostedFile.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
+
+            Stream fs = FileUpload1.PostedFile.InputStream;
+            BinaryReader br = new BinaryReader(fs);
+            byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
+            //Save the Byte Array as File.
+            string filePath = folderPath + Path.GetFileName(FileUpload1.FileName);
+            File.WriteAllBytes(filePath, bytes);
+
+            //Display the Image File.
+            //Image1.ImageUrl = filePath;
+            //Image1.Visible = true;
+
+
+            //Display the success message.
+            lblMessage.Text = Path.GetFileName(FileUpload1.FileName) + " ha sido cargado.";
+
+            GenerateDownloadLinks();
+        }
+
+        private void GenerateDownloadLinks()
+        {
+            int archivos = 0;
+            string path = Server.MapPath("~/media/" + idPaciente + "/");
+            if (Directory.Exists(path))
+            {
+                DataTable ShowContent = new DataTable();
+                ShowContent.Columns.Add("Icon", typeof(string));
+                ShowContent.Columns.Add("DownloadLink", typeof(string));
+                ShowContent.Columns.Add("FileName", typeof(string));
+                DirectoryInfo di = new DirectoryInfo(path);
+                archivos = di.GetFiles().Length;
+                List<System.Web.UI.WebControls.ListItem> files = new List<System.Web.UI.WebControls.ListItem>();
+                
+                foreach (FileInfo fi in di.GetFiles())
+                {
+                    DataRow dr = ShowContent.NewRow();
+                    dr["FileName"] = fi.Name; ;
+                    dr["DownloadLink"] = Server.MapPath("~/media/" + idPaciente + "/") + fi.Name;
+                    dr["Icon"] = ResolveUrl("~/media/OfficeIMO.ico");
+
+                    files.Add(new System.Web.UI.WebControls.ListItem(Path.GetFileName(path), path));
+
+                    ShowContent.Rows.Add(dr);
+                }
+                DataListContent.DataSource = ShowContent;
+                DataListContent.DataBind();
+            }
+
+            lblMessage.Text = "Se han subido los siguientes archivos: " + archivos.ToString();
+        }
+
+        protected void DeleteFile(object sender, EventArgs e)
+        {
+            string filePath = (sender as LinkButton).CommandArgument;
+            File.Delete(filePath);
+            GenerateDownloadLinks();
+        }
+
+        protected void ButtonDownloadContent(object sender, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "Download")
+            {
+                string path = e.CommandArgument.ToString();
+                string name = Path.GetFileName(path);
+                string ext = Path.GetExtension(path);
+                Response.AppendHeader("content-disposition", "attachment; filename=" + name);
+                Response.ContentType = "application/octet-stream";
+                Response.WriteFile(path);
+                Response.End();
             }
         }
     }

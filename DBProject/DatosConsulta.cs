@@ -67,6 +67,26 @@ namespace DBProject
         public string pultpapa { get; set; }
         public string pultmasto { get; set; }
         public string potroagine { get; set; }
+        public string amiso { get; set; }
+        public string tdia { get; set; }
+        public string encar { get; set; }
+        public string enen { get; set; }
+        public string tcan { get; set; }
+        public string coag { get; set; }
+        public string anemia { get; set; }
+        public string trans { get; set; }
+        public string cirpre { get; set; }
+        public string medact { get; set; }
+        public string otroap { get; set; }
+        public string grh { get; set; }
+        public string ntab { get; set; }
+        public string nalco { get; set; }
+        public string ndroga { get; set; }
+        public string ppeso { get; set; }
+        public string ptalla { get; set; }
+        public string pta { get; set; }
+        public string pfc { get; set; }
+        public string pto { get; set; }
     
         public virtual Patient Patient { get; set; }
     }

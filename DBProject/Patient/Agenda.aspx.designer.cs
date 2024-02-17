@@ -15,6 +15,15 @@ namespace DBProject.PatientMG
     {
 
         /// <summary>
+        /// lblIdPaciente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdPaciente;
+
+        /// <summary>
         /// nombrePaciente control.
         /// </summary>
         /// <remarks>
@@ -87,274 +96,112 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.WebControls.Button btnAlergias;
 
         /// <summary>
-        /// chavo3120 control.
+        /// amiso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3120;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText amiso;
 
         /// <summary>
-        /// chavo3122 control.
+        /// Text1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3122;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
 
         /// <summary>
-        /// chavo3127 control.
+        /// Text2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3127;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text2;
 
         /// <summary>
-        /// chavo3129 control.
+        /// Text3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3129;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text3;
 
         /// <summary>
-        /// chavo3134 control.
+        /// Text4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3134;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text4;
 
         /// <summary>
-        /// chavo3136 control.
+        /// Text5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3136;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text5;
 
         /// <summary>
-        /// chavo3141 control.
+        /// Text6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3141;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text6;
 
         /// <summary>
-        /// chavo3143 control.
+        /// Text7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3143;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text7;
 
         /// <summary>
-        /// chavo3148 control.
+        /// Text8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3148;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea Text8;
 
         /// <summary>
-        /// chavo3150 control.
+        /// Text9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3150;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text9;
 
         /// <summary>
-        /// chavo3155 control.
+        /// Text10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3155;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text10;
 
         /// <summary>
-        /// chavo3157 control.
+        /// Text11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3157;
-
-        /// <summary>
-        /// chavo3162 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3162;
-
-        /// <summary>
-        /// chavo3164 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3164;
-
-        /// <summary>
-        /// chavo3169 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3169;
-
-        /// <summary>
-        /// chavo3171 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3171;
-
-        /// <summary>
-        /// chavo3176 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3176;
-
-        /// <summary>
-        /// chavo3178 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3178;
-
-        /// <summary>
-        /// chavo3183 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3183;
-
-        /// <summary>
-        /// chavo3185 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3185;
-
-        /// <summary>
-        /// chavo3190 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3190;
-
-        /// <summary>
-        /// chavo3192 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3192;
-
-        /// <summary>
-        /// chavo3197 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3197;
-
-        /// <summary>
-        /// chavo3199 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3199;
-
-        /// <summary>
-        /// chavo3204 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3204;
-
-        /// <summary>
-        /// chavo3206 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3206;
-
-        /// <summary>
-        /// chavo3211 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3211;
-
-        /// <summary>
-        /// chavo3213 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3213;
-
-        /// <summary>
-        /// chavo3218 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3218;
-
-        /// <summary>
-        /// chavo3220 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3220;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text11;
 
         /// <summary>
         /// btnAP2 control.
@@ -366,112 +213,31 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.WebControls.Button btnAP2;
 
         /// <summary>
-        /// chavo3274 control.
+        /// Text12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3274;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text12;
 
         /// <summary>
-        /// chavo3276 control.
+        /// Text13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3276;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text13;
 
         /// <summary>
-        /// chavo3281 control.
+        /// Text14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3281;
-
-        /// <summary>
-        /// chavo3283 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3283;
-
-        /// <summary>
-        /// chavo3288 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3288;
-
-        /// <summary>
-        /// chavo3290 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3290;
-
-        /// <summary>
-        /// chavo3295 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3295;
-
-        /// <summary>
-        /// chavo3297 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3297;
-
-        /// <summary>
-        /// chavo3302 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3302;
-
-        /// <summary>
-        /// chavo3304 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3304;
-
-        /// <summary>
-        /// chavo3309 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3309;
-
-        /// <summary>
-        /// chavo3311 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3311;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text14;
 
         /// <summary>
         /// btnANP2 control.
@@ -859,5 +625,95 @@ namespace DBProject.PatientMG
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAGO2;
+
+        /// <summary>
+        /// Text15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text15;
+
+        /// <summary>
+        /// Text16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text16;
+
+        /// <summary>
+        /// Text17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text17;
+
+        /// <summary>
+        /// Text18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text18;
+
+        /// <summary>
+        /// Text19 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text19;
+
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// FileUpload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+
+        /// <summary>
+        /// btnUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpload;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        /// <summary>
+        /// DataListContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList DataListContent;
     }
 }

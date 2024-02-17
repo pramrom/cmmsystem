@@ -14,9 +14,8 @@ namespace DBProject
     
     public partial class Department_View
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public Nullable<int> Number_of_Doctors { get; set; }
+        public int No { get; set; }
+        public string Nombre { get; set; }
+        public Nullable<int> Doctores { get; set; }
     }
 }

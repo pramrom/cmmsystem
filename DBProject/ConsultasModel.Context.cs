@@ -33,11 +33,11 @@ namespace DBProject
         public virtual DbSet<LoginTable> LoginTables { get; set; }
         public virtual DbSet<OtherStaff> OtherStaffs { get; set; }
         public virtual DbSet<Patient> Patients { get; set; }
-        public virtual DbSet<Appointment_view> Appointment_view { get; set; }
-        public virtual DbSet<Department_View> Department_View { get; set; }
         public virtual DbSet<deptInfo> deptInfoes { get; set; }
         public virtual DbSet<PATIENT_VIEW> PATIENT_VIEW { get; set; }
         public virtual DbSet<STAFF_VIEW> STAFF_VIEW { get; set; }
+        public virtual DbSet<Appointment_view> Appointment_view { get; set; }
+        public virtual DbSet<Department_View> Department_View { get; set; }
     
         public virtual int AddDoctor(string name, string email, string password, Nullable<System.DateTime> birthDate, Nullable<int> dept, string gender, string address, Nullable<int> exp, Nullable<int> salary, string spec, string phone, Nullable<int> charges, string qual)
         {

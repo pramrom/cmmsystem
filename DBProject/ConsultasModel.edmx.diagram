@@ -11,13 +11,13 @@
         <EntityTypeShape EntityType="cmmsystemModel.LoginTable" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cmmsystemModel.OtherStaff" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cmmsystemModel.Patient" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="cmmsystemModel.Appointment_view" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cmmsystemModel.Department_View" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cmmsystemModel.deptInfo" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cmmsystemModel.PATIENT_VIEW" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cmmsystemModel.STAFF_VIEW" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="cmmsystemModel.FK__Appointme__Patie__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="cmmsystemModel.FK_DatosConsulta_Patient" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="cmmsystemModel.Appointment_view" Width="1.5" PointX="8.375" PointY="9.75" />
+        <EntityTypeShape EntityType="cmmsystemModel.Department_View" Width="1.5" PointX="5.375" PointY="10.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

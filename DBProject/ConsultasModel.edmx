@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="cmmsystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="cmmsystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Appointment">
           <Key>
             <PropertyRef Name="AppointID" />
@@ -82,6 +82,26 @@
           <Property Name="pultpapa" Type="nchar" MaxLength="11" />
           <Property Name="pultmasto" Type="nchar" MaxLength="11" />
           <Property Name="potroagine" Type="nchar" MaxLength="20" />
+          <Property Name="amiso" Type="nchar" MaxLength="3" />
+          <Property Name="tdia" Type="nchar" MaxLength="7" />
+          <Property Name="encar" Type="nchar" MaxLength="17" />
+          <Property Name="enen" Type="nchar" MaxLength="33" />
+          <Property Name="tcan" Type="nchar" MaxLength="20" />
+          <Property Name="coag" Type="nchar" MaxLength="3" />
+          <Property Name="anemia" Type="nchar" MaxLength="3" />
+          <Property Name="trans" Type="nchar" MaxLength="3" />
+          <Property Name="cirpre" Type="nchar" MaxLength="100" />
+          <Property Name="medact" Type="nchar" MaxLength="50" />
+          <Property Name="otroap" Type="nchar" MaxLength="3" />
+          <Property Name="grh" Type="nchar" MaxLength="12" />
+          <Property Name="ntab" Type="nchar" MaxLength="3" />
+          <Property Name="nalco" Type="nchar" MaxLength="3" />
+          <Property Name="ndroga" Type="nchar" MaxLength="3" />
+          <Property Name="ppeso" Type="nchar" MaxLength="6" />
+          <Property Name="ptalla" Type="nchar" MaxLength="6" />
+          <Property Name="pta" Type="nchar" MaxLength="7" />
+          <Property Name="pfc" Type="nchar" MaxLength="4" />
+          <Property Name="pto" Type="nchar" MaxLength="5" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -139,31 +159,35 @@
           <Property Name="CP" Type="nchar" MaxLength="10" />
           <Property Name="Número_exterior" Type="nchar" MaxLength="10" />
           <Property Name="Número_interior" Type="nchar" MaxLength="10" />
+          <Property Name="pacientecurp" Type="nchar" MaxLength="19" />
+          <Property Name="pacienteservi" Type="nchar" MaxLength="15" />
+          <Property Name="pedociv" Type="nchar" MaxLength="17" />
+          <Property Name="pnedu" Type="nchar" MaxLength="17" />
+          <Property Name="pocupa" Type="nchar" MaxLength="17" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'cmmsystem.dbo.Appointment_view' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Appointment_view">
           <Key>
-            <PropertyRef Name="AppointID" />
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="PatientID" />
+            <PropertyRef Name="No" />
+            <PropertyRef Name="Doctor" />
+            <PropertyRef Name="Paciente" />
           </Key>
-          <Property Name="AppointID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="PatientID" Type="int" Nullable="false" />
-          <Property Name="Date" Type="datetime" />
+          <Property Name="No" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Doctor" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Paciente" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'cmmsystem.dbo.Department_View' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Department_View">
           <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Name" />
+            <PropertyRef Name="No" />
+            <PropertyRef Name="Nombre" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Description" Type="varchar" MaxLength="1000" />
-          <Property Name="Number of Doctors" Type="int" />
+          <Property Name="No" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Doctores" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'cmmsystem.dbo.deptInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -501,18 +525,17 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Appointment_view" EntityType="Self.Appointment_view" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [Appointment_view].[AppointID] AS [AppointID], 
-    [Appointment_view].[Name] AS [Name], 
-    [Appointment_view].[PatientID] AS [PatientID], 
-    [Appointment_view].[Date] AS [Date]
+    [Appointment_view].[No] AS [No], 
+    [Appointment_view].[Fecha] AS [Fecha], 
+    [Appointment_view].[Doctor] AS [Doctor], 
+    [Appointment_view].[Paciente] AS [Paciente]
     FROM [dbo].[Appointment_view] AS [Appointment_view]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Department_View" EntityType="Self.Department_View" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [Department_View].[ID] AS [ID], 
-    [Department_View].[Name] AS [Name], 
-    [Department_View].[Description] AS [Description], 
-    [Department_View].[Number of Doctors] AS [Number of Doctors]
+    [Department_View].[No] AS [No], 
+    [Department_View].[Nombre] AS [Nombre], 
+    [Department_View].[Doctores] AS [Doctores]
     FROM [dbo].[Department_View] AS [Department_View]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="deptInfo" EntityType="Self.deptInfo" store:Type="Views" store:Schema="dbo">
@@ -545,8 +568,7 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
             <End Role="DatosConsulta" EntitySet="DatosConsulta" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="cmmsystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -629,6 +651,26 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <Property Name="pultmasto" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
           <Property Name="potroagine" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Patient" Relationship="Self.FK_DatosConsulta_Patient" FromRole="DatosConsulta" ToRole="Patient" />
+          <Property Name="amiso" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="tdia" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="encar" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
+          <Property Name="enen" Type="String" MaxLength="33" FixedLength="true" Unicode="true" />
+          <Property Name="tcan" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="coag" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="anemia" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="trans" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="cirpre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="medact" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="otroap" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="grh" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <Property Name="ntab" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="nalco" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="ndroga" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="ppeso" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="ptalla" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="pta" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="pfc" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pto" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -688,27 +730,11 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <Property Name="Número_interior" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Patie__32E0915F" FromRole="Patient" ToRole="Appointment" />
           <NavigationProperty Name="DatosConsulta" Relationship="Self.FK_DatosConsulta_Patient" FromRole="Patient" ToRole="DatosConsulta" />
-        </EntityType>
-        <EntityType Name="Appointment_view">
-          <Key>
-            <PropertyRef Name="AppointID" />
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="PatientID" />
-          </Key>
-          <Property Name="AppointID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PatientID" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="Department_View">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="Number_of_Doctors" Type="Int32" />
+          <Property Name="pacientecurp" Type="String" MaxLength="19" FixedLength="true" Unicode="true" />
+          <Property Name="pacienteservi" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="pedociv" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
+          <Property Name="pnedu" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
+          <Property Name="pocupa" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="deptInfo">
           <Key>
@@ -768,8 +794,6 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <EntitySet Name="LoginTables" EntityType="Self.LoginTable" />
           <EntitySet Name="OtherStaffs" EntityType="Self.OtherStaff" />
           <EntitySet Name="Patients" EntityType="Self.Patient" />
-          <EntitySet Name="Appointment_view" EntityType="Self.Appointment_view" />
-          <EntitySet Name="Department_View" EntityType="Self.Department_View" />
           <EntitySet Name="deptInfoes" EntityType="Self.deptInfo" />
           <EntitySet Name="PATIENT_VIEW" EntityType="Self.PATIENT_VIEW" />
           <EntitySet Name="STAFF_VIEW" EntityType="Self.STAFF_VIEW" />
@@ -797,23 +821,23 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
             <Parameter Name="qual" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="APPROVE_APPOINTMENT">
-            <Parameter Name="APPOINT_ID" Mode="In" Type="Int32" />
+          <Parameter Name="APPOINT_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="CheckDoctorEmail">
             <Parameter Name="Email" Mode="In" Type="String" />
             <Parameter Name="status" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="delete_APPOINTMENT">
-            <Parameter Name="APPOINT_ID" Mode="In" Type="Int32" />
+          <Parameter Name="APPOINT_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeleteDoctor">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DELETESTAFF">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Doctor_Information_By_ID1" ReturnType="Collection(cmmsystemModel.Doctor_Information_By_ID1_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="finishedPaid">
             <Parameter Name="docId" Mode="In" Type="Int32" />
@@ -824,10 +848,10 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
             <Parameter Name="appointid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="generate_bill" ReturnType="Collection(Double)">
-            <Parameter Name="did" Mode="In" Type="Int32" />
+          <Parameter Name="did" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="get_appointment" ReturnType="Collection(cmmsystemModel.get_appointment_Result)">
-            <Parameter Name="APPOINT_ID" Mode="In" Type="Int32" />
+          <Parameter Name="APPOINT_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GET_DOCTOR_PROFILE" ReturnType="Collection(cmmsystemModel.GET_DOCTOR_PROFILE_Result)">
             <Parameter Name="dID" Mode="In" Type="Int32" />
@@ -859,7 +883,7 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
             <Parameter Name="type" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PatientDelete">
-            <Parameter Name="PatientID" Mode="In" Type="Int32" />
+          <Parameter Name="PatientID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PatientInsert">
             <Parameter Name="PatientID" Mode="In" Type="Int32" />
@@ -908,10 +932,10 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
             <Parameter Name="Número_interior" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PENDING_APPOINTMENTS2" ReturnType="Collection(cmmsystemModel.PENDING_APPOINTMENTS2_Result)">
-            <Parameter Name="DOCTOR_ID" Mode="In" Type="Int32" />
+          <Parameter Name="DOCTOR_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="proc_PatientDelete">
-            <Parameter Name="PatientID" Mode="In" Type="Int32" />
+          <Parameter Name="PatientID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="proc_PatientInsert">
             <Parameter Name="PatientID" Mode="InOut" Type="Int32" />
@@ -938,7 +962,7 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           </FunctionImport>
           <FunctionImport Name="proc_PatientLoadAll" ReturnType="Collection(cmmsystemModel.proc_PatientLoadAll_Result)" />
           <FunctionImport Name="proc_PatientLoadByPrimaryKey" ReturnType="Collection(cmmsystemModel.proc_PatientLoadByPrimaryKey_Result)">
-            <Parameter Name="PatientID" Mode="In" Type="Int32" />
+          <Parameter Name="PatientID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="proc_PatientUpdate">
             <Parameter Name="PatientID" Mode="In" Type="Int32" />
@@ -974,7 +998,7 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
             <Parameter Name="count" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="RetrieveDeptDoctorInfo" ReturnType="Collection(cmmsystemModel.RetrieveDeptDoctorInfo_Result)">
-            <Parameter Name="deptName" Mode="In" Type="String" />
+          <Parameter Name="deptName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="RetrieveDoctorData">
             <Parameter Name="dID" Mode="In" Type="Int32" />
@@ -1017,17 +1041,17 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
             <Parameter Name="count" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="retrievePHistory" ReturnType="Collection(cmmsystemModel.retrievePHistory_Result)">
-            <Parameter Name="dID" Mode="In" Type="Int32" />
+          <Parameter Name="dID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="RetrieveTreatmentHistory" ReturnType="Collection(cmmsystemModel.RetrieveTreatmentHistory_Result)">
             <Parameter Name="pID" Mode="In" Type="Int32" />
             <Parameter Name="count" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="storeFeedback">
-            <Parameter Name="aID" Mode="In" Type="Int32" />
+          <Parameter Name="aID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="TODAYS_APPOINTMENTS" ReturnType="Collection(cmmsystemModel.TODAYS_APPOINTMENTS_Result)">
-            <Parameter Name="DOC_ID" Mode="In" Type="Int32" />
+          <Parameter Name="DOC_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="UpdatePrescription">
             <Parameter Name="docId" Mode="In" Type="Int32" />
@@ -1036,6 +1060,8 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
             <Parameter Name="Progress" Mode="In" Type="String" />
             <Parameter Name="Prescription" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="Appointment_view" EntityType="cmmsystemModel.Appointment_view" />
+          <EntitySet Name="Department_View" EntityType="cmmsystemModel.Department_View" />
         </EntityContainer>
         <ComplexType Name="Doctor_Information_By_ID1_Result">
           <Property Type="Int32" Name="DoctorID" Nullable="false" />
@@ -1163,6 +1189,26 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <Property Type="String" Name="Prescription" Nullable="false" MaxLength="2" />
           <Property Type="Int32" Name="Appointment_Status" Nullable="true" />
         </ComplexType>
+        <EntityType Name="Appointment_view">
+          <Key>
+            <PropertyRef Name="No" />
+            <PropertyRef Name="Doctor" />
+            <PropertyRef Name="Paciente" />
+          </Key>
+          <Property Name="No" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Doctor" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Paciente" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Department_View">
+          <Key>
+            <PropertyRef Name="No" />
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="No" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Doctores" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1193,6 +1239,26 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <EntitySetMapping Name="DatosConsultas">
             <EntityTypeMapping TypeName="cmmsystemModel.DatosConsulta">
               <MappingFragment StoreEntitySet="DatosConsulta">
+                <ScalarProperty Name="pto" ColumnName="pto" />
+                <ScalarProperty Name="pfc" ColumnName="pfc" />
+                <ScalarProperty Name="pta" ColumnName="pta" />
+                <ScalarProperty Name="ptalla" ColumnName="ptalla" />
+                <ScalarProperty Name="ppeso" ColumnName="ppeso" />
+                <ScalarProperty Name="ndroga" ColumnName="ndroga" />
+                <ScalarProperty Name="nalco" ColumnName="nalco" />
+                <ScalarProperty Name="ntab" ColumnName="ntab" />
+                <ScalarProperty Name="grh" ColumnName="grh" />
+                <ScalarProperty Name="otroap" ColumnName="otroap" />
+                <ScalarProperty Name="medact" ColumnName="medact" />
+                <ScalarProperty Name="cirpre" ColumnName="cirpre" />
+                <ScalarProperty Name="trans" ColumnName="trans" />
+                <ScalarProperty Name="anemia" ColumnName="anemia" />
+                <ScalarProperty Name="coag" ColumnName="coag" />
+                <ScalarProperty Name="tcan" ColumnName="tcan" />
+                <ScalarProperty Name="enen" ColumnName="enen" />
+                <ScalarProperty Name="encar" ColumnName="encar" />
+                <ScalarProperty Name="tdia" ColumnName="tdia" />
+                <ScalarProperty Name="amiso" ColumnName="amiso" />
                 <ScalarProperty Name="PatientID" ColumnName="PatientID" />
                 <ScalarProperty Name="palergia" ColumnName="palergia" />
                 <ScalarProperty Name="palergiadec" ColumnName="palergiadec" />
@@ -1286,6 +1352,11 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <EntitySetMapping Name="Patients">
             <EntityTypeMapping TypeName="cmmsystemModel.Patient">
               <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="pocupa" ColumnName="pocupa" />
+                <ScalarProperty Name="pnedu" ColumnName="pnedu" />
+                <ScalarProperty Name="pedociv" ColumnName="pedociv" />
+                <ScalarProperty Name="pacienteservi" ColumnName="pacienteservi" />
+                <ScalarProperty Name="pacientecurp" ColumnName="pacientecurp" />
                 <ScalarProperty Name="PatientID" ColumnName="PatientID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
@@ -1307,26 +1378,6 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
                 <ScalarProperty Name="CP" ColumnName="CP" />
                 <ScalarProperty Name="Número_exterior" ColumnName="Número_exterior" />
                 <ScalarProperty Name="Número_interior" ColumnName="Número_interior" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Appointment_view">
-            <EntityTypeMapping TypeName="cmmsystemModel.Appointment_view">
-              <MappingFragment StoreEntitySet="Appointment_view">
-                <ScalarProperty Name="AppointID" ColumnName="AppointID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Department_View">
-            <EntityTypeMapping TypeName="cmmsystemModel.Department_View">
-              <MappingFragment StoreEntitySet="Department_View">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Number_of_Doctors" ColumnName="Number of Doctors" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1552,6 +1603,25 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UpdatePrescription" FunctionName="cmmsystemModel.Store.UpdatePrescription" />
+          <EntitySetMapping Name="Appointment_view">
+            <EntityTypeMapping TypeName="cmmsystemModel.Appointment_view">
+              <MappingFragment StoreEntitySet="Appointment_view">
+                <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+                <ScalarProperty Name="Doctor" ColumnName="Doctor" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="No" ColumnName="No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department_View">
+            <EntityTypeMapping TypeName="cmmsystemModel.Department_View">
+              <MappingFragment StoreEntitySet="Department_View">
+                <ScalarProperty Name="Doctores" ColumnName="Doctores" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="No" ColumnName="No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

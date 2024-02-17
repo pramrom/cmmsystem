@@ -5,12 +5,13 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form runat="server">
-        <h1 style="font-family: 'Times New Roman', Times, serif; border-radius: 5px; text-decoration: underline; background-color: #CCCCCC">
-            <strong style="margin: 40%">Estadísticas de la clínica</strong>
+        <h1 style="text-align: center; background-color: #CCCCCC">
+            <strong>Estadísticas de la clínica</strong>
         </h1>
-        <br />
-        <br />
+        
         <div style="margin-left: 70px">
+            <br />
+            <br />        
             <h4><strong>Número total de médicos registrados: </strong></h4>
             <asp:Label ID="TotalPatients" runat="server" Font-Bold="true" Font-Size="Medium"></asp:Label>
             <br />

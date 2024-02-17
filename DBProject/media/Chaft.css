@@ -17487,7 +17487,7 @@ label {
     width: 100%;
     height: 42px;
     padding: 6px 12px;
-    border: 1px solid #d9e3eb;
+    border: 1px solid #000;
     border-radius: 4px;
     box-shadow: none;
     font: 400 14px/1.4 'Proxima Nova',Helvetica,Arial,sans-serif;
@@ -20425,7 +20425,7 @@ svg._physiotherapy-body_1l5red {
 }
 
     ._medical-record_1d3apu > [data-autoid=record-name] {
-        max-width: 40%
+        max-width: 70%
     }
 
         ._medical-record_1d3apu > [data-autoid=record-name] + div {

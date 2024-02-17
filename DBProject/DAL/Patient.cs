@@ -149,8 +149,9 @@ namespace DBProject.DAL
 		'=================================================================
 		*/
         public virtual bool LoadByPrimaryKey(int PatientID)
-
         {
+            DataTable dataTable = new DataTable();
+
             bool loaded = false;
 
             OleDbCommand cmd = new OleDbCommand();

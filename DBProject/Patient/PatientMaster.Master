@@ -6,7 +6,7 @@
     <!-- Google Fonts -->
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" crossorigin="anonymous"/>
     <!-- Patient Style -->
     <link rel="stylesheet" href="/assets/css/patient-style.css"/>
 	<script src="/assets/js/jquery-3.7.1.min.js"></script>
@@ -32,25 +32,10 @@
                             <li><a href="/SignUp.aspx"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="PatientFeedback.aspx"><span class="glyphicon glyphicon-thumbs-up	Try it"></span> Feedback</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="TreatmentHistory.aspx"><span class="glyphicon glyphicon-info-sign"></span> Treatment History</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="BillsHistory.aspx"><span class="glyphicon glyphicon-usd"></span> Bills History</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="TakeAppointment.aspx"><span class="glyphicon glyphicon-plus"></span> Take Appointment</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="CurrentAppointment.aspx"><span class="glyphicon glyphicon-search"></span> Current Appointment</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="PatientNotifications.aspx"><span class="	glyphicon glyphicon-flag"></span> Notifications</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
                             <li><a href="Pacientes.aspx"><span class="	glyphicon glyphicon-plus"></span> Agregar Paciente</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="PatientHome.aspx"><span class="	glyphicon glyphicon-plus"></span> Pacientes</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="../Admin/AdminHome.aspx"><span class="glyphicon glyphicon-home"></span> Administración</a></li>

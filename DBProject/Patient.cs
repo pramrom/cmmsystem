@@ -41,6 +41,11 @@ namespace DBProject
         public string CP { get; set; }
         public string Número_exterior { get; set; }
         public string Número_interior { get; set; }
+        public string pacientecurp { get; set; }
+        public string pacienteservi { get; set; }
+        public string pedociv { get; set; }
+        public string pnedu { get; set; }
+        public string pocupa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointments { get; set; }

@@ -66,13 +66,18 @@ namespace DBProject.PatientMG
                         Name = personfirstname.Value,
                         Apellidos = personlastname.Value,
                         BirthDate = Convert.ToDateTime(personbornat.Value),
-                        Phone = persontelephone.Value,                        
+                        Phone = persontelephone.Value,
+                        pacientecurp = personCURP.Value,
+                        pacienteservi = personSerSol.Value,
+                        pedociv = pedociv.Value,
+                        pnedu = pnedu.Value,
+                        pocupa = pocupa.Value,
                         País = personPais.Value,                        
                         Estado = personEstado.Value,
                         Address = personaddress.Value,
                         CP = personzipcode.Value,
                         Número_interior = personaddressinternalnumber.Value,
-                        Número_exterior = personaddressexternalnumber.Value                        
+                        Número_exterior = personaddressexternalnumber.Value
                     };
                     baseDatos.Patients.Add(oPaciente);
                     baseDatos.SaveChanges();

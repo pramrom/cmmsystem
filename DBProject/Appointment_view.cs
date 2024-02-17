@@ -14,9 +14,9 @@ namespace DBProject
     
     public partial class Appointment_view
     {
-        public int AppointID { get; set; }
-        public string Name { get; set; }
-        public int PatientID { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public int No { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
+        public string Doctor { get; set; }
+        public string Paciente { get; set; }
     }
 }

@@ -7,29 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DBProject {
-    
-    
-    public partial class ManageClinic {
-        
+namespace DBProject
+{
+
+
+    public partial class ManageClinic
+    {
+
         /// <summary>
-        /// DoctorEF control.
+        /// Doctor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton Doctor;
-        
+
         /// <summary>
-        /// PatientEF control.
+        /// Patient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton Patient;
-        
+
         /// <summary>
         /// OtherStaff control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace DBProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton OtherStaff;
-        
+
         /// <summary>
         /// txtSearch control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace DBProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSearch;
-        
+
         /// <summary>
         /// Msg control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace DBProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Msg;
-        
+
         /// <summary>
         /// Manage control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace DBProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView Manage;
-        
+
         /// <summary>
         /// mydiv control.
         /// </summary>

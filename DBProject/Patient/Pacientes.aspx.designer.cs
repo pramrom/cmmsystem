@@ -51,6 +51,51 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.HtmlControls.HtmlInputText persontelephone;
 
         /// <summary>
+        /// personCURP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText personCURP;
+
+        /// <summary>
+        /// personSerSol control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText personSerSol;
+
+        /// <summary>
+        /// pedociv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText pedociv;
+
+        /// <summary>
+        /// pnedu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText pnedu;
+
+        /// <summary>
+        /// pocupa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText pocupa;
+
+        /// <summary>
         /// personPais control.
         /// </summary>
         /// <remarks>

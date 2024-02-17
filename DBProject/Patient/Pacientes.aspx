@@ -44,17 +44,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="notifications"></div>
     <div id="ember-basic-dropdown-wormhole"></div>
-    <div id="ember1060" class="ember-view">
+    <div id="ember1060" class="ember-view">        
         <div dir="rtr" class="ember-application-container__body">
             <div id="ember1118" class="ember-view"></div>
-            <div class="ember-application__container">
+            <div class="ember-application__container">                
                 <div class="ember-application__body">
-                    <div id="ember6284" class="">
-                        
+                    <h1 id="ember6345">Alta de nuevos pacientes</h1>
+                    <br />
+                    <br />
+                    <div id="ember6284" class="">                        
                         <div id="ember6331" style="width: 800px;">
                             <div data-autoid="general-content" id="ember6344" class="ember-view">
-                                <h3 id="ember6345" class="_heading_jtnvkl _sub-heading-with-border_jtnvkl ember-view">Información General
-                                </h3>
+                                
                                 <div id="ember6346" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
                                     <div id="ember6347" class="_field_1mkkpr ember-view">
                                         <label for="person-first-name" class="_required_1mkkpr">
@@ -69,16 +70,47 @@
                                         <input id="personlastname" data-autoid="person-last-name" type="text" class="ember-view" runat="server" maxlength="30"/>
                                     </div>
                                 </div>
-
-                                <div id="ember6349" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
-                                    <div id="ember6350" class="_field_1mkkpr ember-view">  
-                                        <label for="person-born-at" class="_required_1mkkpr">Fecha de nacimiento</label>                                        
-                                        <input placeholder="DD-MM-AAAA" id="personbornat" data-autoid="person-born-at" type="text" class="ember-view" runat="server" maxlength="10"/>
+                        <div data-autoid="demographic-accordion" id="ember63940" class="ember-view">
+                            <div id="ember6349" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
+                                <div id="ember6350" class="_field_1mkkpr ember-view">
+                                    <label for="person-born-at" class="_required_1mkkpr">Fecha de nacimiento</label>
+                                    <input placeholder="DD-MM-AAAA" id="personbornat" data-autoid="person-born-at" type="text" class="ember-view" runat="server" maxlength="10" />
+                                </div>
+                                <div id="ember6383" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
+                                    <div id="ember6384" class="_field_1mkkpr ember-view">
+                                        <label for="person-telephone">Teléfono</label>
+                                        <input id="persontelephone" data-autoid="person-telephone" type="text" class="ember-view" runat="server" maxlength="11" />
                                     </div>
-                            <div id="ember6383" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
-                                <div id="ember6384" class="_field_1mkkpr ember-view">  
-                                    <label for="person-telephone">Teléfono</label>
-                                    <input id="persontelephone" data-autoid="person-telephone" type="text" class="ember-view" runat="server" maxlength="11"/>
+                                </div>
+                                <div id="ember64310" class="_field_1mkkpr ember-view">
+                                    <label>
+                                        CURP
+                                    </label>
+                                    <input id="personCURP" type="text" class="ember-view" runat="server" maxlength="10" />
+                                </div>
+                                <div id="ember64311" class="_field_1mkkpr ember-view">
+                                    <label>
+                                        Servicio Solicitado
+                                    </label>
+                                    <input id="personSerSol" type="text" class="ember-view" runat="server" maxlength="10" />
+                                </div>
+                            </div>
+                            <div id="ember63490" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
+                                <div id="ember6351" class="_field_1mkkpr ember-view">
+                                    <label for="person-born-at" class="_field_1mkkpr ember-view">Estado Civil</label>
+                                    <input id="pedociv" type="text" class="ember-view" runat="server" maxlength="17" />
+                                </div>
+                                <div id="ember63830" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
+                                    <div id="ember6385" class="_field_1mkkpr ember-view">
+                                        <label for="person-telephone">Nivel Educativo</label>
+                                        <input id="pnedu" data-autoid="person-telephone" type="text" class="ember-view" runat="server" maxlength="17" />
+                                    </div>
+                                </div>
+                                <div id="ember64312" class="_field_1mkkpr ember-view">
+                                    <label>
+                                        Ocupación
+                                    </label>
+                                    <input id="pocupa" type="text" class="ember-view" runat="server" maxlength="17" />
                                 </div>
                             </div>
                             <br />
