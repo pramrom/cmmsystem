@@ -1,4 +1,5 @@
 ﻿using DBProject.DAL;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using DocumentFormat.OpenXml.Wordprocessing;
 using Newtonsoft.Json;
 using OfficeIMO.Word;
@@ -11,6 +12,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
@@ -114,7 +116,7 @@ namespace DBProject.PatientMG
                         nombrePaciente.Text = newPaciente.Name + " " + newPaciente.Apellidos;
                         edadPaciente.Text = age.ToString();
                         DoctorActual.Text = strDoctorActual;
-                        lblIdPaciente.Text = newPaciente.PatientID.ToString();
+                        lblIdPaciente.Text = newPaciente.PatientID.ToString();                        
                     }
 
                     DivINeedToAddStuffTo.InnerHtml = sb.ToString();
@@ -125,6 +127,20 @@ namespace DBProject.PatientMG
                         if (result != null)
                         {
                             Otrasalergias.Value = result.palergiadec;
+
+
+                            txtamiso.Value = result.amiso;
+                            txttdia.Value = result.tdia;
+                            txtencar.Value = result.encar;
+                            txtenen.Value = result.enen;
+                            txttcan.Value = result.tcan;
+                            txtcoag.Value = result.coag;
+                            txtanemia.Value = result.anemia;
+                            txttrans.Value = result.trans;
+                            txtcirpre.Value = result.cirpre;
+                            txtmedact.Value = result.medact;
+                            txtotroap.Value = result.otroap;
+                            txtgrh.Value = result.grh;
 
                             chavo3401.Value = result.pfpmens;
                             chavo3407.Value = result.pfumens;
@@ -139,6 +155,36 @@ namespace DBProject.PatientMG
                             chavo34130b.Value = result.psgsem;
                             chavo3413ab.Value = result.pai;
                             chavo3413b.Value = result.pacienteusg;
+                            if (result.pembgine.HasValue) chavo3420.Checked = false;
+                            if (result.pcancer.HasValue) chavo3427.Checked = false;
+                            if (result.puter.HasValue) chavo3441.Checked = false;
+                            if (result.pcanma.HasValue) chavo34485.Checked = false;
+                            if (result.pactsex.HasValue) chavo3427.Checked = false;
+
+                            chavo3454.Value  = result.pmetplani;
+                            if (result.pterhormo.HasValue) chavo3427.Checked = false;
+                            chavo3467.Value = result.pultpapa;
+                            chavo3473.Value = result.pultmasto;
+                            txtpotroagine.Value = result.potroagine;
+                            txtppep.Value = result.ppep;
+
+                            txtntab.Value = result.ntab;
+                            txtnalco.Value = result.nalco;
+                            txtndroga.Value = result.ndroga;
+
+                            if (result.pdiaah.HasValue) chavo3338.Checked = false;
+                            if (result.pcardioah.HasValue) chavo3345.Checked = false;
+                            if (result.phipartah.HasValue) chavo3352.Checked = false;
+                            if (result.penftiroah.HasValue) chavo3359.Checked = false;
+                            if (result.penfrenalah.HasValue) chavo3366.Checked = false;
+                            if (result.potroanther.HasValue) chavo3373.Checked = false;
+
+                            txtppeso.Value = result.ppeso;
+                            txtptalla.Value = result.ptalla;
+                            txtpta.Value = result.pta;
+                            txtpfc.Value = result.pfc;
+                            txtpto.Value = result.pto;
+                            txtFR.Value = result.pfr;
                         }
                     }
 
@@ -200,6 +246,7 @@ namespace DBProject.PatientMG
             // Get the destination path
             var copyToPath = currentApplicationPath + "\\Temp-TemplateWord\\" + docto;
 
+            File.Delete(copyToPath);
             // Copy the file
             File.Copy(fullFilePath, copyToPath,true);
 
@@ -228,10 +275,11 @@ namespace DBProject.PatientMG
                     replacedCount = document.FindAndReplace("$pacientetel", newPaciente.Phone);
                     replacedCount = document.FindAndReplace("$pacientecurp", newPaciente.CURP);
                     //replacedCount = document.FindAndReplace("$pacienteservi", newPaciente.serv);
-                    replacedCount = document.FindAndReplace("$pacientecalle", newPaciente.Dirección);
+
+                    replacedCount = document.FindAndReplace("[pacientecalle]", newPaciente.Address);
                     replacedCount = document.FindAndReplace("$pacientenumero", newPaciente.Número_exterior);
                     replacedCount = document.FindAndReplace("$pacientenumeroint", newPaciente.Número_interior);
-                    //replacedCount = document.FindAndReplace("$pacientecolonia", newPaciente.);
+                    replacedCount = document.FindAndReplace("[pacientecolonia]", newPaciente.Colonia);
                     replacedCount = document.FindAndReplace("$pacientecp", newPaciente.CP);
                     replacedCount = document.FindAndReplace("$pacientecd", newPaciente.Ciudad);
                     replacedCount = document.FindAndReplace("$pacientepais", newPaciente.País);
@@ -254,7 +302,66 @@ namespace DBProject.PatientMG
                         replacedCount = document.FindAndReplace("$psgtam", result.psgtam);
                         replacedCount = document.FindAndReplace("$psgsem", result.psgsem);
                         replacedCount = document.FindAndReplace("$pai", result.pai);
-                        replacedCount = document.FindAndReplace("$pacienteusg", result.pacienteusg);
+
+                        replacedCount = document.FindAndReplace("$amiso", result.amiso);
+                        replacedCount = document.FindAndReplace("$tdia", result.tdia);
+                        replacedCount = document.FindAndReplace("$encar", result.encar);
+                        replacedCount = document.FindAndReplace("$enen", result.enen);
+                        replacedCount = document.FindAndReplace("$tcan", result.tcan);
+                        replacedCount = document.FindAndReplace("$coag", result.coag);
+                        replacedCount = document.FindAndReplace("$anemia", result.anemia);
+                        replacedCount = document.FindAndReplace("$trans", result.trans);
+                        replacedCount = document.FindAndReplace("$cirpre", result.cirpre);
+                        replacedCount = document.FindAndReplace("$medact", result.medact);
+                        replacedCount = document.FindAndReplace("$otroap", result.otroap);
+                        replacedCount = document.FindAndReplace("$grh", result.grh);
+
+                        replacedCount = document.FindAndReplace("$ntab", result.ntab);
+                        replacedCount = document.FindAndReplace("$nalco", result.nalco);
+                        replacedCount = document.FindAndReplace("$ndroga  ", result.ndroga);
+
+                        replacedCount = document.FindAndReplace("$pdiaah", result.pdiaah.ToString());
+                        replacedCount = document.FindAndReplace("$pcardioah", result.pcardioah.ToString());
+                        replacedCount = document.FindAndReplace("$phipartah", result.phipartah.ToString());
+                        replacedCount = document.FindAndReplace("$penftiroah", result.penftiroah.ToString());
+                        replacedCount = document.FindAndReplace("$penfrenalah", result.penfrenalah.ToString());
+                        replacedCount = document.FindAndReplace("$potroanther", result.potroanther.ToString());
+
+
+                        replacedCount = document.FindAndReplace("$pdiaah", result.pfpmens);
+                        replacedCount = document.FindAndReplace("$pcardioah", result.pfumens);
+                        replacedCount = document.FindAndReplace("$phipartah", result.pcarmens);
+                        replacedCount = document.FindAndReplace("$penftiroah", result.pgesta);
+                        replacedCount = document.FindAndReplace("$penfrenalah", result.pp);
+                        replacedCount = document.FindAndReplace("$potroanther", result.pc);
+                        replacedCount = document.FindAndReplace("$pdiaah", result.pa);
+                        replacedCount = document.FindAndReplace("$pcardioah", result.pile);
+                        replacedCount = document.FindAndReplace("$phipartah", result.plcctam);
+                        replacedCount = document.FindAndReplace("$penftiroah", result.plccsem);
+                        replacedCount = document.FindAndReplace("$penfrenalah", result.psgtam);
+                        replacedCount = document.FindAndReplace("$potroanther", result.psgsem);
+                        replacedCount = document.FindAndReplace("$potroanther", result.pai);
+                        replacedCount = document.FindAndReplace("$potroanther", result.pacienteusg);
+
+                        replacedCount = document.FindAndReplace("$pdiaah", result.pembgine.ToString());
+                        replacedCount = document.FindAndReplace("$pcardioah", result.pcancer.ToString());
+                        replacedCount = document.FindAndReplace("$phipartah", result.puter.ToString());
+                        replacedCount = document.FindAndReplace("$penftiroah", result.pcanma.ToString());
+                        replacedCount = document.FindAndReplace("$penfrenalah", result.pactsex.ToString()   );
+                        replacedCount = document.FindAndReplace("$potroanther", result.pmetplani);
+                        replacedCount = document.FindAndReplace("$pdiaah", result.pterhormo.ToString());
+                        replacedCount = document.FindAndReplace("$pcardioah", result.pultmasto);
+                        replacedCount = document.FindAndReplace("$phipartah", result.potroagine);
+                        replacedCount = document.FindAndReplace("$penftiroah", result.plccsem);
+
+
+                        replacedCount = document.FindAndReplace("$ppeso", result.ppeso);
+                        replacedCount = document.FindAndReplace("$ptalla", result.ptalla);
+                        replacedCount = document.FindAndReplace("$pta", result.pta);
+                        replacedCount = document.FindAndReplace("$pfc", result.pfc);
+                        replacedCount = document.FindAndReplace("$pto", result.pto);
+
+                        replacedCount = document.FindAndReplace("[pacienteusg]", result.pacienteusg); 
                     }
                     
                     document.CleanupDocument();
@@ -292,7 +399,7 @@ namespace DBProject.PatientMG
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string strOtA = Otrasalergias.Value;
+            string strOtA = Otrasalergias.Value.Trim();
             int intPaciente = Convert.ToInt32(Request.QueryString["Id"]);
 
             try
@@ -321,7 +428,6 @@ namespace DBProject.PatientMG
                             ve.ErrorMessage);
                     }
                 }
-                throw;
             }
         }
 
@@ -461,7 +567,6 @@ namespace DBProject.PatientMG
                             ve.ErrorMessage);
                     }
                 }
-                throw;
             }
         }
 
@@ -495,7 +600,18 @@ namespace DBProject.PatientMG
                 var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == intPaciente);
                 if (result != null)
                 {
-                    result.phospre = true;
+                    result.amiso = txtamiso.Value;
+                    result.tdia = txttdia.Value;
+                    result.encar = txtencar.Value;
+                    result.enen = txtenen.Value;
+                    result.tcan = txttcan.Value;
+                    result.coag = txtcoag.Value;
+                    result.anemia = txtanemia.Value;
+                    result.trans = txttrans.Value;
+                    result.cirpre = txtcirpre.Value;
+                    result.medact = txtmedact.Value;
+                    result.otroap = txtotroap.Value;
+                    result.grh = txtgrh.Value;
 
                     baseDatos.SaveChanges();
                 }
@@ -512,7 +628,9 @@ namespace DBProject.PatientMG
                 var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == intPaciente);
                 if (result != null)
                 {
-                    result.palergiadec = strOtA;
+                    result.ntab = txtntab.Value;
+                    result.nalco = txtnalco.Value;
+                    result.ndroga = txtndroga.Value;
                     baseDatos.SaveChanges();
                 }
             }
@@ -523,24 +641,36 @@ namespace DBProject.PatientMG
             string strOtA = Otrasalergias.Value;
             int intPaciente = Convert.ToInt32(Request.QueryString["Id"]);
 
+            bool pdiaah = chavo3338.Checked ? true : false;
+            bool pcardioah = chavo3345.Checked ? true : false;
+            bool phipartah = chavo3352.Checked ? true : false;
+            bool penftiroah = chavo3359.Checked ? true : false;
+            bool penfrenalah = chavo3366.Checked ? true : false;
+            bool potroanther = chavo3373.Checked ? true : false;
+
+
             using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
             {
                 var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == intPaciente);
                 if (result != null)
                 {
-                    result.palergiadec = strOtA;
+                    result.pdiaah = pdiaah;
+                    result.pcardioah = pcardioah;
+                    result.phipartah = phipartah;
+                    result.penftiroah = penftiroah;
+                    result.penfrenalah = penfrenalah;
+                    result.potroanther = potroanther;
+
                     baseDatos.SaveChanges();
                 }
             }
         }
 
         protected void btnAGO2_Click(object sender, EventArgs e)
-        {
-            string strOtA = Otrasalergias.Value;
-
+        {           
             string pfpmens = chavo3401.Value;
             string pfumens = chavo3407.Value;
-            string pgesta = chavo34131a.Value;
+            string pgesta = chavo34131a.Value;            
             string pp = chavo34132b.Value;
             string pc = chavo34133b.Value;
             string pa = chavo34134b.Value;
@@ -551,29 +681,71 @@ namespace DBProject.PatientMG
             string psgsem = chavo34130b.Value;
             string pai = chavo3413ab.Value;
             string pacienteusg = chavo3413b.Value;
+            bool pembgine = chavo3420.Checked ? true:false;
+            bool pcancer = chavo3427.Checked ? true : false;
+            bool puter = chavo3434.Checked ? true : false;
+            bool pcanma = chavo3441.Checked ? true : false;
+            bool pactsex = chavo34485.Checked ? true : false;
+            string pmetplani = chavo3454.Value;
+            bool pterhormo = chavo3427.Checked ? true : false;
+            string pultpapa = chavo3467.Value;
+            string pultmasto = chavo3473.Value;
+            string potroagine = txtpotroagine.Value;
 
-
-            int intPaciente = Convert.ToInt32(Request.QueryString["Id"]);
-
-            using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
+            try
             {
-                var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == intPaciente);
-                if (result != null)
+
+                int intPaciente = Convert.ToInt32(Request.QueryString["Id"]);
+
+                using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
                 {
-                    result.pfpmens = pfpmens;
-                    result.pfumens = pfumens;
-                    result.pgesta = pgesta;
-                    result.pp = pp;
-                    result.pc = pc;
-                    result.pa = pa;
-                    result.pile = pile;
-                    result.plcctam = plcctam;
-                    result.plccsem = plccsem;
-                    result.psgtam = psgtam;
-                    result.psgsem = psgsem;
-                    result.pai = pai;
-                    result.pacienteusg = pacienteusg;
-                    baseDatos.SaveChanges();
+                    var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == intPaciente);
+                    if (result != null)
+                    {
+                        result.pfpmens = pfpmens;
+                        result.pfumens = pfumens;
+                        result.pcarmens = chavo3413.Value;
+                        result.pgesta = pgesta;
+                        result.pp = pp;
+                        result.pc = pc;
+                        result.pa = pa;
+                        result.pile = pile;
+                        result.plcctam = plcctam;
+                        result.plccsem = plccsem;
+                        result.psgtam = psgtam;
+                        result.psgsem = psgsem;
+                        result.pai = pai;
+                        result.pacienteusg = pacienteusg;
+
+                        result.pembgine = pembgine;
+                        result.pcancer = pcancer;
+                        result.puter = puter;
+                        result.pcanma = pcanma;
+                        result.pactsex = pactsex;
+                        result.pmetplani = pmetplani;
+                        result.pterhormo = pterhormo;
+                        result.pultpapa = pultpapa;
+                        result.pultmasto = pultmasto;
+                        result.potroagine = potroagine;
+                        result.ppep = txtppep.Value;
+
+                        baseDatos.SaveChanges();
+                    }
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Value: \"{1}\", Error: \"{2}\"",
+                            ve.PropertyName,
+                            eve.Entry.CurrentValues.GetValue<object>(ve.PropertyName),
+                            ve.ErrorMessage);
+                    }
                 }
             }
         }
@@ -662,6 +834,27 @@ namespace DBProject.PatientMG
                 Response.ContentType = "application/octet-stream";
                 Response.WriteFile(path);
                 Response.End();
+            }
+        }
+
+        protected void btnFisicas_Click(object sender, EventArgs e)
+        {
+            int intPaciente = Convert.ToInt32(Request.QueryString["Id"]);
+
+            using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
+            {
+                var result = baseDatos.DatosConsultas.SingleOrDefault(b => b.PatientID == intPaciente);
+                if (result != null)
+                {
+                    result.ppeso = txtppeso.Value;
+                    result.ptalla = txtptalla.Value;
+                    result.pta = txtpta.Value;
+                    result.pfc = txtpfc.Value;
+                    result.pto = txtpto.Value;
+                    result.pfr = txtFR.Value;
+
+                    baseDatos.SaveChanges();
+                }
             }
         }
     }

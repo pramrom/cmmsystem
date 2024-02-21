@@ -58,9 +58,9 @@
           <Property Name="penftiroah" Type="bit" />
           <Property Name="penfrenalah" Type="bit" />
           <Property Name="potroanther" Type="bit" />
-          <Property Name="pfpmens" Type="nchar" MaxLength="4" />
+          <Property Name="pfpmens" Type="nchar" MaxLength="15" />
           <Property Name="pfumens" Type="nchar" MaxLength="20" />
-          <Property Name="pcarmens" Type="nchar" MaxLength="4" />
+          <Property Name="pcarmens" Type="nchar" MaxLength="20" />
           <Property Name="pgesta" Type="nchar" MaxLength="4" />
           <Property Name="pp" Type="nchar" MaxLength="4" />
           <Property Name="pc" Type="nchar" MaxLength="4" />
@@ -77,7 +77,7 @@
           <Property Name="puter" Type="bit" />
           <Property Name="pcanma" Type="bit" />
           <Property Name="pactsex" Type="bit" />
-          <Property Name="pmetplani" Type="bit" />
+          <Property Name="pmetplani" Type="nchar" MaxLength="20" />
           <Property Name="pterhormo" Type="bit" />
           <Property Name="pultpapa" Type="nchar" MaxLength="11" />
           <Property Name="pultmasto" Type="nchar" MaxLength="11" />
@@ -86,7 +86,7 @@
           <Property Name="tdia" Type="nchar" MaxLength="7" />
           <Property Name="encar" Type="nchar" MaxLength="17" />
           <Property Name="enen" Type="nchar" MaxLength="33" />
-          <Property Name="tcan" Type="nchar" MaxLength="20" />
+          <Property Name="tcan" Type="nchar" MaxLength="25" />
           <Property Name="coag" Type="nchar" MaxLength="3" />
           <Property Name="anemia" Type="nchar" MaxLength="3" />
           <Property Name="trans" Type="nchar" MaxLength="3" />
@@ -96,12 +96,14 @@
           <Property Name="grh" Type="nchar" MaxLength="12" />
           <Property Name="ntab" Type="nchar" MaxLength="3" />
           <Property Name="nalco" Type="nchar" MaxLength="3" />
-          <Property Name="ndroga" Type="nchar" MaxLength="3" />
-          <Property Name="ppeso" Type="nchar" MaxLength="6" />
-          <Property Name="ptalla" Type="nchar" MaxLength="6" />
+          <Property Name="ndroga" Type="nchar" MaxLength="25" />
+          <Property Name="ppeso" Type="nchar" MaxLength="7" />
+          <Property Name="ptalla" Type="nchar" MaxLength="7" />
           <Property Name="pta" Type="nchar" MaxLength="7" />
-          <Property Name="pfc" Type="nchar" MaxLength="4" />
-          <Property Name="pto" Type="nchar" MaxLength="5" />
+          <Property Name="pfc" Type="nchar" MaxLength="7" />
+          <Property Name="pto" Type="nchar" MaxLength="7" />
+          <Property Name="pfr" Type="nchar" MaxLength="7" />
+          <Property Name="ppep" Type="nchar" MaxLength="3" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -164,6 +166,7 @@
           <Property Name="pedociv" Type="nchar" MaxLength="17" />
           <Property Name="pnedu" Type="nchar" MaxLength="17" />
           <Property Name="pocupa" Type="nchar" MaxLength="17" />
+          <Property Name="Colonia" Type="nchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'cmmsystem.dbo.Appointment_view' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -200,20 +203,15 @@ warning 6002: The table/view 'cmmsystem.dbo.deptInfo' does not have a primary ke
           <Property Name="Number of Doctors" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'cmmsystem.dbo.Income' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Income">
-          <Property Name="Income" Type="float" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'cmmsystem.dbo.PATIENT_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PATIENT_VIEW">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="Name" />
+            <PropertyRef Name="Nombre" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Phone" Type="char" MaxLength="11" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Telefono" Type="char" MaxLength="11" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -227,16 +225,6 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
           <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Designation" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'cmmsystem.dbo.Total_Doctors' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Total_Doctors">
-          <Property Name="Total Doctors" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Total_Patient">
-          <Property Name="Total Patients" Type="int" />
-        </EntityType>-->
         <Association Name="FK__Appointme__Patie__32E0915F">
           <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
           <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
@@ -548,8 +536,8 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <EntitySet Name="PATIENT_VIEW" EntityType="Self.PATIENT_VIEW" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [PATIENT_VIEW].[ID] AS [ID], 
-    [PATIENT_VIEW].[Name] AS [Name], 
-    [PATIENT_VIEW].[Phone] AS [Phone]
+    [PATIENT_VIEW].[Nombre] AS [Nombre], 
+    [PATIENT_VIEW].[Telefono] AS [Telefono]
     FROM [dbo].[PATIENT_VIEW] AS [PATIENT_VIEW]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="STAFF_VIEW" EntityType="Self.STAFF_VIEW" store:Type="Views" store:Schema="dbo">
@@ -591,86 +579,7 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <Property Name="Prescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="AppointmentStart" Type="DateTime" Precision="3" />
           <Property Name="AppointmentEnd" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Patient" Relationship="Self.FK__Appointme__Patie__32E0915F" FromRole="Appointment" ToRole="Patient" />
-        </EntityType>
-        <EntityType Name="DatosConsulta">
-          <Key>
-            <PropertyRef Name="PatientID" />
-          </Key>
-          <Property Name="PatientID" Type="Int32" Nullable="false" />
-          <Property Name="palergia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="palergiadec" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="phospre" Type="Boolean" />
-          <Property Name="pcirpre" Type="Boolean" />
-          <Property Name="pdia" Type="Boolean" />
-          <Property Name="penftiro" Type="Boolean" />
-          <Property Name="phipart" Type="Boolean" />
-          <Property Name="pcardio" Type="Boolean" />
-          <Property Name="ptrauma" Type="Boolean" />
-          <Property Name="pcancer" Type="Boolean" />
-          <Property Name="ptuber" Type="Boolean" />
-          <Property Name="ppatores" Type="Boolean" />
-          <Property Name="ppatogas" Type="Boolean" />
-          <Property Name="penftrans" Type="Boolean" />
-          <Property Name="penfrenal" Type="Boolean" />
-          <Property Name="potrospat" Type="Boolean" />
-          <Property Name="pactfis" Type="Boolean" />
-          <Property Name="ptab" Type="Boolean" />
-          <Property Name="palco" Type="Boolean" />
-          <Property Name="pdroga" Type="Boolean" />
-          <Property Name="pvacuna" Type="Boolean" />
-          <Property Name="potronopat" Type="Boolean" />
-          <Property Name="pdiaah" Type="Boolean" />
-          <Property Name="pcardioah" Type="Boolean" />
-          <Property Name="phipartah" Type="Boolean" />
-          <Property Name="penftiroah" Type="Boolean" />
-          <Property Name="penfrenalah" Type="Boolean" />
-          <Property Name="potroanther" Type="Boolean" />
-          <Property Name="pfpmens" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="pfumens" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="pcarmens" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="pgesta" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="pp" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="pc" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="pa" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="pile" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="plcctam" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="plccsem" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="psgtam" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="psgsem" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="pai" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="pacienteusg" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="pembgine" Type="Boolean" />
-          <Property Name="pcancer2" Type="Boolean" />
-          <Property Name="puter" Type="Boolean" />
-          <Property Name="pcanma" Type="Boolean" />
-          <Property Name="pactsex" Type="Boolean" />
-          <Property Name="pmetplani" Type="Boolean" />
-          <Property Name="pterhormo" Type="Boolean" />
-          <Property Name="pultpapa" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
-          <Property Name="pultmasto" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
-          <Property Name="potroagine" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Patient" Relationship="Self.FK_DatosConsulta_Patient" FromRole="DatosConsulta" ToRole="Patient" />
-          <Property Name="amiso" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="tdia" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
-          <Property Name="encar" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
-          <Property Name="enen" Type="String" MaxLength="33" FixedLength="true" Unicode="true" />
-          <Property Name="tcan" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="coag" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="anemia" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="trans" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="cirpre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="medact" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="otroap" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="grh" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
-          <Property Name="ntab" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="nalco" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="ndroga" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="ppeso" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
-          <Property Name="ptalla" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
-          <Property Name="pta" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
-          <Property Name="pfc" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="pto" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Patient" Relationship="cmmsystemModel.FK__Appointme__Patie__32E0915F" FromRole="Appointment" ToRole="Patient" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -703,39 +612,6 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <Property Name="Highest_Qualification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Salary" Type="Double" />
         </EntityType>
-        <EntityType Name="Patient">
-          <Key>
-            <PropertyRef Name="PatientID" />
-          </Key>
-          <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
-          <Property Name="Address" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="BirthDate" Type="DateTime" Precision="0" />
-          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="Nombres" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="Apellidos" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="Sexo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Teléfono_móvil" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Sin_celular" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Teléfono" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="CURP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Dirección" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="País" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Ciudad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="CP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Número_exterior" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Número_interior" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Patie__32E0915F" FromRole="Patient" ToRole="Appointment" />
-          <NavigationProperty Name="DatosConsulta" Relationship="Self.FK_DatosConsulta_Patient" FromRole="Patient" ToRole="DatosConsulta" />
-          <Property Name="pacientecurp" Type="String" MaxLength="19" FixedLength="true" Unicode="true" />
-          <Property Name="pacienteservi" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="pedociv" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
-          <Property Name="pnedu" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
-          <Property Name="pocupa" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
-        </EntityType>
         <EntityType Name="deptInfo">
           <Key>
             <PropertyRef Name="DeptName" />
@@ -743,15 +619,6 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <Property Name="DeptName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="Number_of_Doctors" Type="Int32" />
-        </EntityType>
-        <EntityType Name="PATIENT_VIEW">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="STAFF_VIEW">
           <Key>
@@ -763,48 +630,13 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Designation" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Appointme__Patie__32E0915F">
-          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
-          <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Patient">
-              <PropertyRef Name="PatientID" />
-            </Principal>
-            <Dependent Role="Appointment">
-              <PropertyRef Name="PatientID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DatosConsulta_Patient">
-          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
-          <End Role="DatosConsulta" Type="Self.DatosConsulta" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Patient">
-              <PropertyRef Name="PatientID" />
-            </Principal>
-            <Dependent Role="DatosConsulta">
-              <PropertyRef Name="PatientID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="cmmsystemEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Appointments" EntityType="Self.Appointment" />
-          <EntitySet Name="DatosConsultas" EntityType="Self.DatosConsulta" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="LoginTables" EntityType="Self.LoginTable" />
           <EntitySet Name="OtherStaffs" EntityType="Self.OtherStaff" />
-          <EntitySet Name="Patients" EntityType="Self.Patient" />
           <EntitySet Name="deptInfoes" EntityType="Self.deptInfo" />
-          <EntitySet Name="PATIENT_VIEW" EntityType="Self.PATIENT_VIEW" />
           <EntitySet Name="STAFF_VIEW" EntityType="Self.STAFF_VIEW" />
-          <AssociationSet Name="FK__Appointme__Patie__32E0915F" Association="Self.FK__Appointme__Patie__32E0915F">
-            <End Role="Patient" EntitySet="Patients" />
-            <End Role="Appointment" EntitySet="Appointments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DatosConsulta_Patient" Association="Self.FK_DatosConsulta_Patient">
-            <End Role="Patient" EntitySet="Patients" />
-            <End Role="DatosConsulta" EntitySet="DatosConsultas" />
-          </AssociationSet>
           <FunctionImport Name="AddDoctor">
             <Parameter Name="Name" Mode="In" Type="String" />
             <Parameter Name="Email" Mode="In" Type="String" />
@@ -1062,6 +894,17 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           </FunctionImport>
           <EntitySet Name="Appointment_view" EntityType="cmmsystemModel.Appointment_view" />
           <EntitySet Name="Department_View" EntityType="cmmsystemModel.Department_View" />
+          <EntitySet Name="DatosConsultas" EntityType="cmmsystemModel.DatosConsulta" />
+          <EntitySet Name="Patients" EntityType="cmmsystemModel.Patient" />
+          <AssociationSet Name="FK__Appointme__Patie__32E0915F" Association="cmmsystemModel.FK__Appointme__Patie__32E0915F">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Appointment" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatosConsulta_Patient" Association="cmmsystemModel.FK_DatosConsulta_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="DatosConsulta" EntitySet="DatosConsultas" />
+          </AssociationSet>
+          <EntitySet Name="PATIENT_VIEW" EntityType="cmmsystemModel.PATIENT_VIEW" />
         </EntityContainer>
         <ComplexType Name="Doctor_Information_By_ID1_Result">
           <Property Type="Int32" Name="DoctorID" Nullable="false" />
@@ -1209,6 +1052,154 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Doctores" Type="Int32" />
         </EntityType>
+        <EntityType Name="DatosConsulta">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="palergia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="palergiadec" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="phospre" Type="Boolean" />
+          <Property Name="pcirpre" Type="Boolean" />
+          <Property Name="pdia" Type="Boolean" />
+          <Property Name="penftiro" Type="Boolean" />
+          <Property Name="phipart" Type="Boolean" />
+          <Property Name="pcardio" Type="Boolean" />
+          <Property Name="ptrauma" Type="Boolean" />
+          <Property Name="pcancer" Type="Boolean" />
+          <Property Name="ptuber" Type="Boolean" />
+          <Property Name="ppatores" Type="Boolean" />
+          <Property Name="ppatogas" Type="Boolean" />
+          <Property Name="penftrans" Type="Boolean" />
+          <Property Name="penfrenal" Type="Boolean" />
+          <Property Name="potrospat" Type="Boolean" />
+          <Property Name="pactfis" Type="Boolean" />
+          <Property Name="ptab" Type="Boolean" />
+          <Property Name="palco" Type="Boolean" />
+          <Property Name="pdroga" Type="Boolean" />
+          <Property Name="pvacuna" Type="Boolean" />
+          <Property Name="potronopat" Type="Boolean" />
+          <Property Name="pdiaah" Type="Boolean" />
+          <Property Name="pcardioah" Type="Boolean" />
+          <Property Name="phipartah" Type="Boolean" />
+          <Property Name="penftiroah" Type="Boolean" />
+          <Property Name="penfrenalah" Type="Boolean" />
+          <Property Name="potroanther" Type="Boolean" />
+          <Property Name="pfpmens" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="pfumens" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="pcarmens" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="pgesta" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pp" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pc" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pa" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pile" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="plcctam" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="plccsem" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="psgtam" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="psgsem" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pai" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pacienteusg" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="pembgine" Type="Boolean" />
+          <Property Name="pcancer2" Type="Boolean" />
+          <Property Name="puter" Type="Boolean" />
+          <Property Name="pcanma" Type="Boolean" />
+          <Property Name="pactsex" Type="Boolean" />
+          <Property Name="pmetplani" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="pterhormo" Type="Boolean" />
+          <Property Name="pultpapa" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="pultmasto" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="potroagine" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="amiso" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="tdia" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="encar" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
+          <Property Name="enen" Type="String" MaxLength="33" FixedLength="true" Unicode="true" />
+          <Property Name="tcan" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="coag" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="anemia" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="trans" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="cirpre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="medact" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="otroap" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="grh" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <Property Name="ntab" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="nalco" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="ndroga" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="ppeso" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="ptalla" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="pta" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="pfc" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="pto" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="pfr" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="ppep" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Patient" Relationship="cmmsystemModel.FK_DatosConsulta_Patient" FromRole="DatosConsulta" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Nombres" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Apellidos" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Sexo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Teléfono_móvil" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Sin_celular" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Teléfono" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CURP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Dirección" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="País" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Ciudad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Número_exterior" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Número_interior" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="pacientecurp" Type="String" MaxLength="19" FixedLength="true" Unicode="true" />
+          <Property Name="pacienteservi" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="pedociv" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
+          <Property Name="pnedu" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
+          <Property Name="pocupa" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
+          <Property Name="Colonia" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Appointments" Relationship="cmmsystemModel.FK__Appointme__Patie__32E0915F" FromRole="Patient" ToRole="Appointment" />
+          <NavigationProperty Name="DatosConsulta" Relationship="cmmsystemModel.FK_DatosConsulta_Patient" FromRole="Patient" ToRole="DatosConsulta" />
+        </EntityType>
+        <Association Name="FK__Appointme__Patie__32E0915F">
+          <End Type="cmmsystemModel.Patient" Role="Patient" Multiplicity="0..1" />
+          <End Type="cmmsystemModel.Appointment" Role="Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="Appointment">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatosConsulta_Patient">
+          <End Type="cmmsystemModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="cmmsystemModel.DatosConsulta" Role="DatosConsulta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="DatosConsulta">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PATIENT_VIEW">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1233,85 +1224,6 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
                 <ScalarProperty Name="Prescription" ColumnName="Prescription" />
                 <ScalarProperty Name="AppointmentStart" ColumnName="AppointmentStart" />
                 <ScalarProperty Name="AppointmentEnd" ColumnName="AppointmentEnd" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DatosConsultas">
-            <EntityTypeMapping TypeName="cmmsystemModel.DatosConsulta">
-              <MappingFragment StoreEntitySet="DatosConsulta">
-                <ScalarProperty Name="pto" ColumnName="pto" />
-                <ScalarProperty Name="pfc" ColumnName="pfc" />
-                <ScalarProperty Name="pta" ColumnName="pta" />
-                <ScalarProperty Name="ptalla" ColumnName="ptalla" />
-                <ScalarProperty Name="ppeso" ColumnName="ppeso" />
-                <ScalarProperty Name="ndroga" ColumnName="ndroga" />
-                <ScalarProperty Name="nalco" ColumnName="nalco" />
-                <ScalarProperty Name="ntab" ColumnName="ntab" />
-                <ScalarProperty Name="grh" ColumnName="grh" />
-                <ScalarProperty Name="otroap" ColumnName="otroap" />
-                <ScalarProperty Name="medact" ColumnName="medact" />
-                <ScalarProperty Name="cirpre" ColumnName="cirpre" />
-                <ScalarProperty Name="trans" ColumnName="trans" />
-                <ScalarProperty Name="anemia" ColumnName="anemia" />
-                <ScalarProperty Name="coag" ColumnName="coag" />
-                <ScalarProperty Name="tcan" ColumnName="tcan" />
-                <ScalarProperty Name="enen" ColumnName="enen" />
-                <ScalarProperty Name="encar" ColumnName="encar" />
-                <ScalarProperty Name="tdia" ColumnName="tdia" />
-                <ScalarProperty Name="amiso" ColumnName="amiso" />
-                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
-                <ScalarProperty Name="palergia" ColumnName="palergia" />
-                <ScalarProperty Name="palergiadec" ColumnName="palergiadec" />
-                <ScalarProperty Name="phospre" ColumnName="phospre" />
-                <ScalarProperty Name="pcirpre" ColumnName="pcirpre" />
-                <ScalarProperty Name="pdia" ColumnName="pdia" />
-                <ScalarProperty Name="penftiro" ColumnName="penftiro" />
-                <ScalarProperty Name="phipart" ColumnName="phipart" />
-                <ScalarProperty Name="pcardio" ColumnName="pcardio" />
-                <ScalarProperty Name="ptrauma" ColumnName="ptrauma" />
-                <ScalarProperty Name="pcancer" ColumnName="pcancer" />
-                <ScalarProperty Name="ptuber" ColumnName="ptuber" />
-                <ScalarProperty Name="ppatores" ColumnName="ppatores" />
-                <ScalarProperty Name="ppatogas" ColumnName="ppatogas" />
-                <ScalarProperty Name="penftrans" ColumnName="penftrans" />
-                <ScalarProperty Name="penfrenal" ColumnName="penfrenal" />
-                <ScalarProperty Name="potrospat" ColumnName="potrospat" />
-                <ScalarProperty Name="pactfis" ColumnName="pactfis" />
-                <ScalarProperty Name="ptab" ColumnName="ptab" />
-                <ScalarProperty Name="palco" ColumnName="palco" />
-                <ScalarProperty Name="pdroga" ColumnName="pdroga" />
-                <ScalarProperty Name="pvacuna" ColumnName="pvacuna" />
-                <ScalarProperty Name="potronopat" ColumnName="potronopat" />
-                <ScalarProperty Name="pdiaah" ColumnName="pdiaah" />
-                <ScalarProperty Name="pcardioah" ColumnName="pcardioah" />
-                <ScalarProperty Name="phipartah" ColumnName="phipartah" />
-                <ScalarProperty Name="penftiroah" ColumnName="penftiroah" />
-                <ScalarProperty Name="penfrenalah" ColumnName="penfrenalah" />
-                <ScalarProperty Name="potroanther" ColumnName="potroanther" />
-                <ScalarProperty Name="pfpmens" ColumnName="pfpmens" />
-                <ScalarProperty Name="pfumens" ColumnName="pfumens" />
-                <ScalarProperty Name="pcarmens" ColumnName="pcarmens" />
-                <ScalarProperty Name="pgesta" ColumnName="pgesta" />
-                <ScalarProperty Name="pp" ColumnName="pp" />
-                <ScalarProperty Name="pc" ColumnName="pc" />
-                <ScalarProperty Name="pa" ColumnName="pa" />
-                <ScalarProperty Name="pile" ColumnName="pile" />
-                <ScalarProperty Name="plcctam" ColumnName="plcctam" />
-                <ScalarProperty Name="plccsem" ColumnName="plccsem" />
-                <ScalarProperty Name="psgtam" ColumnName="psgtam" />
-                <ScalarProperty Name="psgsem" ColumnName="psgsem" />
-                <ScalarProperty Name="pai" ColumnName="pai" />
-                <ScalarProperty Name="pacienteusg" ColumnName="pacienteusg" />
-                <ScalarProperty Name="pembgine" ColumnName="pembgine" />
-                <ScalarProperty Name="pcancer2" ColumnName="pcancer2" />
-                <ScalarProperty Name="puter" ColumnName="puter" />
-                <ScalarProperty Name="pcanma" ColumnName="pcanma" />
-                <ScalarProperty Name="pactsex" ColumnName="pactsex" />
-                <ScalarProperty Name="pmetplani" ColumnName="pmetplani" />
-                <ScalarProperty Name="pterhormo" ColumnName="pterhormo" />
-                <ScalarProperty Name="pultpapa" ColumnName="pultpapa" />
-                <ScalarProperty Name="pultmasto" ColumnName="pultmasto" />
-                <ScalarProperty Name="potroagine" ColumnName="potroagine" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1349,53 +1261,12 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Patients">
-            <EntityTypeMapping TypeName="cmmsystemModel.Patient">
-              <MappingFragment StoreEntitySet="Patient">
-                <ScalarProperty Name="pocupa" ColumnName="pocupa" />
-                <ScalarProperty Name="pnedu" ColumnName="pnedu" />
-                <ScalarProperty Name="pedociv" ColumnName="pedociv" />
-                <ScalarProperty Name="pacienteservi" ColumnName="pacienteservi" />
-                <ScalarProperty Name="pacientecurp" ColumnName="pacientecurp" />
-                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
-                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
-                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Teléfono_móvil" ColumnName="Teléfono_móvil" />
-                <ScalarProperty Name="Sin_celular" ColumnName="Sin_celular" />
-                <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
-                <ScalarProperty Name="CURP" ColumnName="CURP" />
-                <ScalarProperty Name="Dirección" ColumnName="Dirección" />
-                <ScalarProperty Name="País" ColumnName="País" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
-                <ScalarProperty Name="CP" ColumnName="CP" />
-                <ScalarProperty Name="Número_exterior" ColumnName="Número_exterior" />
-                <ScalarProperty Name="Número_interior" ColumnName="Número_interior" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="deptInfoes">
             <EntityTypeMapping TypeName="cmmsystemModel.deptInfo">
               <MappingFragment StoreEntitySet="deptInfo">
                 <ScalarProperty Name="DeptName" ColumnName="DeptName" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Number_of_Doctors" ColumnName="Number of Doctors" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PATIENT_VIEW">
-            <EntityTypeMapping TypeName="cmmsystemModel.PATIENT_VIEW">
-              <MappingFragment StoreEntitySet="PATIENT_VIEW">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1619,6 +1490,129 @@ warning 6013: The table/view 'cmmsystem.dbo.Total_Patient' does not have a prima
                 <ScalarProperty Name="Doctores" ColumnName="Doctores" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="No" ColumnName="No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DatosConsultas">
+            <EntityTypeMapping TypeName="cmmsystemModel.DatosConsulta">
+              <MappingFragment StoreEntitySet="DatosConsulta">
+                <ScalarProperty Name="ppep" ColumnName="ppep" />
+                <ScalarProperty Name="pfr" ColumnName="pfr" />
+                <ScalarProperty Name="pto" ColumnName="pto" />
+                <ScalarProperty Name="pfc" ColumnName="pfc" />
+                <ScalarProperty Name="pta" ColumnName="pta" />
+                <ScalarProperty Name="ptalla" ColumnName="ptalla" />
+                <ScalarProperty Name="ppeso" ColumnName="ppeso" />
+                <ScalarProperty Name="ndroga" ColumnName="ndroga" />
+                <ScalarProperty Name="nalco" ColumnName="nalco" />
+                <ScalarProperty Name="ntab" ColumnName="ntab" />
+                <ScalarProperty Name="grh" ColumnName="grh" />
+                <ScalarProperty Name="otroap" ColumnName="otroap" />
+                <ScalarProperty Name="medact" ColumnName="medact" />
+                <ScalarProperty Name="cirpre" ColumnName="cirpre" />
+                <ScalarProperty Name="trans" ColumnName="trans" />
+                <ScalarProperty Name="anemia" ColumnName="anemia" />
+                <ScalarProperty Name="coag" ColumnName="coag" />
+                <ScalarProperty Name="tcan" ColumnName="tcan" />
+                <ScalarProperty Name="enen" ColumnName="enen" />
+                <ScalarProperty Name="encar" ColumnName="encar" />
+                <ScalarProperty Name="tdia" ColumnName="tdia" />
+                <ScalarProperty Name="amiso" ColumnName="amiso" />
+                <ScalarProperty Name="potroagine" ColumnName="potroagine" />
+                <ScalarProperty Name="pultmasto" ColumnName="pultmasto" />
+                <ScalarProperty Name="pultpapa" ColumnName="pultpapa" />
+                <ScalarProperty Name="pterhormo" ColumnName="pterhormo" />
+                <ScalarProperty Name="pmetplani" ColumnName="pmetplani" />
+                <ScalarProperty Name="pactsex" ColumnName="pactsex" />
+                <ScalarProperty Name="pcanma" ColumnName="pcanma" />
+                <ScalarProperty Name="puter" ColumnName="puter" />
+                <ScalarProperty Name="pcancer2" ColumnName="pcancer2" />
+                <ScalarProperty Name="pembgine" ColumnName="pembgine" />
+                <ScalarProperty Name="pacienteusg" ColumnName="pacienteusg" />
+                <ScalarProperty Name="pai" ColumnName="pai" />
+                <ScalarProperty Name="psgsem" ColumnName="psgsem" />
+                <ScalarProperty Name="psgtam" ColumnName="psgtam" />
+                <ScalarProperty Name="plccsem" ColumnName="plccsem" />
+                <ScalarProperty Name="plcctam" ColumnName="plcctam" />
+                <ScalarProperty Name="pile" ColumnName="pile" />
+                <ScalarProperty Name="pa" ColumnName="pa" />
+                <ScalarProperty Name="pc" ColumnName="pc" />
+                <ScalarProperty Name="pp" ColumnName="pp" />
+                <ScalarProperty Name="pgesta" ColumnName="pgesta" />
+                <ScalarProperty Name="pcarmens" ColumnName="pcarmens" />
+                <ScalarProperty Name="pfumens" ColumnName="pfumens" />
+                <ScalarProperty Name="pfpmens" ColumnName="pfpmens" />
+                <ScalarProperty Name="potroanther" ColumnName="potroanther" />
+                <ScalarProperty Name="penfrenalah" ColumnName="penfrenalah" />
+                <ScalarProperty Name="penftiroah" ColumnName="penftiroah" />
+                <ScalarProperty Name="phipartah" ColumnName="phipartah" />
+                <ScalarProperty Name="pcardioah" ColumnName="pcardioah" />
+                <ScalarProperty Name="pdiaah" ColumnName="pdiaah" />
+                <ScalarProperty Name="potronopat" ColumnName="potronopat" />
+                <ScalarProperty Name="pvacuna" ColumnName="pvacuna" />
+                <ScalarProperty Name="pdroga" ColumnName="pdroga" />
+                <ScalarProperty Name="palco" ColumnName="palco" />
+                <ScalarProperty Name="ptab" ColumnName="ptab" />
+                <ScalarProperty Name="pactfis" ColumnName="pactfis" />
+                <ScalarProperty Name="potrospat" ColumnName="potrospat" />
+                <ScalarProperty Name="penfrenal" ColumnName="penfrenal" />
+                <ScalarProperty Name="penftrans" ColumnName="penftrans" />
+                <ScalarProperty Name="ppatogas" ColumnName="ppatogas" />
+                <ScalarProperty Name="ppatores" ColumnName="ppatores" />
+                <ScalarProperty Name="ptuber" ColumnName="ptuber" />
+                <ScalarProperty Name="pcancer" ColumnName="pcancer" />
+                <ScalarProperty Name="ptrauma" ColumnName="ptrauma" />
+                <ScalarProperty Name="pcardio" ColumnName="pcardio" />
+                <ScalarProperty Name="phipart" ColumnName="phipart" />
+                <ScalarProperty Name="penftiro" ColumnName="penftiro" />
+                <ScalarProperty Name="pdia" ColumnName="pdia" />
+                <ScalarProperty Name="pcirpre" ColumnName="pcirpre" />
+                <ScalarProperty Name="phospre" ColumnName="phospre" />
+                <ScalarProperty Name="palergiadec" ColumnName="palergiadec" />
+                <ScalarProperty Name="palergia" ColumnName="palergia" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="cmmsystemModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+                <ScalarProperty Name="pocupa" ColumnName="pocupa" />
+                <ScalarProperty Name="pnedu" ColumnName="pnedu" />
+                <ScalarProperty Name="pedociv" ColumnName="pedociv" />
+                <ScalarProperty Name="pacienteservi" ColumnName="pacienteservi" />
+                <ScalarProperty Name="pacientecurp" ColumnName="pacientecurp" />
+                <ScalarProperty Name="Número_interior" ColumnName="Número_interior" />
+                <ScalarProperty Name="Número_exterior" ColumnName="Número_exterior" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="País" ColumnName="País" />
+                <ScalarProperty Name="Dirección" ColumnName="Dirección" />
+                <ScalarProperty Name="CURP" ColumnName="CURP" />
+                <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
+                <ScalarProperty Name="Sin_celular" ColumnName="Sin_celular" />
+                <ScalarProperty Name="Teléfono_móvil" ColumnName="Teléfono_móvil" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PATIENT_VIEW">
+            <EntityTypeMapping TypeName="cmmsystemModel.PATIENT_VIEW">
+              <MappingFragment StoreEntitySet="PATIENT_VIEW">
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -42,7 +42,7 @@
             EnableViewState="False"
             OnRowDeleting="DeleteDoctor_Click"
                 OnRowCommand="SelectCommand"
-            runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="2px" CellPadding="8" Caption="Doctors Table" CaptionAlign="Top" HorizontalAlign="Center" Width="380px"  GridLines="Horizontal" CellSpacing="3" AutoGenerateSelectButton="True">
+            runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="2px" CellPadding="8" Caption="Resultados" CaptionAlign="Top" HorizontalAlign="Center" Width="380px"  GridLines="Horizontal" CellSpacing="3" AutoGenerateSelectButton="True">
                 <FooterStyle BackColor="White" ForeColor="#333333" />
                 <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />

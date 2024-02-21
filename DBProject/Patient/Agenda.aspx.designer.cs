@@ -33,6 +33,15 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.WebControls.Label nombrePaciente;
 
         /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
         /// edadPaciente control.
         /// </summary>
         /// <remarks>
@@ -96,112 +105,112 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.WebControls.Button btnAlergias;
 
         /// <summary>
-        /// amiso control.
+        /// txtamiso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText amiso;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtamiso;
 
         /// <summary>
-        /// Text1 control.
+        /// txttdia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txttdia;
 
         /// <summary>
-        /// Text2 control.
+        /// txtencar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtencar;
 
         /// <summary>
-        /// Text3 control.
+        /// txtenen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text3;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtenen;
 
         /// <summary>
-        /// Text4 control.
+        /// txttcan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txttcan;
 
         /// <summary>
-        /// Text5 control.
+        /// txtcoag control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text5;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtcoag;
 
         /// <summary>
-        /// Text6 control.
+        /// txtanemia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text6;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtanemia;
 
         /// <summary>
-        /// Text7 control.
+        /// txttrans control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text7;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txttrans;
 
         /// <summary>
-        /// Text8 control.
+        /// txtcirpre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea Text8;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtcirpre;
 
         /// <summary>
-        /// Text9 control.
+        /// txtmedact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text9;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtmedact;
 
         /// <summary>
-        /// Text10 control.
+        /// txtotroap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text10;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtotroap;
 
         /// <summary>
-        /// Text11 control.
+        /// txtgrh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text11;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtgrh;
 
         /// <summary>
         /// btnAP2 control.
@@ -213,31 +222,31 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.WebControls.Button btnAP2;
 
         /// <summary>
-        /// Text12 control.
+        /// txtntab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text12;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtntab;
 
         /// <summary>
-        /// Text13 control.
+        /// txtnalco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text13;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtnalco;
 
         /// <summary>
-        /// Text14 control.
+        /// txtndroga control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text14;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtndroga;
 
         /// <summary>
         /// btnANP2 control.
@@ -564,13 +573,13 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3443;
 
         /// <summary>
-        /// chavo3448 control.
+        /// chavo34485 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3448;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo34485;
 
         /// <summary>
         /// chavo3450 control.
@@ -580,6 +589,15 @@ namespace DBProject.PatientMG
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3450;
+
+        /// <summary>
+        /// chavo3454 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText chavo3454;
 
         /// <summary>
         /// chavo3461 control.
@@ -600,22 +618,40 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3463;
 
         /// <summary>
-        /// chavo3480 control.
+        /// chavo3467 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3480;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText chavo3467;
 
         /// <summary>
-        /// chavo3482 control.
+        /// chavo3473 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3482;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText chavo3473;
+
+        /// <summary>
+        /// txtpotroagine control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtpotroagine;
+
+        /// <summary>
+        /// txtppep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtppep;
 
         /// <summary>
         /// btnAGO2 control.
@@ -627,58 +663,67 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.WebControls.Button btnAGO2;
 
         /// <summary>
-        /// Text15 control.
+        /// txtppeso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text15;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtppeso;
 
         /// <summary>
-        /// Text16 control.
+        /// txtptalla control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text16;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtptalla;
 
         /// <summary>
-        /// Text17 control.
+        /// txtpta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text17;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtpta;
 
         /// <summary>
-        /// Text18 control.
+        /// txtpfc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text18;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtpfc;
 
         /// <summary>
-        /// Text19 control.
+        /// txtpto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text19;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtpto;
 
         /// <summary>
-        /// Button1 control.
+        /// txtFR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtFR;
+
+        /// <summary>
+        /// btnFisicas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFisicas;
 
         /// <summary>
         /// FileUpload1 control.

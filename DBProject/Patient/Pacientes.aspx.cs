@@ -75,6 +75,7 @@ namespace DBProject.PatientMG
                         País = personPais.Value,                        
                         Estado = personEstado.Value,
                         Address = personaddress.Value,
+                        Colonia = personColonia.Value,
                         CP = personzipcode.Value,
                         Número_interior = personaddressinternalnumber.Value,
                         Número_exterior = personaddressexternalnumber.Value

@@ -101,8 +101,8 @@
                             <div class="_name_1klpxd">
                                 <div class="_header-actions_1klpxd">
                                     <asp:Label ID="lblIdPaciente" runat="server" Text="Label" Visible="true"></asp:Label>
-                                    <asp:Label ID="nombrePaciente" runat="server" Text="Label"></asp:Label>
-                                    <button data-autoid="header-actions-toggle" id="chavo8504" class=" _toggle-dropdown_1dy3qg fa fa-ellipsis-h ember-view"></button>
+                                    <asp:Label ID="nombrePaciente" runat="server" Text="Label"></asp:Label>                                    
+                                    <asp:Button ID="Button1" class=" _toggle-dropdown_1dy3qg fa fa-ellipsis-h ember-view" runat="server" Text="..." />
                                 </div>
                                 <div class="_info-person_1klpxd">
                                     Edad:
@@ -191,7 +191,7 @@
                                                 <label class="_title_1kd7wc">
                                                     Otras alergias                                       
                                                 </label>
-                                                <textarea data-autoid="medical-records-allergies" id="Otrasalergias" class="textarea--expand-on-focus ember-text-area ember-view" runat="server"></textarea>
+                                                <textarea data-autoid="medical-records-allergies" id="Otrasalergias" maxlength="100" class="textarea--expand-on-focus ember-text-area ember-view" runat="server"></textarea>
                                             </div>
                                         </div>
                                         <div id="chavo3096" class="_record-actions_me0a7f ember-view">
@@ -212,7 +212,7 @@
                                                     ALERGIA AL MISOPROSOL
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="amiso" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtamiso" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3124" class="_medical-record_1d3apu ember-view">
@@ -220,7 +220,7 @@
                                                     TIPO DE DIABETES
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="Text1" class="ember-view" runat="server" maxlength="7" />
+                                                    <input type="text" id="txttdia" class="ember-view" runat="server" maxlength="7" />
                                                 </div>
                                             </li>
                                             <li id="chavo3131" class="_medical-record_1d3apu ember-view">
@@ -228,7 +228,7 @@
                                                     ENFERMEDADES CARDIOVASCULARES
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="Text2" class="ember-view" runat="server" maxlength="33" style="width: 300px" />
+                                                    <input type="text" id="txtencar" class="ember-view" runat="server" maxlength="33" style="width: 300px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3138" class="_medical-record_1d3apu ember-view">
@@ -236,15 +236,15 @@
                                                     ENFERMEDADES ENDOCRINAS
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="Text3" class="ember-view" runat="server" maxlength="20" style="width: 180px" />
+                                                    <input type="text" id="txtenen" class="ember-view" runat="server" maxlength="20" style="width: 180px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3145" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
                                                     CANCER
                                                 </div>
-                                                <div class="_field_1mkkpr ember-view" style="width: 50px">
-                                                    <input type="text" id="Text4" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                <div class="_field_1mkkpr ember-view">
+                                                    <input type="text" id="txttcan" class="ember-view" runat="server" maxlength="25" style="width: 200px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3152" class="_medical-record_1d3apu ember-view">
@@ -252,7 +252,7 @@
                                                     COAGULOPATIAS
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view" style="width: 50px">
-                                                    <input type="text" id="Text5" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtcoag" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3159" class="_medical-record_1d3apu ember-view">
@@ -260,7 +260,7 @@
                                                     ANEMIA
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view" style="width: 50px">
-                                                    <input type="text" id="Text6" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtanemia" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3166" class="_medical-record_1d3apu ember-view">
@@ -268,7 +268,7 @@
                                                     TRANSFUNCIONES
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view" style="width: 50px">
-                                                    <input type="text" id="Text7" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txttrans" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3173" class="_medical-record_1d3apu ember-view">
@@ -276,7 +276,7 @@
                                                     CIRUGIAS PREVIAS
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <textarea id="Text8" class="ember-view" runat="server" maxlength="100" cols="100" rows="2" style="width: 400px" />
+                                                    <textarea id="txtcirpre" class="ember-view" runat="server" maxlength="100" cols="100" rows="2" style="width: 400px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3180" class="_medical-record_1d3apu ember-view">
@@ -284,7 +284,7 @@
                                                     MEDICAMENTOS QUE TOMA ACTUALMENTE
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="Text9" class="ember-view" runat="server" maxlength="50" style="width: 400px" />
+                                                    <input type="text" id="txtmedact" class="ember-view" runat="server" maxlength="50" style="width: 400px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3187" class="_medical-record_1d3apu ember-view">
@@ -292,7 +292,7 @@
                                                     OTROS
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view" style="width: 50px">
-                                                    <input type="text" id="Text10" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtotroap" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3194" class="_medical-record_1d3apu ember-view">
@@ -300,7 +300,7 @@
                                                     GRUPO Y RH
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view" style="width: 100px">
-                                                    <input type="text" id="Text11" class="ember-view" runat="server" maxlength="12" style="width: 100px" />
+                                                    <input type="text" id="txtgrh" class="ember-view" runat="server" maxlength="12" style="width: 100px" />
                                                 </div>
                                             </li>
                                         </ul>
@@ -325,7 +325,7 @@
                                                             Tabaquismo
                                                         </div>
                                                         <div class="_field_1mkkpr ember-view" style="width: 50px">
-                                                            <input type="text" id="Text12" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                            <input type="text" id="txtntab" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                         </div>
                                                     </li>
                                                     <li id="chavo3285" class="_medical-record_1d3apu ember-view">
@@ -333,15 +333,15 @@
                                                             Alcoholismo
                                                         </div>
                                                         <div class="_field_1mkkpr ember-view" style="width: 50px">
-                                                            <input type="text" id="Text13" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                            <input type="text" id="txtnalco" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                         </div>
                                                     </li>
                                                     <li id="chavo3292" class="_medical-record_1d3apu ember-view">
                                                         <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
                                                             Uso de otras sustancias (Drogas)
                                                         </div>
-                                                        <div class="_field_1mkkpr ember-view" style="width: 50px">
-                                                            <input type="text" id="Text14" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                        <div class="_field_1mkkpr ember-view">
+                                                            <input type="text" id="txtndroga" class="ember-view" runat="server" maxlength="25" style="width: 250px" />
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -369,10 +369,10 @@
                                                 </div>
                                                 <div class="_radio-buttons_9k179t">
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group0" id="chavo3338" class="ember-view" runat="server" />Si
+                                                        <input type="radio" value="true" name="group00" id="chavo3338" class="ember-view" runat="server" />Si
                                                     </label>
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group0" id="chavo3340" class="ember-view" runat="server" />No
+                                                        <input type="radio" value="false" name="group00" id="chavo3340" class="ember-view" runat="server" />No
                                                     </label>
                                                 </div>
                                             </li>
@@ -382,10 +382,10 @@
                                                 </div>
                                                 <div class="_radio-buttons_9k179t">
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group1" id="chavo3345" class="ember-view" runat="server" />Si
+                                                        <input type="radio" value="true" name="group10" id="chavo3345" class="ember-view" runat="server" />Si
                                                     </label>
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group1" id="chavo3347" class="ember-view" runat="server" />No
+                                                        <input type="radio" value="false" name="group10" id="chavo3347" class="ember-view" runat="server" />No
                                                     </label>
                                                 </div>
                                             </li>
@@ -395,10 +395,10 @@
                                                 </div>
                                                 <div class="_radio-buttons_9k179t">
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group2" id="chavo3352" class="ember-view" runat="server" />Si
+                                                        <input type="radio" value="true" name="group20" id="chavo3352" class="ember-view" runat="server" />Si
                                                     </label>
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group2" id="chavo3354" class="ember-view" runat="server" />No
+                                                        <input type="radio" value="false" name="group20" id="chavo3354" class="ember-view" runat="server" />No
                                                     </label>
                                                 </div>
                                             </li>
@@ -408,10 +408,10 @@
                                                 </div>
                                                 <div class="_radio-buttons_9k179t">
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group3" id="chavo3359" class="ember-view" runat="server" />Si
+                                                        <input type="radio" value="true" name="group30" id="chavo3359" class="ember-view" runat="server" />Si
                                                     </label>
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group3" id="chavo3361" class="ember-view" runat="server" />No
+                                                        <input type="radio" value="false" name="group30" id="chavo3361" class="ember-view" runat="server" />No
                                                     </label>
                                                 </div>
                                             </li>
@@ -421,10 +421,10 @@
                                                 </div>
                                                 <div class="_radio-buttons_9k179t">
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group4" id="chavo3366" class="ember-view" runat="server" />Si
+                                                        <input type="radio" value="true" name="group40" id="chavo3366" class="ember-view" runat="server" />Si
                                                     </label>
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group4" id="chavo3368" class="ember-view" runat="server" />No
+                                                        <input type="radio" value="false" name="group40" id="chavo3368" class="ember-view" runat="server" />No
                                                     </label>
                                                 </div>
                                             </li>
@@ -434,10 +434,10 @@
                                                 </div>
                                                 <div class="_radio-buttons_9k179t">
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group5" id="chavo3373" class="ember-view" runat="server" />Si
+                                                        <input type="radio" value="true" name="group50" id="chavo3373" class="ember-view" runat="server" />Si
                                                     </label>
                                                     <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group5" id="chavo3375" class="ember-view" runat="server" />No
+                                                        <input type="radio" value="false" name="group50" id="chavo3375" class="ember-view" runat="server" />No
                                                     </label>
                                                 </div>
                                             </li>
@@ -465,7 +465,7 @@
                                                             Fecha de primera menstruación
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3401" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo3401" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="10" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3402" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3403" class="ember-view">
@@ -482,7 +482,7 @@
                                                             Fecha de última menstruación
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3407" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo3407" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="20" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3408" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3409" class="ember-view">
@@ -499,7 +499,7 @@
                                                             Características menstruación
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo3413" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="20" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415" class="ember-view">
@@ -521,7 +521,7 @@
                                                             Gestas
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo34131a" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo34131a" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414a" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo341a5" class="ember-view">
@@ -539,7 +539,7 @@
                                                             Parto
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo34132b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo34132b" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -557,7 +557,7 @@
                                                             CESAREA
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo34133b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo34133b" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -575,7 +575,7 @@
                                                             ABORTO
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo34134b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo34134b" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -593,7 +593,7 @@
                                                             ILE
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo34135b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo34135b" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -615,7 +615,7 @@
                                                             LCC TAMAÑO
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo34137a" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo34137a" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414a" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo341a5" class="ember-view">
@@ -633,7 +633,7 @@
                                                             LCC SEMANAS
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo34138c" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo34138c" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414a" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo341a5" class="ember-view">
@@ -651,7 +651,7 @@
                                                             SG TAMAÑO
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo34139b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo34139b" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -669,7 +669,7 @@
                                                             SG SEMANAS
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo34130b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo34130b" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -687,7 +687,7 @@
                                                             ABORTO INCOMPETO
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413ab" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo3413ab" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -705,7 +705,7 @@
                                                             SEMANAS
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo3413b" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -776,7 +776,7 @@
                                                         </div>
                                                         <div class="_radio-buttons_9k179t">
                                                             <label class="ember-radio-button  ">
-                                                                <input type="radio" value="true" name="group4" id="chavo3448" class="ember-view" runat="server" />Si
+                                                                <input type="radio" value="true" name="group4" id="chavo34485" class="ember-view" runat="server" />Si
                                                             </label>
                                                             <label class="ember-radio-button  ">
                                                                 <input type="radio" value="false" name="group4" id="chavo3450" class="ember-view" runat="server" />No
@@ -788,7 +788,7 @@
                                                             Método de Planificación Familiar
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3454" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo3454" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="20" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3455" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3456" class="ember-view">
@@ -818,7 +818,7 @@
                                                             Ultimo Papanicolau
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3467" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo3467" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="11" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3468" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3469" class="ember-view">
@@ -835,7 +835,7 @@
                                                             Ultima Mastografía
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo3473" class="_deny-field_oxheyk ember-text-field ember-view">
+                                                            <input data-autoid="deny-field" type="text" id="chavo3473" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="11" runat="server"/>
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3474" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3475" class="ember-view">
@@ -851,13 +851,34 @@
                                                         <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
                                                             Otros
                                                         </div>
-                                                        <div class="_radio-buttons_9k179t">
-                                                            <label class="ember-radio-button  ">
-                                                                <input type="radio" value="true" id="chavo3480" class="ember-view" runat="server" />Si
-                                                            </label>
-                                                            <label class="ember-radio-button  ">
-                                                                <input type="radio" value="false" id="chavo3482" class="ember-view" runat="server" />No
-                                                            </label>
+                                                        <div class=" _deny-field-container_oxheyk">
+                                                            <input data-autoid="deny-field" type="text" id="txtpotroagine" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="20" runat="server"/>
+                                                            <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
+                                                                <div id="chavo34741" class="ember-tooltip-base ember-view">
+                                                                    <div id="chavo34751" class="ember-view">
+                                                                        <div>
+                                                                            n/a
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                    <li id="chavo34772" class="_medical-record_1d3apu ember-view">
+                                                        <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
+                                                            Prueba de Embarazo Positivo
+                                                        </div>
+                                                        <div class=" _deny-field-container_oxheyk">
+                                                            <input data-autoid="deny-field" type="text" id="txtppep" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="3" runat="server"/>
+                                                            <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
+                                                                <div id="chavo34742" class="ember-tooltip-base ember-view">
+                                                                    <div id="chavo34752" class="ember-view">
+                                                                        <div>
+                                                                            n/a
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -879,50 +900,58 @@
                                     </div>
                                     <div id="chavo2532" class="_medical-records_1d3apu ember-view">
                                         <ul data-autoid="medical-records" id="chavo3333" class="_medical-record-list-item_1d3apu ember-view">
-                                            <li id="chavo3335" class="_medical-record_1d3apu ember-view">
+                                            <li id="chavo33357" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
                                                     PESO
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="Text15" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtppeso" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                 </div>
                                             </li>
-                                            <li id="chavo3342" class="_medical-record_1d3apu ember-view">
+                                            <li id="chavo33427" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
                                                     TALLA
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="Text16" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtptalla" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                 </div>
                                             </li>
-                                            <li id="chavo3349" class="_medical-record_1d3apu ember-view">
+                                            <li id="chavo33497" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
                                                     TA
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="Text17" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtpta" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                 </div>
                                             </li>
-                                            <li id="chavo3356" class="_medical-record_1d3apu ember-view">
+                                            <li id="chavo33567" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
                                                     FC
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="Text18" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtpfc" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
                                                 </div>
                                             </li>
-                                            <li id="chavo3363" class="_medical-record_1d3apu ember-view">
+                                            <li id="chavo33637" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
                                                     T°
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="Text19" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtpto" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                </div>
+                                            </li>
+                                            <li id="chavo336372" class="_medical-record_1d3apu ember-view">
+                                                <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
+                                                    FR
+                                                </div>
+                                                <div class="_field_1mkkpr ember-view">
+                                                    <input type="text" id="txtFR" class="ember-view" runat="server" maxlength="7" style="width: 50px" />
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
                                     <div id="chavo3201b" class="_record-actions_me0a7f ember-view">
-                                        <asp:Button ID="Button1" runat="server" OnClick="btnAHF2_Click" Text="Guardar" class="button button--tall _start-consultation_alrpq4 ember-tooltip-target" />
+                                        <asp:Button ID="btnFisicas" runat="server" Text="Guardar" class="button button--tall _start-consultation_alrpq4 ember-tooltip-target" OnClick="btnFisicas_Click" />
                                     </div>
                                 </div>
                             </div>

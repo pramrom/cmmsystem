@@ -73,7 +73,7 @@ namespace DBProject
 			{
 				if (objDAL.DeleteDoctor(Convert.ToInt32(id)) == 1)
 				{
-					Msg.Text = " Doctor No: " + id + " Deleted";
+					Msg.Text = " Doctor No: " + id + " Borrado";
 					LoadGrid("", "DOCTOR");
 				}
 				else
@@ -84,7 +84,7 @@ namespace DBProject
 			else if (Patient.Checked == true)
 			{
 				{
-					Msg.Text = "You are not Authorized to Delete a Patient";
+					Msg.Text = "No esta autorizado a borrar un paciente";
 				}
 			}
 			else

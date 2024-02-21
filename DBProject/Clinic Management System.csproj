@@ -393,20 +393,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="TemplatesWord\CONSENTIMIENTO mini silver.docx" />
-    <Content Include="TemplatesWord\Consentimiento Aborto Incompleto local.docx" />
-    <Content Include="TemplatesWord\Consentimiento Aborto Incompleto Sedacion.docx" />
-    <Content Include="TemplatesWord\Consentimiento Ameu local lcc.docx" />
-    <Content Include="TemplatesWord\Consentimiento Ameu local sg.docx" />
-    <Content Include="TemplatesWord\Consentimiento Ameu sedacion lcc.docx" />
-    <Content Include="TemplatesWord\Consentimiento Ameu sedacion sg.docx" />
-    <Content Include="TemplatesWord\consentimiento DKT.docx" />
-    <Content Include="TemplatesWord\consentimiento implanon.docx" />
-    <Content Include="TemplatesWord\consentimiento mia care.docx" />
-    <Content Include="TemplatesWord\consentimiento Nulipara.docx" />
-    <Content Include="TemplatesWord\consentimiento silver.docx" />
-    <Content Include="TemplatesWord\consentimiento T de cobre.docx" />
-    <Content Include="TemplatesWord\consentimiento Tde cobre emergencia.docx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

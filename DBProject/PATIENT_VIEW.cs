@@ -15,7 +15,7 @@ namespace DBProject
     public partial class PATIENT_VIEW
     {
         public int ID { get; set; }
-        public string Name { get; set; }
-        public string Phone { get; set; }
+        public string Nombre { get; set; }
+        public string Telefono { get; set; }
     }
 }

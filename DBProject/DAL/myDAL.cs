@@ -266,8 +266,7 @@ namespace DBProject.DAL
             if (SearchQuery == "")
             {
                 cmd = new SqlCommand(
-                "SELECT Doctor.DoctorID as ID , Doctor.Name , D.DeptName as Department FROM Doctor JOIN Department D ON D.DeptNo = Doctor.DeptNo" +
-                " WHERE Doctor.Status = 1",
+                "SELECT Doctor.DoctorID as ID , Doctor.Name as Nombre, D.DeptName as Departmento FROM Doctor JOIN Department D ON D.DeptNo = Doctor.DeptNo",
                 con);
             }
             else

@@ -62,7 +62,7 @@ namespace DBProject
         public Nullable<bool> puter { get; set; }
         public Nullable<bool> pcanma { get; set; }
         public Nullable<bool> pactsex { get; set; }
-        public Nullable<bool> pmetplani { get; set; }
+        public string pmetplani { get; set; }
         public Nullable<bool> pterhormo { get; set; }
         public string pultpapa { get; set; }
         public string pultmasto { get; set; }
@@ -87,6 +87,8 @@ namespace DBProject
         public string pta { get; set; }
         public string pfc { get; set; }
         public string pto { get; set; }
+        public string pfr { get; set; }
+        public string ppep { get; set; }
     
         public virtual Patient Patient { get; set; }
     }

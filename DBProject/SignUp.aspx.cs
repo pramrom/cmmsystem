@@ -60,17 +60,17 @@ namespace DBProject
 
             else if (status == 1)
             {
-                Response.Write("<script>alert('Email not found. Try Again !');</script>");
+                Response.Write("<script>alert('Usuario no encontrado, intente nuevamente');</script>");
             }
 
             else if (status == 2)
             {
-                Response.Write("<script>alert('Incorrect Password. Try Again !');</script>");
+                Response.Write("<script>alert('Contraseña incorrecta');</script>");
             }
 
             else if (status == -1)
             {
-                Response.Write("<script>alert('There was some error. Try Again !');</script>");
+                Response.Write("<script>alert('Ocurrio un error intente nuevamente');</script>");
             }
         }
     }
