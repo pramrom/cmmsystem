@@ -10,10 +10,22 @@
         }
     </style>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link href="../assets/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet" />
     <link rel="stylesheet" href="../media/Chaft2.css"/>
     <link rel="stylesheet" href="../media/Chaft.css"/>
+    <script src="../assets/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+    <script src="../assets/jquery-ui-1.11.4/external/jquery/datepicker-es.js"></script>
     <script>
-        // Validates that the input string is a valid date formatted as "mm/dd/yyyy"
+        $(function () {
+            $("#ContentPlaceHolder1_personbornat").datepicker(
+                {
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: '1950:2030'
+                }
+            );
+        });
+        // Validates that the input string is a valid date formatted as "dd/mm/yyyy"
         function isValidDate(dateString)
         {
             // First check for the pattern
@@ -123,13 +135,13 @@
                                         <div id="ember6421" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
                                             <div id="ember6422" class="_field_1mkkpr ember-view">
                                                 <label>
-                                                    País
+                                                    Estado
                                                 </label>
                                                 <input id="personPais" type="text" class="ember-view" runat="server" maxlength="10"/>
                                             </div>
                                             <div id="ember6431" class="_field_1mkkpr ember-view">
                                                 <label>
-                                                    Estado
+                                                    Alcaldia
                                                 </label>
                                                 <input id="personEstado" type="text" class="ember-view" runat="server" maxlength="10"/>
                                             </div>
@@ -221,13 +233,13 @@
         function isValidDate() {
             dateString = document.getElementById("ContentPlaceHolder1_personbornat").value;
             // First check for the pattern
-            if (!/^\d{1,2}\-\d{1,2}\-\d{4}$/.test(dateString)) {
-                alert('Formato de fecha incorrecto, debe ser DD-MM-YYY')
+            if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString)) {
+                alert('Formato de fecha incorrecto, debe ser DD/MM/YYYY')
                 return false;
             }
 
             // Parse the date parts to integers
-            var parts = dateString.split("-");
+            var parts = dateString.split("/");
             var day = parseInt(parts[0], 10);
             var month = parseInt(parts[1], 10);
             var year = parseInt(parts[2], 10);

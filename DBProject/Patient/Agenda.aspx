@@ -557,7 +557,7 @@
                                                             CESAREA
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
-                                                            <input data-autoid="deny-field" type="text" id="chavo34133b" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="4" runat="server" />
+                                                            <input data-autoid="deny-field" type="text" id="chavo34133b" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="20" runat="server" />
                                                             <button data-autoid="deny-action" class="_deny-action_oxheyk ember-tooltip-target">
                                                                 <div id="chavo3414b" class="ember-tooltip-base ember-view">
                                                                     <div id="chavo3415b" class="ember-view">
@@ -905,7 +905,7 @@
                                                     PESO
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="txtppeso" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtppeso" class="ember-view" runat="server" maxlength="7" style="width: 80px" />
                                                 </div>
                                             </li>
                                             <li id="chavo33427" class="_medical-record_1d3apu ember-view">
@@ -913,7 +913,7 @@
                                                     TALLA
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="txtptalla" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtptalla" class="ember-view" runat="server" maxlength="7" style="width: 80px" />
                                                 </div>
                                             </li>
                                             <li id="chavo33497" class="_medical-record_1d3apu ember-view">
@@ -921,7 +921,7 @@
                                                     TA
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="txtpta" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtpta" class="ember-view" runat="server" maxlength="7" style="width: 80px" />
                                                 </div>
                                             </li>
                                             <li id="chavo33567" class="_medical-record_1d3apu ember-view">
@@ -929,7 +929,7 @@
                                                     FC
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="txtpfc" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtpfc" class="ember-view" runat="server" maxlength="7" style="width: 80px" />
                                                 </div>
                                             </li>
                                             <li id="chavo33637" class="_medical-record_1d3apu ember-view">
@@ -937,7 +937,7 @@
                                                     T°
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="txtpto" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
+                                                    <input type="text" id="txtpto" class="ember-view" runat="server" maxlength="7" style="width: 80px" />
                                                 </div>
                                             </li>
                                             <li id="chavo336372" class="_medical-record_1d3apu ember-view">
@@ -945,7 +945,7 @@
                                                     FR
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="txtFR" class="ember-view" runat="server" maxlength="7" style="width: 50px" />
+                                                    <input type="text" id="txtFR" class="ember-view" runat="server" maxlength="7" style="width: 80px" />
                                                 </div>
                                             </li>
                                         </ul>

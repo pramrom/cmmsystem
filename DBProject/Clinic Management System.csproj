@@ -213,6 +213,23 @@
     <Content Include="assets\images\ui-icons_ffffff_256x240.png" />
     <Content Include="assets\img\backgrounds\1.jpg" />
     <Content Include="assets\img\backgrounds\PatientHome.jpg" />
+    <Content Include="assets\jquery-ui-1.11.4\external\jquery\datepicker-es.js" />
+    <Content Include="assets\jquery-ui-1.11.4\external\jquery\jquery.js" />
+    <Content Include="assets\jquery-ui-1.11.4\images\ui-icons_444444_256x240.png" />
+    <Content Include="assets\jquery-ui-1.11.4\images\ui-icons_555555_256x240.png" />
+    <Content Include="assets\jquery-ui-1.11.4\images\ui-icons_777620_256x240.png" />
+    <Content Include="assets\jquery-ui-1.11.4\images\ui-icons_777777_256x240.png" />
+    <Content Include="assets\jquery-ui-1.11.4\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="assets\jquery-ui-1.11.4\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\jquery-ui-1.11.4\index.html" />
+    <Content Include="assets\jquery-ui-1.11.4\jquery-ui.css" />
+    <Content Include="assets\jquery-ui-1.11.4\jquery-ui.js" />
+    <Content Include="assets\jquery-ui-1.11.4\jquery-ui.min.css" />
+    <Content Include="assets\jquery-ui-1.11.4\jquery-ui.min.js" />
+    <Content Include="assets\jquery-ui-1.11.4\jquery-ui.structure.css" />
+    <Content Include="assets\jquery-ui-1.11.4\jquery-ui.structure.min.css" />
+    <Content Include="assets\jquery-ui-1.11.4\jquery-ui.theme.css" />
+    <Content Include="assets\jquery-ui-1.11.4\jquery-ui.theme.min.css" />
     <Content Include="assets\js\datatables.min.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

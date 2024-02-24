@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -59,13 +60,16 @@ namespace DBProject.PatientMG
             {
                 int newID = 0;
 
+                DateTime result = DateTime.ParseExact(personbornat.Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                
+
                 using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
                 {
                     Patient oPaciente = new Patient
                     {
                         Name = personfirstname.Value,
                         Apellidos = personlastname.Value,
-                        BirthDate = Convert.ToDateTime(personbornat.Value),
+                        BirthDate = result,
                         Phone = persontelephone.Value,
                         pacientecurp = personCURP.Value,
                         pacienteservi = personSerSol.Value,

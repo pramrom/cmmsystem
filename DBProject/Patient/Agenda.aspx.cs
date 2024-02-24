@@ -334,6 +334,7 @@ namespace DBProject.PatientMG
                         replacedCount = document.FindAndReplace("$penftiroah", result.pgesta);
                         replacedCount = document.FindAndReplace("$penfrenalah", result.pp);
                         replacedCount = document.FindAndReplace("$potroanther", result.pc);
+                        replacedCount = document.FindAndReplace("[pcarmens]", result.pcarmens);
                         replacedCount = document.FindAndReplace("$pdiaah", result.pa);
                         replacedCount = document.FindAndReplace("$pcardioah", result.pile);
                         replacedCount = document.FindAndReplace("$phipartah", result.plcctam);
