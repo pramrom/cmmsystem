@@ -102,7 +102,7 @@
                                 <div class="_header-actions_1klpxd">
                                     <asp:Label ID="lblIdPaciente" runat="server" Text="Label" Visible="true"></asp:Label>
                                     <asp:Label ID="nombrePaciente" runat="server" Text="Label"></asp:Label>                                    
-                                    <asp:Button ID="Button1" class=" _toggle-dropdown_1dy3qg fa fa-ellipsis-h ember-view" runat="server" Text="..." />
+                                    <asp:Button ID="Button1" class=" _toggle-dropdown_1dy3qg fa fa-ellipsis-h ember-view" runat="server" Text="..." OnClick="Button1_Click2" />
                                 </div>
                                 <div class="_info-person_1klpxd">
                                     Edad:
@@ -130,8 +130,16 @@
                             <div id="chavo8769" class="ember-tooltip-base ember-view">
                                 <div id="chavo8770" class="ember-view">
                                     <div>
-                                        Crear consulta sin cita previa
-                                    </div>
+                                        Crear consulta sin cita previa<br />
+                                        <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
+                                            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                                            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                                            <OtherMonthDayStyle ForeColor="#999999" />
+                                            <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                                            <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                                            <TodayDayStyle BackColor="#CCCCCC" />
+                                        </asp:Calendar>
+&nbsp;</div>
                                 </div>
                             </div>
                             <button data-autoid="show-follow-up-reminder-button" class="button button--alternative button--tall _follow-up-reminder_alrpq4 ember-tooltip-target" data-ember-action="" data-ember-action-8771="8771">
@@ -376,6 +384,14 @@
                                                     </label>
                                                 </div>
                                             </li>
+                                            <li id="chavo33352" class="_medical-record_1d3apu ember-view">
+                                                <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
+                                                    ¿Qué familiar tuvo?
+                                                </div>
+                                                <div class="_field_1mkkpr ember-view">
+                                                    <input type="text" id="quientuvo" class="ember-view" runat="server" maxlength="40" style="width: 250px" />
+                                                </div>
+                                            </li>
                                             <li id="chavo3342" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
                                                     Cardiopatías
@@ -439,6 +455,14 @@
                                                     <label class="ember-radio-button  ">
                                                         <input type="radio" value="false" name="group50" id="chavo3375" class="ember-view" runat="server" />No
                                                     </label>
+                                                </div>
+                                            </li>
+                                            <li id="chavo33353" class="_medical-record_1d3apu ember-view">
+                                                <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
+                                                    Descripción
+                                                </div>
+                                                <div class="_field_1mkkpr ember-view">
+                                                    <input type="text" id="AHFOtros" class="ember-view" runat="server" maxlength="50" style="width: 250px" />
                                                 </div>
                                             </li>
                                         </ul>
@@ -1003,7 +1027,7 @@
                 <div id="chavo8766" class="_widget-box-container_1kdhi6 ember-view">
 
                     <div id="chavo87810" class="ember-view">
-                        <h3><strong>Descarga de Concentimientos</strong></h3>
+                        <h3><strong>Descarga de Consentimientos</strong></h3>
                         <div id="chavo87811" class="ember-view">
                             <table id="example" class="display" width="100%">
                                 <thead>

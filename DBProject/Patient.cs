@@ -47,6 +47,9 @@ namespace DBProject
         public string pnedu { get; set; }
         public string pocupa { get; set; }
         public string Colonia { get; set; }
+        public string citaprogram { get; set; }
+        public string hora { get; set; }
+        public string Capturo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointments { get; set; }

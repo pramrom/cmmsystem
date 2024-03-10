@@ -89,6 +89,8 @@ namespace DBProject
         public string pto { get; set; }
         public string pfr { get; set; }
         public string ppep { get; set; }
+        public string QuienTuvo { get; set; }
+        public string AHFOtros { get; set; }
     
         public virtual Patient Patient { get; set; }
     }

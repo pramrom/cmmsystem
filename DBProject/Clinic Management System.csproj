@@ -136,6 +136,7 @@
   <ItemGroup>
     <Content Include="Admin\AddStaff.aspx" />
     <Content Include="Admin\AdminHome.aspx" />
+    <Content Include="Admin\Inventario.aspx" />
     <Content Include="assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="assets\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="assets\bootstrap\css\bootstrap.css" />
@@ -154,6 +155,7 @@
     <Content Include="assets\css\grid-view.css" />
     <Content Include="assets\css\patient-style.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\data.txt" />
     <Content Include="assets\Doctor.jpg" />
     <Content Include="assets\font-awesome\css\font-awesome.css" />
     <Content Include="assets\font-awesome\css\font-awesome.min.css" />
@@ -230,6 +232,7 @@
     <Content Include="assets\jquery-ui-1.11.4\jquery-ui.structure.min.css" />
     <Content Include="assets\jquery-ui-1.11.4\jquery-ui.theme.css" />
     <Content Include="assets\jquery-ui-1.11.4\jquery-ui.theme.min.css" />
+    <Content Include="assets\js\dataTables.cellEdit.js" />
     <Content Include="assets\js\datatables.min.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -450,6 +453,13 @@
     <Compile Include="Admin\AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Inventario.aspx.cs">
+      <DependentUpon>Inventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Inventario.aspx.designer.cs">
+      <DependentUpon>Inventario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Appointment.cs">
       <DependentUpon>ConsultasModel.tt</DependentUpon>
     </Compile>
@@ -513,6 +523,9 @@
       <DependentUpon>ConsultasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GET_DOCTOR_PROFILE_Result.cs">
+      <DependentUpon>ConsultasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario.cs">
       <DependentUpon>ConsultasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LoginTable.cs">

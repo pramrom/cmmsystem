@@ -47,6 +47,9 @@
                             <li><a href="ManageClinic.aspx"><span class="glyphicon glyphicon-cog"></span> Administrar clínica</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            <li><a href="Inventario.aspx"><span class="glyphicon glyphicon-cog"></span> Inventario</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
                             <li><a href="AdminHome.aspx"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
                         </ul>
                    </div>

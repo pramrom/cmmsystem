@@ -77,7 +77,7 @@ namespace DBProject.DAL
                   */
                 SqlCommand cmd1 = new SqlCommand("PatientSignup", con);              
                 cmd1.CommandType = CommandType.StoredProcedure;
-				cmd1.Parameters.Add("@name", SqlDbType.VarChar, 20).Value = Name;
+				cmd1.Parameters.Add("@name", SqlDbType.VarChar, 80).Value = Name;
 				cmd1.Parameters.Add("@address", SqlDbType.VarChar, 40).Value = Address;
 				cmd1.Parameters.Add("@gender", SqlDbType.VarChar, 1).Value = gender;
 				cmd1.Parameters.Add("@date", SqlDbType.Date).Value = BirthDate;
@@ -148,7 +148,7 @@ namespace DBProject.DAL
             @phone
             @spec
              */
-            cmd.Parameters.Add("@Name", SqlDbType.VarChar, 30).Value = Name;
+            cmd.Parameters.Add("@Name", SqlDbType.VarChar, 80).Value = Name;
             cmd.Parameters.Add("@Email", SqlDbType.VarChar, 30).Value = Email;
             cmd.Parameters.Add("@Password", SqlDbType.VarChar, 30).Value = Password;
             cmd.Parameters.Add("@BirthDate", SqlDbType.Date).Value = BirthDate;
@@ -185,7 +185,7 @@ namespace DBProject.DAL
                 @qualification
                 */
                 /*INPUTS*/
-                cmd.Parameters.Add("@Name", SqlDbType.VarChar, 30).Value = Name;
+                cmd.Parameters.Add("@Name", SqlDbType.VarChar, 80).Value = Name;
                 cmd.Parameters.Add("@BirthDate", SqlDbType.Date).Value = BirthDate;
                 cmd.Parameters.Add("@Phone", SqlDbType.VarChar, 30).Value = Phone;
                 cmd.Parameters.Add("@gender", SqlDbType.VarChar, 1).Value = gender;
@@ -392,7 +392,7 @@ namespace DBProject.DAL
                 //Inputs
                 cmd1.Parameters.Add("@dID", SqlDbType.Int).Value = dID;
                 //Outputs
-                cmd1.Parameters.Add("@name", SqlDbType.VarChar, 20).Direction = ParameterDirection.Output;
+                cmd1.Parameters.Add("@name", SqlDbType.VarChar, 80).Direction = ParameterDirection.Output;
                 cmd1.Parameters.Add("@phone", SqlDbType.VarChar, 15).Direction = ParameterDirection.Output;
                 cmd1.Parameters.Add("@gender", SqlDbType.VarChar, 2).Direction = ParameterDirection.Output;
                 cmd1.Parameters.Add("@charges", SqlDbType.Float).Direction = ParameterDirection.Output;
@@ -431,7 +431,7 @@ namespace DBProject.DAL
             //Inputs
             cmd1.Parameters.Add("@id", SqlDbType.Int).Value = id;
             //Outputs
-            cmd1.Parameters.Add("@name", SqlDbType.VarChar, 20).Direction = ParameterDirection.Output;
+            cmd1.Parameters.Add("@name", SqlDbType.VarChar, 80).Direction = ParameterDirection.Output;
             cmd1.Parameters.Add("@phone", SqlDbType.VarChar, 15).Direction = ParameterDirection.Output;
             cmd1.Parameters.Add("@gender", SqlDbType.VarChar, 2).Direction = ParameterDirection.Output;
             cmd1.Parameters.Add("@address", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
@@ -722,7 +722,7 @@ namespace DBProject.DAL
 				//Inputs
 				cmd1.Parameters.Add("@dID", SqlDbType.Int).Value = dID;
 				//Outputs
-				cmd1.Parameters.Add("@name", SqlDbType.VarChar, 20).Direction = ParameterDirection.Output;
+				cmd1.Parameters.Add("@name", SqlDbType.VarChar, 80).Direction = ParameterDirection.Output;
 				cmd1.Parameters.Add("@phone", SqlDbType.VarChar, 15).Direction = ParameterDirection.Output;
 				cmd1.Parameters.Add("@gender", SqlDbType.VarChar, 2).Direction = ParameterDirection.Output;
 				cmd1.Parameters.Add("@charges", SqlDbType.Float).Direction = ParameterDirection.Output;

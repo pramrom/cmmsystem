@@ -35,7 +35,7 @@
                             <li><a href="Pacientes.aspx"><span class="	glyphicon glyphicon-plus"></span> Agregar Paciente</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="PatientHome.aspx"><span class="	glyphicon glyphicon-plus"></span> Pacientes</a></li>
+                            <li><a href="PatientHome.aspx"><span class="	glyphicon glyphicon-plus"></span> Consultas</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="../Admin/AdminHome.aspx"><span class="glyphicon glyphicon-home"></span> Administración</a></li>

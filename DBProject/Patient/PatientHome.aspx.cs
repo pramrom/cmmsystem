@@ -9,15 +9,18 @@ using System.Data;
 using Newtonsoft.Json;
 using System.IO;
 using System.Text;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace DBProject.PatientMG
 {
     class PatientReporte
     {
-        public string ID { get; set; }
-        public string Name { get; set; }                
-        public string gender { get; set; }               
-        public DateTime? dateOfBirth { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string SerSol { get; set; }
+        public string CitaProg { get; set; }
+        public string CitaHora { get; set; }
+        public string Capturo{ get; set; }
     }
 
     public partial class PatientHome : System.Web.UI.Page
@@ -37,20 +40,23 @@ namespace DBProject.PatientMG
         {
             var pacientes = new List<PatientReporte>();
 
-            if (newObj.LoadAll())
-            {
-                newObj.Rewind();
-                do
+            using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
+            {                
+                Pacientes oPacientes = new Pacientes();
+
+                foreach (var entity in baseDatos.Patients)
                 {
                     var paciente = new PatientReporte()
                     {
-                        ID = newObj.PatientID.ToString(),
-                        Name = newObj.Name.Trim() + " " + newObj.Apellidos.Trim(),
-                        dateOfBirth = newObj.BirthDate,                        
+                        ID = entity.PatientID,
+                        Name = entity.Name.Trim() + " " + entity.Apellidos.Trim(),
+                        SerSol = entity.pacienteservi.Trim(),
+                        CitaProg = entity.citaprogram.Trim(),
+                        CitaHora = entity.hora.Trim(),
+                        Capturo = entity.Capturo.Trim()
                     };
-
                     pacientes.Add(paciente);
-                } while (newObj.MoveNext());
+                }
 
                 StringBuilder sb = new StringBuilder();
                 using (StringWriter sw = new StringWriter(sb))

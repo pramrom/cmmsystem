@@ -1,0 +1,676 @@
+{
+	"data": [
+		{
+			"MATERIAL": "Aguja hipodérmica amarilla 20 G                                                                     ",
+			"INGRESO": 20,
+			"EGRESO": 10,
+			"Id": 1
+		},
+		{
+			"MATERIAL": "Agua inyectable 10 ml                                                                               ",
+			"INGRESO": 5,
+			"EGRESO": 6,
+			"Id": 2
+		},
+		{
+			"MATERIAL": "Agua inyectable 1000 ml                                                                             ",
+			"INGRESO": 80,
+			"EGRESO": 90,
+			"Id": 3
+		},
+		{
+			"MATERIAL": "Agua inyectable 500 ml                                                                              ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 4
+		},
+		{
+			"MATERIAL": "Agua oxigenada                                                                                      ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 5
+		},
+		{
+			"MATERIAL": "Aguja hipodérmica naranja 26 G                                                                      ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 6
+		},
+		{
+			"MATERIAL": "Aguja hipodérmica negra 22 G                                                                        ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 7
+		},
+		{
+			"MATERIAL": "Aguja hipodérmica rosa 18 G                                                                         ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 8
+		},
+		{
+			"MATERIAL": "Alcohol etílico 70%                                                                                 ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 9
+		},
+		{
+			"MATERIAL": "Bata desechable                                                                                     ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 10
+		},
+		{
+			"MATERIAL": "Bicarbonato de sodio 7.5%/20ml                                                                      ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 11
+		},
+		{
+			"MATERIAL": "Bicarbonato de sodio 7.5%/50ml                                                                      ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 12
+		},
+		{
+			"MATERIAL": "Bolsa amarilla RPBI                                                                                 ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 13
+		},
+		{
+			"MATERIAL": "Bolsa para esterilizar                                                                              ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 14
+		},
+		{
+			"MATERIAL": "Bolsa roja RPBI                                                                                     ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 15
+		},
+		{
+			"MATERIAL": "Botas desechables                                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 16
+		},
+		{
+			"MATERIAL": "Cal sodada                                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 17
+		},
+		{
+			"MATERIAL": "Cánula #10                                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 18
+		},
+		{
+			"MATERIAL": "Cánula #12                                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 19
+		},
+		{
+			"MATERIAL": "Cánula #4                                                                                           ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 20
+		},
+		{
+			"MATERIAL": "Cánula #5                                                                                           ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 21
+		},
+		{
+			"MATERIAL": "Cánula #6                                                                                           ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 22
+		},
+		{
+			"MATERIAL": "Cánula #7                                                                                           ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 23
+		},
+		{
+			"MATERIAL": "Cánula #8                                                                                           ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 24
+		},
+		{
+			"MATERIAL": "Cánula #9                                                                                           ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 25
+		},
+		{
+			"MATERIAL": "Cánula guedel No 4                                                                                  ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 26
+		},
+		{
+			"MATERIAL": "Cánula guedel No3                                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 27
+		},
+		{
+			"MATERIAL": "Cinta micropore                                                                                     ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 28
+		},
+		{
+			"MATERIAL": "Cinta testigo                                                                                       ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 29
+		},
+		{
+			"MATERIAL": "Circuito anestésico con mascarilla                                                                  ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 30
+		},
+		{
+			"MATERIAL": "Citobrush                                                                                           ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 31
+		},
+		{
+			"MATERIAL": "Citofix                                                                                             ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 32
+		},
+		{
+			"MATERIAL": "Cloropiramina 20 mg/2ml                                                                             ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 33
+		},
+		{
+			"MATERIAL": "Cloruro de sodio 0.9%/1000ml                                                                        ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 34
+		},
+		{
+			"MATERIAL": "Cloruro de sodio 0.9%/250 ml                                                                        ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 35
+		},
+		{
+			"MATERIAL": "Cloruro de sodio 0.9%/500ml                                                                         ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 36
+		},
+		{
+			"MATERIAL": "Coberplast                                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 37
+		},
+		{
+			"MATERIAL": "Contenedor RPBI 1.8                                                                                 ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 38
+		},
+		{
+			"MATERIAL": "Contenedor RPBI 8.5                                                                                 ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 39
+		},
+		{
+			"MATERIAL": "Dexametasona                                                                                        ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 40
+		},
+		{
+			"MATERIAL": "Difehidramina 10mg/1ml                                                                              ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 41
+		},
+		{
+			"MATERIAL": "Dispositivo intrauterino COBRE                                                                      ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 42
+		},
+		{
+			"MATERIAL": "Dispositivo intrauterino MIA CARE                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 43
+		},
+		{
+			"MATERIAL": "Dispositivo intrauterino MINI SILVER                                                                ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 44
+		},
+		{
+			"MATERIAL": "Dispositivo intrauterino NULIPARA                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 45
+		},
+		{
+			"MATERIAL": "Dispositivo intrauterino SILVER                                                                     ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 46
+		},
+		{
+			"MATERIAL": "DISPOSITIVOS MEDICOS (MAC)                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 47
+		},
+		{
+			"MATERIAL": "Doxiciclina 100 mg                                                                                  ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 48
+		},
+		{
+			"MATERIAL": "Electrodos                                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 49
+		},
+		{
+			"MATERIAL": "Equipo venoclisis                                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 50
+		},
+		{
+			"MATERIAL": "Espátula de aire                                                                                    ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 51
+		},
+		{
+			"MATERIAL": "Espejos vaginales desechables                                                                       ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 52
+		},
+		{
+			"MATERIAL": "Estericide con ph neutro                                                                            ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 53
+		},
+		{
+			"MATERIAL": "Fisiológica 100ml                                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 54
+		},
+		{
+			"MATERIAL": "Gasas 10 cm                                                                                         ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 55
+		},
+		{
+			"MATERIAL": "Gasas 7.5 cm                                                                                        ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 56
+		},
+		{
+			"MATERIAL": "Gel conductor                                                                                       ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 57
+		},
+		{
+			"MATERIAL": "Glucosada 5%/1000ml                                                                                 ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 58
+		},
+		{
+			"MATERIAL": "Glucosada 5%/250ml                                                                                  ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 59
+		},
+		{
+			"MATERIAL": "Glucosada 5%/500ml                                                                                  ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 60
+		},
+		{
+			"MATERIAL": "Guantes estériles                                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 61
+		},
+		{
+			"MATERIAL": "Guantes nitrilo                                                                                     ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 62
+		},
+		{
+			"MATERIAL": "Guantes no estériles                                                                                ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 63
+		},
+		{
+			"MATERIAL": "Hartman 1000ml                                                                                      ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 64
+		},
+		{
+			"MATERIAL": "Hartman 500ml                                                                                       ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 65
+		},
+		{
+			"MATERIAL": "Hidrocortisona 100mg/2ml                                                                            ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 66
+		},
+		{
+			"MATERIAL": "Hioscina 20mg/1ml                                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 67
+		},
+		{
+			"MATERIAL": "Hoja bisturí #15                                                                                    ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 68
+		},
+		{
+			"MATERIAL": "Ibuprofeno 800 mg                                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 69
+		},
+		{
+			"MATERIAL": "Implanon                                                                                            ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 70
+		},
+		{
+			"MATERIAL": "Implante dkt                                                                                        ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 71
+		},
+		{
+			"MATERIAL": "Isodine                                                                                             ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 72
+		},
+		{
+			"MATERIAL": "Jabón quirúrgico                                                                                    ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 73
+		},
+		{
+			"MATERIAL": "Jeringa desechable 10 ml                                                                            ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 74
+		},
+		{
+			"MATERIAL": "Jeringa desechable 1ml                                                                              ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 75
+		},
+		{
+			"MATERIAL": "Jeringa desechable 20 ml                                                                            ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 76
+		},
+		{
+			"MATERIAL": "Jeringa desechable 3ml                                                                              ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 77
+		},
+		{
+			"MATERIAL": "Jeringa desechable 5ml                                                                              ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 78
+		},
+		{
+			"MATERIAL": "Jeringas aspiración                                                                                 ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 79
+		},
+		{
+			"MATERIAL": "Ketorolaco 30mg/1ml                                                                                 ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 80
+		},
+		{
+			"MATERIAL": "Ketorolaco sublingual 30mg                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 81
+		},
+		{
+			"MATERIAL": "Lidocaína 10mg/ml                                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 82
+		},
+		{
+			"MATERIAL": "Lidocaína 20mg/ml                                                                                   ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 83
+		},
+		{
+			"MATERIAL": "Loratadina 10mg                                                                                     ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 84
+		},
+		{
+			"MATERIAL": "Lubricante                                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 85
+		},
+		{
+			"MATERIAL": "Lugol                                                                                               ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 86
+		},
+		{
+			"MATERIAL": "Mascarilla facial #4                                                                                ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 87
+		},
+		{
+			"MATERIAL": "Mascarilla facial #5                                                                                ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 88
+		},
+		{
+			"MATERIAL": "Mascarilla reservorio                                                                               ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 89
+		},
+		{
+			"MATERIAL": "Metroclopramida 10mg/2ml                                                                            ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 90
+		},
+		{
+			"MATERIAL": "Metronidazol óvulos 500mg                                                                           ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 91
+		},
+		{
+			"MATERIAL": "Mifepristona 200mg                                                                                  ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 92
+		},
+		{
+			"MATERIAL": "Misoprostol 200mng                                                                                  ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 93
+		},
+		{
+			"MATERIAL": "Omeprazol 40mg/10ml                                                                                 ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 94
+		},
+		{
+			"MATERIAL": "Ondasetron 2mg/2 ml                                                                                 ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 95
+		},
+		{
+			"MATERIAL": "Portaobjetos citología                                                                              ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 96
+		},
+		{
+			"MATERIAL": "Preservativos                                                                                       ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 97
+		},
+		{
+			"MATERIAL": "Puntas nasales adulto                                                                               ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 98
+		},
+		{
+			"MATERIAL": "Punzo No 18                                                                                         ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 99
+		},
+		{
+			"MATERIAL": "Punzo No19                                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 100
+		},
+		{
+			"MATERIAL": "Punzo No20                                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 101
+		},
+		{
+			"MATERIAL": "Punzo No24                                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 102
+		},
+		{
+			"MATERIAL": "Rollo de tela azul                                                                                  ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 103
+		},
+		{
+			"MATERIAL": "Rollo para desfibrilador                                                                            ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 104
+		},
+		{
+			"MATERIAL": "SOLUCIONES                                                                                          ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 105
+		},
+		{
+			"MATERIAL": "Tegaderm                                                                                            ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 106
+		},
+		{
+			"MATERIAL": "Tela adhesiva                                                                                       ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 107
+		},
+		{
+			"MATERIAL": "Tiras reactivas (PIE)                                                                               ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 108
+		},
+		{
+			"MATERIAL": "Toallas sanitarias                                                                                  ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 109
+		},
+		{
+			"MATERIAL": "Torundas algodón                                                                                    ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 110
+		},
+		{
+			"MATERIAL": "Tubo látex aspiración                                                                               ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 111
+		},
+		{
+			"MATERIAL": "Venda elástica 3 cm                                                                                 ",
+			"INGRESO": 0,
+			"EGRESO": 0,
+			"Id": 112
+		}
+	]
+}

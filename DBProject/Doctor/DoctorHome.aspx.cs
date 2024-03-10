@@ -7,8 +7,6 @@ using System.Web.UI.WebControls;
 using DBProject.DAL;
 using System.Data;
 
-
-
 namespace doctor
 {
     public partial class doctorhome : System.Web.UI.Page
@@ -21,7 +19,6 @@ namespace doctor
             int did = (int)Session["idoriginal"];
          
             found = objmyDAL.docinfo_DAL(did, ref dt);
-
 
 			if (found!=1)
             {

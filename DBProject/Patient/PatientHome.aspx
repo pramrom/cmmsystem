@@ -12,8 +12,10 @@
                 columns: [
                     { title: 'ID' },
                     { title: 'Nombre' },
-                    { title: 'Sexo' },
-                    { title: 'Fecha Nacimiento' },
+                    { title: 'Servicio Solicitado' },
+                    { title: 'Cita Programada' },
+                    { title: 'Cita Hora' },
+                    { title: 'Capturo' },
                     {
                         title: 'Consulta',
                         render: function (data, type, full, meta, row) {
@@ -47,7 +49,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
         <h1 style="font-family: 'Times New Roman', Times, serif; border-radius: 5px; text-decoration: underline; background-color: #CCCCCC">
-            <strong style="margin: 45%">Pacientes</strong>
+            <strong style="margin: 45%">Consultas</strong>
         </h1>        
         <br /><br />
         <div style="margin-left: 20px">
@@ -56,8 +58,10 @@
                     <tr>                        
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Sexo</th>
-                        <th>Fecha Nacimiento</th>
+                        <th>Servicio</th>
+                        <th>Cita Programada</th>
+                        <th>Cita Hora</th>
+                        <th>Capturo</th>
                         <th></th>
                     </tr>
                 </thead>

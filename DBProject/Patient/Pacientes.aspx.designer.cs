@@ -15,6 +15,15 @@ namespace DBProject.PatientMG
     {
 
         /// <summary>
+        /// lblTitulo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
+
+        /// <summary>
         /// personfirstname control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,24 @@ namespace DBProject.PatientMG
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText personSerSol;
+
+        /// <summary>
+        /// citaprogam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText citaprogam;
+
+        /// <summary>
+        /// hora control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText hora;
 
         /// <summary>
         /// pedociv control.
@@ -157,6 +184,15 @@ namespace DBProject.PatientMG
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText personzipcode;
+
+        /// <summary>
+        /// Capturo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Capturo;
 
         /// <summary>
         /// btnGuardarConsulta control.

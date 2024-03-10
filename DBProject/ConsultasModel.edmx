@@ -104,6 +104,8 @@
           <Property Name="pto" Type="nchar" MaxLength="7" />
           <Property Name="pfr" Type="nchar" MaxLength="7" />
           <Property Name="ppep" Type="nchar" MaxLength="3" />
+          <Property Name="QuienTuvo" Type="nchar" MaxLength="40" />
+          <Property Name="AHFOtros" Type="nchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -112,6 +114,15 @@
           <Property Name="DeptNo" Type="int" Nullable="false" />
           <Property Name="DeptName" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Inventario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MATERIAL" Type="nchar" MaxLength="100" />
+          <Property Name="INGRESO" Type="int" />
+          <Property Name="EGRESO" Type="int" />
         </EntityType>
         <EntityType Name="LoginTable">
           <Key>
@@ -153,10 +164,10 @@
           <Property Name="Teléfono_móvil" Type="nchar" MaxLength="10" />
           <Property Name="Sin_celular" Type="nchar" MaxLength="10" />
           <Property Name="Teléfono" Type="nchar" MaxLength="10" />
-          <Property Name="CURP" Type="nchar" MaxLength="10" />
+          <Property Name="CURP" Type="nchar" MaxLength="18" />
           <Property Name="Dirección" Type="nchar" MaxLength="10" />
-          <Property Name="País" Type="nchar" MaxLength="10" />
-          <Property Name="Estado" Type="nchar" MaxLength="10" />
+          <Property Name="País" Type="nchar" MaxLength="50" />
+          <Property Name="Estado" Type="nchar" MaxLength="50" />
           <Property Name="Ciudad" Type="nchar" MaxLength="10" />
           <Property Name="CP" Type="nchar" MaxLength="10" />
           <Property Name="Número_exterior" Type="nchar" MaxLength="10" />
@@ -167,6 +178,9 @@
           <Property Name="pnedu" Type="nchar" MaxLength="17" />
           <Property Name="pocupa" Type="nchar" MaxLength="17" />
           <Property Name="Colonia" Type="nchar" MaxLength="50" />
+          <Property Name="citaprogram" Type="nchar" MaxLength="10" />
+          <Property Name="hora" Type="nchar" MaxLength="10" />
+          <Property Name="Capturo" Type="nchar" MaxLength="80" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'cmmsystem.dbo.Appointment_view' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -508,6 +522,7 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
           <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DatosConsulta" EntityType="Self.DatosConsulta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventario" EntityType="Self.Inventario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoginTable" EntityType="Self.LoginTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OtherStaff" EntityType="Self.OtherStaff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
@@ -894,12 +909,13 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
           </FunctionImport>
           <EntitySet Name="Appointment_view" EntityType="cmmsystemModel.Appointment_view" />
           <EntitySet Name="Department_View" EntityType="cmmsystemModel.Department_View" />
+          <EntitySet Name="PATIENT_VIEW" EntityType="cmmsystemModel.PATIENT_VIEW" />
+          <EntitySet Name="Inventarios" EntityType="cmmsystemModel.Inventario" />
           <EntitySet Name="Patients" EntityType="cmmsystemModel.Patient" />
           <AssociationSet Name="FK__Appointme__Patie__32E0915F" Association="cmmsystemModel.FK__Appointme__Patie__32E0915F">
             <End Role="Patient" EntitySet="Patients" />
             <End Role="Appointment" EntitySet="Appointments" />
           </AssociationSet>
-          <EntitySet Name="PATIENT_VIEW" EntityType="cmmsystemModel.PATIENT_VIEW" />
           <EntitySet Name="DatosConsultas" EntityType="cmmsystemModel.DatosConsulta" />
           <AssociationSet Name="FK_DatosConsulta_Patient" Association="cmmsystemModel.FK_DatosConsulta_Patient">
             <End Role="Patient" EntitySet="Patients" />
@@ -1052,6 +1068,24 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Doctores" Type="Int32" />
         </EntityType>
+        <EntityType Name="PATIENT_VIEW">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Inventario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="MATERIAL" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="INGRESO" Type="Int32" />
+          <Property Name="EGRESO" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
         <EntityType Name="Patient">
           <Key>
             <PropertyRef Name="PatientID" />
@@ -1069,10 +1103,10 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
           <Property Name="Teléfono_móvil" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Sin_celular" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Teléfono" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="CURP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CURP" Type="String" MaxLength="18" FixedLength="true" Unicode="true" />
           <Property Name="Dirección" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="País" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="País" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="Ciudad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="CP" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Número_exterior" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -1083,6 +1117,9 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
           <Property Name="pnedu" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
           <Property Name="pocupa" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
           <Property Name="Colonia" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="citaprogram" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="hora" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Capturo" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Appointments" Relationship="cmmsystemModel.FK__Appointme__Patie__32E0915F" FromRole="Patient" ToRole="Appointment" />
           <NavigationProperty Name="DatosConsulta" Relationship="cmmsystemModel.FK_DatosConsulta_Patient" FromRole="Patient" ToRole="DatosConsulta" />
         </EntityType>
@@ -1098,15 +1135,6 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="PATIENT_VIEW">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Nombre" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Telefono" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
-        </EntityType>
         <EntityType Name="DatosConsulta">
           <Key>
             <PropertyRef Name="PatientID" />
@@ -1186,6 +1214,8 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
           <Property Name="pto" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
           <Property Name="pfr" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
           <Property Name="ppep" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="QuienTuvo" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="AHFOtros" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Patient" Relationship="cmmsystemModel.FK_DatosConsulta_Patient" FromRole="DatosConsulta" ToRole="Patient" />
         </EntityType>
         <Association Name="FK_DatosConsulta_Patient">
@@ -1493,9 +1523,31 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PATIENT_VIEW">
+            <EntityTypeMapping TypeName="cmmsystemModel.PATIENT_VIEW">
+              <MappingFragment StoreEntitySet="PATIENT_VIEW">
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventarios">
+            <EntityTypeMapping TypeName="cmmsystemModel.Inventario">
+              <MappingFragment StoreEntitySet="Inventario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EGRESO" ColumnName="EGRESO" />
+                <ScalarProperty Name="INGRESO" ColumnName="INGRESO" />
+                <ScalarProperty Name="MATERIAL" ColumnName="MATERIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Patients">
             <EntityTypeMapping TypeName="cmmsystemModel.Patient">
               <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="Capturo" ColumnName="Capturo" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="citaprogram" ColumnName="citaprogram" />
                 <ScalarProperty Name="Colonia" ColumnName="Colonia" />
                 <ScalarProperty Name="pocupa" ColumnName="pocupa" />
                 <ScalarProperty Name="pnedu" ColumnName="pnedu" />
@@ -1526,18 +1578,11 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PATIENT_VIEW">
-            <EntityTypeMapping TypeName="cmmsystemModel.PATIENT_VIEW">
-              <MappingFragment StoreEntitySet="PATIENT_VIEW">
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DatosConsultas">
             <EntityTypeMapping TypeName="cmmsystemModel.DatosConsulta">
               <MappingFragment StoreEntitySet="DatosConsulta">
+                <ScalarProperty Name="AHFOtros" ColumnName="AHFOtros" />
+                <ScalarProperty Name="QuienTuvo" ColumnName="QuienTuvo" />
                 <ScalarProperty Name="ppep" ColumnName="ppep" />
                 <ScalarProperty Name="pfr" ColumnName="pfr" />
                 <ScalarProperty Name="pto" ColumnName="pto" />

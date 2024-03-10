@@ -59,7 +59,7 @@
                                 <!-- sign up form start honay laga hai :)-->
                                 <div class="form-group">
                                     <asp:RequiredFieldValidator ID="NameValidator" runat="server" ErrorMessage="* Requiredo" Display="dynamic" Font-Bold="False" SetFocusOnError="True" ControlToValidate="Name" ForeColor="Red"></asp:RequiredFieldValidator>
-                                    <asp:TextBox ID="Name" runat="server" type="text" class="form-username form-control" placeholder="Nombre" MaxLength="50"></asp:TextBox>
+                                    <asp:TextBox ID="Name" runat="server" type="text" class="form-username form-control" placeholder="Nombre" MaxLength="80"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:RequiredFieldValidator runat="server" ErrorMessage="* Required0" ControlToValidate="BirthDate" ID="BDateReqiured" Display="Dynamic" Font-Bold="False" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
@@ -98,11 +98,11 @@
                                 <div class="form-group">
                                     <asp:DropDownList ID="Department" runat="server" Width="228px" Height="39px">
                                         <asp:ListItem Text="Seleccione un Depatmento" Value="0"></asp:ListItem>
-                                        <asp:ListItem Text="Cardiology" Value="1"></asp:ListItem>
-                                        <asp:ListItem Text="Orthopaedics" Value="2"></asp:ListItem>
-                                        <asp:ListItem Text="ENT" Value="3"></asp:ListItem>
-                                        <asp:ListItem Text="Physiotherapy" Value="4"></asp:ListItem>
-                                        <asp:ListItem Text="Neurology" Value="5"></asp:ListItem>
+                                        <asp:ListItem Text="Cardiología" Value="1"></asp:ListItem>
+                                        <asp:ListItem Text="Fisioterapia" Value="2"></asp:ListItem>
+                                        <asp:ListItem Text="Neurología" Value="3"></asp:ListItem>
+                                        <asp:ListItem Text="Ortopedía" Value="4"></asp:ListItem>
+                                        <asp:ListItem Text="Usuarios" Value="5"></asp:ListItem>
                                     </asp:DropDownList>
                                     <asp:TextBox ID="Qualification" runat="server" type="text" placeholder="Calificación" Width="228px"></asp:TextBox>
                                     <asp:TextBox ID="spec" runat="server" type="text" placeholder="Especialización" Width="228px"></asp:TextBox>

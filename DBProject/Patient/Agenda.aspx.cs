@@ -66,14 +66,14 @@ namespace DBProject.PatientMG
                     Session["WordConsent"] = WordConsent;
 
                     StringBuilder sb = new StringBuilder();
-                    string strDoctorActual = string.Empty;
+                    string strDoctorActual = string.Empty;                    
 
                     using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
                     {
                         Appointment oAppointments = new Appointment();
                         Pacientes oPacientes = new Pacientes();
 
-                        var newPaciente = baseDatos.Patients.Find(idPaciente);                        
+                        var newPaciente = baseDatos.Patients.Find(idPaciente);
 
                         TimeSpan timeSpan = (TimeSpan)(DateTime.Now - newPaciente.BirthDate);
                         int age = new DateTime(timeSpan.Ticks).Year - 1;
@@ -110,8 +110,11 @@ namespace DBProject.PatientMG
                                 sb.AppendLine(strDoctor);
                                 sb.AppendLine("<br /><button class='button _delete_16c14z ember-tooltip-target'><i class='fa fa-trash-o'></i></button></div></div></div>");
 
+                                varDoctor = strDoctor;
                             }
                         }
+
+                        Session["DoctorUltimo"] = varDoctor;
 
                         nombrePaciente.Text = newPaciente.Name + " " + newPaciente.Apellidos;
                         edadPaciente.Text = age.ToString();
@@ -127,7 +130,6 @@ namespace DBProject.PatientMG
                         if (result != null)
                         {
                             Otrasalergias.Value = result.palergiadec;
-
 
                             txtamiso.Value = result.amiso;
                             txttdia.Value = result.tdia;
@@ -178,6 +180,7 @@ namespace DBProject.PatientMG
                             if (result.penftiroah.HasValue) chavo3359.Checked = false;
                             if (result.penfrenalah.HasValue) chavo3366.Checked = false;
                             if (result.potroanther.HasValue) chavo3373.Checked = false;
+                            quientuvo.Value = result.QuienTuvo;
 
                             txtppeso.Value = result.ppeso;
                             txtptalla.Value = result.ptalla;
@@ -185,6 +188,8 @@ namespace DBProject.PatientMG
                             txtpfc.Value = result.pfc;
                             txtpto.Value = result.pto;
                             txtFR.Value = result.pfr;
+
+                            AHFOtros.Value = result.AHFOtros;
                         }
                     }
 
@@ -236,6 +241,7 @@ namespace DBProject.PatientMG
         [WebMethod]
         public static string createConsentimiento(string docto, string doctor, string paciente)
         {
+            doctor = varDoctor;
             int idPaciente = Convert.ToInt32(paciente);
             // Get the current app path:
             var currentApplicationPath = HttpContext.Current.Request.PhysicalApplicationPath;
@@ -273,8 +279,11 @@ namespace DBProject.PatientMG
                     replacedCount = document.FindAndReplace("$pacientemail", newPaciente.Email);
                     replacedCount = document.FindAndReplace("$pacientecel", newPaciente.Teléfono_móvil);
                     replacedCount = document.FindAndReplace("$pacientetel", newPaciente.Phone);
-                    replacedCount = document.FindAndReplace("$pacientecurp", newPaciente.CURP);
-                    //replacedCount = document.FindAndReplace("$pacienteservi", newPaciente.serv);
+                    replacedCount = document.FindAndReplace("$pacientecurp", newPaciente.pacientecurp);
+                    replacedCount = document.FindAndReplace("$pacienteservi", newPaciente.pacienteservi);
+                    replacedCount = document.FindAndReplace("$pedociv", newPaciente.pedociv);
+                    replacedCount = document.FindAndReplace("$pocupa", newPaciente.pocupa);
+                    replacedCount = document.FindAndReplace("[pnedu]", newPaciente.pnedu);
 
                     replacedCount = document.FindAndReplace("[pacientecalle]", newPaciente.Address);
                     replacedCount = document.FindAndReplace("$pacientenumero", newPaciente.Número_exterior);
@@ -282,7 +291,8 @@ namespace DBProject.PatientMG
                     replacedCount = document.FindAndReplace("[pacientecolonia]", newPaciente.Colonia);
                     replacedCount = document.FindAndReplace("$pacientecp", newPaciente.CP);
                     replacedCount = document.FindAndReplace("$pacientecd", newPaciente.Ciudad);
-                    replacedCount = document.FindAndReplace("$pacientepais", newPaciente.País);
+                    replacedCount = document.FindAndReplace("[pacienteestado]", newPaciente.Estado); 
+                    replacedCount = document.FindAndReplace("[pacientepais]", newPaciente.País);
 
 
                     replacedCount = document.FindAndReplace("$doctoranombre", doctor);
@@ -318,7 +328,9 @@ namespace DBProject.PatientMG
 
                         replacedCount = document.FindAndReplace("$ntab", result.ntab);
                         replacedCount = document.FindAndReplace("$nalco", result.nalco);
-                        replacedCount = document.FindAndReplace("$ndroga  ", result.ndroga);
+                        replacedCount = document.FindAndReplace("[ndroga]", result.ndroga);
+                        replacedCount = document.FindAndReplace("[pep]", result.ppep);
+                        replacedCount = document.FindAndReplace("[potroagine]", result.potroagine);
 
                         replacedCount = document.FindAndReplace("$pdiaah", result.pdiaah.ToString());
                         replacedCount = document.FindAndReplace("$pcardioah", result.pcardioah.ToString());
@@ -356,7 +368,7 @@ namespace DBProject.PatientMG
                         replacedCount = document.FindAndReplace("$penftiroah", result.plccsem);
 
 
-                        replacedCount = document.FindAndReplace("$ppeso", result.ppeso);
+                        replacedCount = document.FindAndReplace("[ppeso]", result.ppeso);
                         replacedCount = document.FindAndReplace("$ptalla", result.ptalla);
                         replacedCount = document.FindAndReplace("$pta", result.pta);
                         replacedCount = document.FindAndReplace("$pfc", result.pfc);
@@ -661,6 +673,8 @@ namespace DBProject.PatientMG
                     result.penftiroah = penftiroah;
                     result.penfrenalah = penfrenalah;
                     result.potroanther = potroanther;
+                    result.QuienTuvo = quientuvo.Value.Trim();
+                    result.AHFOtros = AHFOtros.Value.Trim();
 
                     baseDatos.SaveChanges();
                 }
@@ -857,6 +871,11 @@ namespace DBProject.PatientMG
                     baseDatos.SaveChanges();
                 }
             }
+        }
+
+        protected void Button1_Click2(object sender, EventArgs e)
+        {
+            Response.Redirect("Pacientes.aspx?Id=" + Request.QueryString["Id"]);
         }
     }
 }

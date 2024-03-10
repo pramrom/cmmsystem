@@ -61,7 +61,9 @@
             <div id="ember1118" class="ember-view"></div>
             <div class="ember-application__container">                
                 <div class="ember-application__body">
-                    <h1 id="ember6345">Alta de nuevos pacientes</h1>
+                    <h1 id="ember6345">
+                        <asp:Label ID="lblTitulo" runat="server" Text="Label"></asp:Label>
+                    </h1>
                     <br />
                     <br />
                     <div id="ember6284" class="">                        
@@ -96,17 +98,31 @@
                                 </div>
                                 <div id="ember64310" class="_field_1mkkpr ember-view">
                                     <label>
-                                        CURP
+                                        
                                     </label>
-                                    <input id="personCURP" type="text" class="ember-view" runat="server" maxlength="10" />
+                                    <input id="personCURP" type="text" class="ember-view" runat="server" maxlength="18" visible="false" />
                                 </div>
-                                <div id="ember64311" class="_field_1mkkpr ember-view">
+                                <div id="ember64313" class="_field_1mkkpr ember-view">
                                     <label>
                                         Servicio Solicitado
                                     </label>
                                     <input id="personSerSol" type="text" class="ember-view" runat="server" maxlength="10" />
                                 </div>
                             </div>
+                            <div id="ember63491" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
+                                <div id="ember643101" class="_field_1mkkpr ember-view">
+                                    <label>
+                                        Cita programada
+                                    </label>
+                                    <input id="citaprogam" type="text" class="ember-view" runat="server" maxlength="10" />
+                                </div>
+                                <div id="ember64311" class="_field_1mkkpr ember-view">
+                                    <label>
+                                        Hora
+                                    </label>
+                                    <input id="hora" type="text" class="ember-view" runat="server" maxlength="10" />
+                                </div>
+                            </div
                             <div id="ember63490" class="_fieldset_1kfu8s _two-fields-per-row_1kfu8s ember-view">
                                 <div id="ember6351" class="_field_1mkkpr ember-view">
                                     <label for="person-born-at" class="_field_1mkkpr ember-view">Estado Civil</label>
@@ -137,13 +153,13 @@
                                                 <label>
                                                     Estado
                                                 </label>
-                                                <input id="personPais" type="text" class="ember-view" runat="server" maxlength="10"/>
+                                                <input id="personPais" type="text" class="ember-view" runat="server" maxlength="50"/>
                                             </div>
                                             <div id="ember6431" class="_field_1mkkpr ember-view">
                                                 <label>
                                                     Alcaldia
                                                 </label>
-                                                <input id="personEstado" type="text" class="ember-view" runat="server" maxlength="10"/>
+                                                <input id="personEstado" type="text" class="ember-view" runat="server" maxlength="50"/>
                                             </div>
                                         </div>
                                         <div id="ember6418" class="_fieldset_1kfu8s ember-view">
@@ -180,6 +196,14 @@
                                                     Código Postal
                                                 </label>
                                                 <input id="personzipcode" type="text" class="ember-view" runat="server" maxlength="5"/>
+                                            </div>
+                                        </div>
+                                        <div id="ember64180" class="_fieldset_1kfu8s ember-view">
+                                            <div id="ember6423" class="_field_1mkkpr ember-view">
+                                                <label for="person-address">
+                                                    Capturo
+                                                </label>
+                                                <input id="Capturo" type="text" class="ember-view" runat="server" maxlength="80"/>
                                             </div>
                                         </div>
                                     </div>

@@ -78,6 +78,15 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.WebControls.Button btnGuardarConsulta;
 
         /// <summary>
+        /// Calendar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+
+        /// <summary>
         /// DivINeedToAddStuffTo control.
         /// </summary>
         /// <remarks>
@@ -276,6 +285,15 @@ namespace DBProject.PatientMG
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3340;
 
         /// <summary>
+        /// quientuvo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText quientuvo;
+
+        /// <summary>
         /// chavo3345 control.
         /// </summary>
         /// <remarks>
@@ -364,6 +382,15 @@ namespace DBProject.PatientMG
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3375;
+
+        /// <summary>
+        /// AHFOtros control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText AHFOtros;
 
         /// <summary>
         /// btnAHF2 control.
