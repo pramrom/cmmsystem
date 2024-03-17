@@ -26,15 +26,17 @@ namespace DBProject.PatientMG
             {
                 string idPaciente = Request.QueryString["Id"];
                 if (!String.IsNullOrEmpty(idPaciente))
-                {
+                {                    
                     lblTitulo.Text = "Editar paciente";
                     using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
-                    {
+                    {                        
                         var newPaciente = baseDatos.Patients.Find(Convert.ToInt32(idPaciente));
+
+                        DateTime strPersonbornat = (DateTime)newPaciente.BirthDate;
 
                         personfirstname.Value = newPaciente.Name;
                         personlastname.Value = newPaciente.Apellidos;
-                        personbornat.Value = newPaciente.BirthDate.ToString().Substring(0, 10);
+                        personbornat.Value = strPersonbornat.ToString("dd/MM/yyyy");
                         persontelephone.Value = newPaciente.Phone;
                         personCURP.Value = newPaciente.CURP;
                         personSerSol.Value = newPaciente.pacienteservi;

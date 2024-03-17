@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -17,47 +18,96 @@ namespace DB_Project
 	{
         public string WordConsent;
         protected void Page_Load(object sender, EventArgs e)
-		{
+        {
             if (!IsPostBack)
             {
-                WordConsent = getallWords();
-                Session["WordConsent"] = WordConsent;
-            }
-            else
-            {
-                WordConsent = Session["WordConsent"].ToString();
+                GenerateDownloadLinks();
             }
         }
 
-        public string getallWords()
+        protected void btnUpload_Click(object sender, EventArgs e)
         {
-            StringBuilder sb = new StringBuilder();            
+            //string folderPath = Server.MapPath("~/media/" + idPaciente);
+            string folderPath = Server.MapPath("~/media/inventario/");
 
-            using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
+            //Check whether Directory (Folder) exists.
+            if (!Directory.Exists(folderPath))
             {
-                Inventario oInventario = new Inventario();
+                //If Directory (Folder) does not exists. Create it.
+                Directory.CreateDirectory(folderPath);
+            }
 
-                var allRows = baseDatos.Inventarios.ToList();
-                
-                using (StringWriter sw = new StringWriter(sb))
-                using (JsonTextWriter writer = new JsonTextWriter(sw))
+            //Save the File to the Directory (Folder).
+            //FileUpload1.PostedFile.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
+
+            Stream fs = FileUpload1.PostedFile.InputStream;
+            BinaryReader br = new BinaryReader(fs);
+            byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
+            //Save the Byte Array as File.
+            string filePath = folderPath + Path.GetFileName(FileUpload1.FileName);
+            File.WriteAllBytes(filePath, bytes);
+
+            //Display the Image File.
+            //Image1.ImageUrl = filePath;
+            //Image1.Visible = true;
+
+
+            //Display the success message.
+            lblMessage.Text = Path.GetFileName(FileUpload1.FileName) + " ha sido cargado.";
+
+            GenerateDownloadLinks();
+        }
+
+        private void GenerateDownloadLinks()
+        {
+            int archivos = 0;
+            string path = Server.MapPath("~/media/inventario/");
+            if (Directory.Exists(path))
+            {
+                DataTable ShowContent = new DataTable();
+                ShowContent.Columns.Add("Icon", typeof(string));
+                ShowContent.Columns.Add("DownloadLink", typeof(string));
+                ShowContent.Columns.Add("FileName", typeof(string));
+                DirectoryInfo di = new DirectoryInfo(path);
+                archivos = di.GetFiles().Length;
+                List<System.Web.UI.WebControls.ListItem> files = new List<System.Web.UI.WebControls.ListItem>();
+
+                foreach (FileInfo fi in di.GetFiles())
                 {
-                    writer.QuoteChar = '\'';
-                    //writer.WriteStartArray = 
+                    DataRow dr = ShowContent.NewRow();
+                    dr["FileName"] = fi.Name; ;
+                    dr["DownloadLink"] = Server.MapPath("~/media/inventario/") + fi.Name;
+                    dr["Icon"] = ResolveUrl("~/media/OfficeIMO.ico");
 
-                    JsonSerializer ser = new JsonSerializer();
-                    //ser.Serialize(writer, GetObjectArray(allRows));
-                    ser.Serialize(writer, allRows);
+                    files.Add(new System.Web.UI.WebControls.ListItem(Path.GetFileName(path), path));
+
+                    ShowContent.Rows.Add(dr);
                 }
-
+                DataListContent.DataSource = ShowContent;
+                DataListContent.DataBind();
             }
-            
-            return sb.ToString();
-        }
 
-        public IEnumerable<object> GetObjectArray<T>(IEnumerable<T> obj)
+            lblMessage.Text = "Se han subido los siguientes archivos: " + archivos.ToString();
+        }
+        protected void DeleteFile(object sender, EventArgs e)
         {
-            return obj.Select(o => o.GetType().GetProperties().Select(p => p.GetValue(o, null)));
+            string filePath = (sender as LinkButton).CommandArgument;
+            File.Delete(filePath);
+            GenerateDownloadLinks();
+        }
+        protected void ButtonDownloadContent(object sender, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "Download")
+            {
+                string path = e.CommandArgument.ToString();
+                string name = Path.GetFileName(path);
+                string ext = Path.GetExtension(path);
+                Response.AppendHeader("content-disposition", "attachment; filename=" + name);
+                Response.ContentType = "application/octet-stream";
+                Response.WriteFile(path);
+                Response.End();
+            }
         }
     }
 }
