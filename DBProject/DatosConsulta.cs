@@ -36,12 +36,12 @@ namespace DBProject
         public Nullable<bool> palco { get; set; }
         public Nullable<bool> pdroga { get; set; }
         public Nullable<bool> pvacuna { get; set; }
-        public Nullable<bool> potronopat { get; set; }
+        public string potronopat { get; set; }
         public Nullable<bool> pdiaah { get; set; }
-        public Nullable<bool> pcardioah { get; set; }
-        public Nullable<bool> phipartah { get; set; }
-        public Nullable<bool> penftiroah { get; set; }
-        public Nullable<bool> penfrenalah { get; set; }
+        public string pcardioah { get; set; }
+        public string phipartah { get; set; }
+        public string penftiroah { get; set; }
+        public string penfrenalah { get; set; }
         public Nullable<bool> potroanther { get; set; }
         public string pfpmens { get; set; }
         public string pfumens { get; set; }

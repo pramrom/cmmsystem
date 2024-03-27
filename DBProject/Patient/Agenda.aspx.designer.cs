@@ -300,16 +300,7 @@ namespace DBProject.PatientMG
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3345;
-
-        /// <summary>
-        /// chavo3347 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3347;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText chavo3345;
 
         /// <summary>
         /// chavo3352 control.
@@ -318,16 +309,7 @@ namespace DBProject.PatientMG
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3352;
-
-        /// <summary>
-        /// chavo3354 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3354;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText chavo3352;
 
         /// <summary>
         /// chavo3359 control.
@@ -336,16 +318,7 @@ namespace DBProject.PatientMG
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3359;
-
-        /// <summary>
-        /// chavo3361 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3361;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText chavo3359;
 
         /// <summary>
         /// chavo3366 control.
@@ -354,16 +327,7 @@ namespace DBProject.PatientMG
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3366;
-
-        /// <summary>
-        /// chavo3368 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3368;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText chavo3366;
 
         /// <summary>
         /// chavo3373 control.
@@ -372,16 +336,7 @@ namespace DBProject.PatientMG
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3373;
-
-        /// <summary>
-        /// chavo3375 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton chavo3375;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText chavo3373;
 
         /// <summary>
         /// AHFOtros control.

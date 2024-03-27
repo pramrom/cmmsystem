@@ -175,11 +175,7 @@ namespace DBProject.PatientMG
                             txtndroga.Value = result.ndroga;
 
                             if (result.pdiaah.HasValue) chavo3338.Checked = false;
-                            if (result.pcardioah.HasValue) chavo3345.Checked = false;
-                            if (result.phipartah.HasValue) chavo3352.Checked = false;
-                            if (result.penftiroah.HasValue) chavo3359.Checked = false;
-                            if (result.penfrenalah.HasValue) chavo3366.Checked = false;
-                            if (result.potroanther.HasValue) chavo3373.Checked = false;
+                           // if (result.potroanther.HasValue) chavo3373.Checked = false;
                             quientuvo.Value = result.QuienTuvo;
 
                             txtppeso.Value = result.ppeso;
@@ -655,11 +651,11 @@ namespace DBProject.PatientMG
             int intPaciente = Convert.ToInt32(Request.QueryString["Id"]);
 
             bool pdiaah = chavo3338.Checked ? true : false;
-            bool pcardioah = chavo3345.Checked ? true : false;
-            bool phipartah = chavo3352.Checked ? true : false;
-            bool penftiroah = chavo3359.Checked ? true : false;
-            bool penfrenalah = chavo3366.Checked ? true : false;
-            bool potroanther = chavo3373.Checked ? true : false;
+            string pcardioah = chavo3345.Value;
+            string phipartah = chavo3352.Value;
+            string penftiroah = chavo3359.Value;
+            string penfrenalah = chavo3366.Value;
+            //bool potroanther = chavo3373.Checked ? true : false;
 
 
             using (cmmsystemEntities1 baseDatos = new cmmsystemEntities1())
@@ -672,7 +668,7 @@ namespace DBProject.PatientMG
                     result.phipartah = phipartah;
                     result.penftiroah = penftiroah;
                     result.penfrenalah = penfrenalah;
-                    result.potroanther = potroanther;
+                    //result.potroanther = potroanther;
                     result.QuienTuvo = quientuvo.Value.Trim();
                     result.AHFOtros = AHFOtros.Value.Trim();
 

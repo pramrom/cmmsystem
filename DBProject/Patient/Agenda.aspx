@@ -184,7 +184,7 @@
                         <div style="background-color: #fafcfe !important;" class="container-accordion ">
                             <div class="accordion-1">
                                 <div id="chavo8563" class="head">
-                                    <h2 data-autoid="record-title-pathological" id="chavo8569a" class="_record-title_1wtm69 ember-view">Alergias</h2>
+                                    <h2 data-autoid="record-title-pathological" id="chavo8569a" class="_record-title_1wtm69 ember-view">TRATAMIENTO</h2>
                                 </div>
                                 <div class="content">
                                     <div id="chavo2414" class="">
@@ -197,7 +197,7 @@
                                             </div>
                                             <div class="_other-allergies_1kd7wc">
                                                 <label class="_title_1kd7wc">
-                                                    Otras alergias                                       
+                                                    Describe
                                                 </label>
                                                 <textarea data-autoid="medical-records-allergies" id="Otrasalergias" maxlength="100" class="textarea--expand-on-focus ember-text-area ember-view" runat="server"></textarea>
                                             </div>
@@ -217,7 +217,7 @@
                                         <ul data-autoid="medical-records" id="chavo3099" class="_medical-record-list-item_1d3apu ember-view">
                                             <li id="chavo3101" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
-                                                    ALERGIA AL MISOPROSOL
+                                                    ALERGIA
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
                                                     <input type="text" id="txtamiso" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
@@ -225,7 +225,7 @@
                                             </li>
                                             <li id="chavo3124" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
-                                                    TIPO DE DIABETES
+                                                    APARATODIGESTIVO
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
                                                     <input type="text" id="txttdia" class="ember-view" runat="server" maxlength="7" />
@@ -233,7 +233,7 @@
                                             </li>
                                             <li id="chavo3131" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
-                                                    ENFERMEDADES CARDIOVASCULARES
+                                                    APARATO CARDIO RESPIRATORIO
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
                                                     <input type="text" id="txtencar" class="ember-view" runat="server" maxlength="33" style="width: 300px" />
@@ -241,7 +241,7 @@
                                             </li>
                                             <li id="chavo3138" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
-                                                    ENFERMEDADES ENDOCRINAS
+                                                    SISTEMA ENDOCRINO
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
                                                     <input type="text" id="txtenen" class="ember-view" runat="server" maxlength="20" style="width: 180px" />
@@ -249,7 +249,7 @@
                                             </li>
                                             <li id="chavo3145" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
-                                                    CANCER
+                                                    SISTEMA HEMATOPOYETICO
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
                                                     <input type="text" id="txttcan" class="ember-view" runat="server" maxlength="25" style="width: 200px" />
@@ -257,7 +257,7 @@
                                             </li>
                                             <li id="chavo3152" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
-                                                    COAGULOPATIAS
+                                                    SISTEMA GENITOURINARIO
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view" style="width: 50px">
                                                     <input type="text" id="txtcoag" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
@@ -265,7 +265,7 @@
                                             </li>
                                             <li id="chavo3159" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
-                                                    ANEMIA
+                                                    SISTEMA NERVIOSO
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view" style="width: 50px">
                                                     <input type="text" id="txtanemia" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
@@ -273,7 +273,7 @@
                                             </li>
                                             <li id="chavo3166" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
-                                                    TRANSFUNCIONES
+                                                    SISTEMA MUSCULOESQUELETICO
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view" style="width: 50px">
                                                     <input type="text" id="txttrans" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
@@ -284,7 +284,7 @@
                                                     CIRUGIAS PREVIAS
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <textarea id="txtcirpre" class="ember-view" runat="server" maxlength="100" cols="100" rows="2" style="width: 400px" />
+                                                    <textarea id="txtcirpre" class="ember-view" runat="server" maxlength="100" cols="25" rows="2" style="width: 400px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3180" class="_medical-record_1d3apu ember-view">
@@ -292,12 +292,12 @@
                                                     MEDICAMENTOS QUE TOMA ACTUALMENTE
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
-                                                    <input type="text" id="txtmedact" class="ember-view" runat="server" maxlength="50" style="width: 400px" />
+                                                    <input type="text" id="txtmedact" class="ember-view" runat="server" maxlength="25" style="width: 400px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3187" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
-                                                    OTROS
+                                                    TRANSFUSIONES
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view" style="width: 50px">
                                                     <input type="text" id="txtotroap" class="ember-view" runat="server" maxlength="3" style="width: 50px" />
@@ -308,7 +308,7 @@
                                                     GRUPO Y RH
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view" style="width: 100px">
-                                                    <input type="text" id="txtgrh" class="ember-view" runat="server" maxlength="12" style="width: 100px" />
+                                                    <input type="text" id="txtgrh" class="ember-view" runat="server" maxlength="9" style="width: 100px" />
                                                 </div>
                                             </li>
                                         </ul>
@@ -386,7 +386,7 @@
                                             </li>
                                             <li id="chavo33352" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
-                                                    ¿Qué familiar tuvo?
+                                                    Descripción
                                                 </div>
                                                 <div class="_field_1mkkpr ember-view">
                                                     <input type="text" id="quientuvo" class="ember-view" runat="server" maxlength="40" style="width: 250px" />
@@ -396,65 +396,40 @@
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
                                                     Cardiopatías
                                                 </div>
-                                                <div class="_radio-buttons_9k179t">
-                                                    <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group10" id="chavo3345" class="ember-view" runat="server" />Si
-                                                    </label>
-                                                    <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group10" id="chavo3347" class="ember-view" runat="server" />No
-                                                    </label>
+                                                <div class="_field_1mkkpr ember-view">
+                                                    <input type="text" id="chavo3345" class="ember-view" runat="server" maxlength="25" style="width: 250px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3349" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
                                                     Hipertensión Arterial
                                                 </div>
-                                                <div class="_radio-buttons_9k179t">
-                                                    <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group20" id="chavo3352" class="ember-view" runat="server" />Si
-                                                    </label>
-                                                    <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group20" id="chavo3354" class="ember-view" runat="server" />No
-                                                    </label>
+                                                <div class="_field_1mkkpr ember-view">
+                                                    <input type="text" id="chavo3352" class="ember-view" runat="server" maxlength="25" style="width: 250px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3356" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
                                                     Enfermedades Tiroideas
                                                 </div>
-                                                <div class="_radio-buttons_9k179t">
-                                                    <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group30" id="chavo3359" class="ember-view" runat="server" />Si
-                                                    </label>
-                                                    <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group30" id="chavo3361" class="ember-view" runat="server" />No
-                                                    </label>
+                                                <div class="_field_1mkkpr ember-view">
+                                                    <input type="text" id="chavo3359" class="ember-view" runat="server" maxlength="25" style="width: 250px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3363" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
                                                     Enfermedad Renal Crónica
                                                 </div>
-                                                <div class="_radio-buttons_9k179t">
-                                                    <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group40" id="chavo3366" class="ember-view" runat="server" />Si
-                                                    </label>
-                                                    <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group40" id="chavo3368" class="ember-view" runat="server" />No
-                                                    </label>
+                                                <div class="_field_1mkkpr ember-view">
+                                                    <input type="text" id="chavo3366" class="ember-view" runat="server" maxlength="25" style="width: 250px" />
                                                 </div>
                                             </li>
                                             <li id="chavo3370" class="_medical-record_1d3apu ember-view">
                                                 <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7" style="width: 40px">
-                                                    Otros
+                                                    Cancer
                                                 </div>
-                                                <div class="_radio-buttons_9k179t">
-                                                    <label class="ember-radio-button  ">
-                                                        <input type="radio" value="true" name="group50" id="chavo3373" class="ember-view" runat="server" />Si
-                                                    </label>
-                                                    <label class="ember-radio-button  ">
-                                                        <input type="radio" value="false" name="group50" id="chavo3375" class="ember-view" runat="server" />No
-                                                    </label>
+                                                <div class="_field_1mkkpr ember-view">
+                                                    <input type="text" id="chavo3373" class="ember-view" runat="server" maxlength="25" style="width: 250px" />
                                                 </div>
                                             </li>
                                             <li id="chavo33353" class="_medical-record_1d3apu ember-view">
@@ -890,7 +865,7 @@
                                                     </li>
                                                     <li id="chavo34772" class="_medical-record_1d3apu ember-view">
                                                         <div data-autoid="record-name" class="_record-name_9k179t _record-name_e768m7">
-                                                            Prueba de Embarazo Positivo
+                                                            Prueba de Embarazo
                                                         </div>
                                                         <div class=" _deny-field-container_oxheyk">
                                                             <input data-autoid="deny-field" type="text" id="txtppep" class="_deny-field_oxheyk ember-text-field ember-view" maxlength="3" runat="server"/>

@@ -51,12 +51,12 @@
           <Property Name="palco" Type="bit" />
           <Property Name="pdroga" Type="bit" />
           <Property Name="pvacuna" Type="bit" />
-          <Property Name="potronopat" Type="bit" />
+          <Property Name="potronopat" Type="nchar" MaxLength="25" />
           <Property Name="pdiaah" Type="bit" />
-          <Property Name="pcardioah" Type="bit" />
-          <Property Name="phipartah" Type="bit" />
-          <Property Name="penftiroah" Type="bit" />
-          <Property Name="penfrenalah" Type="bit" />
+          <Property Name="pcardioah" Type="nchar" MaxLength="25" />
+          <Property Name="phipartah" Type="nchar" MaxLength="25" />
+          <Property Name="penftiroah" Type="nchar" MaxLength="25" />
+          <Property Name="penfrenalah" Type="nchar" MaxLength="25" />
           <Property Name="potroanther" Type="bit" />
           <Property Name="pfpmens" Type="nchar" MaxLength="15" />
           <Property Name="pfumens" Type="nchar" MaxLength="20" />
@@ -82,20 +82,20 @@
           <Property Name="pultpapa" Type="nchar" MaxLength="11" />
           <Property Name="pultmasto" Type="nchar" MaxLength="11" />
           <Property Name="potroagine" Type="nchar" MaxLength="20" />
-          <Property Name="amiso" Type="nchar" MaxLength="3" />
-          <Property Name="tdia" Type="nchar" MaxLength="7" />
-          <Property Name="encar" Type="nchar" MaxLength="17" />
-          <Property Name="enen" Type="nchar" MaxLength="33" />
+          <Property Name="amiso" Type="nchar" MaxLength="15" />
+          <Property Name="tdia" Type="nchar" MaxLength="25" />
+          <Property Name="encar" Type="nchar" MaxLength="25" />
+          <Property Name="enen" Type="nchar" MaxLength="25" />
           <Property Name="tcan" Type="nchar" MaxLength="25" />
-          <Property Name="coag" Type="nchar" MaxLength="3" />
-          <Property Name="anemia" Type="nchar" MaxLength="3" />
-          <Property Name="trans" Type="nchar" MaxLength="3" />
+          <Property Name="coag" Type="nchar" MaxLength="25" />
+          <Property Name="anemia" Type="nchar" MaxLength="25" />
+          <Property Name="trans" Type="nchar" MaxLength="25" />
           <Property Name="cirpre" Type="nchar" MaxLength="100" />
           <Property Name="medact" Type="nchar" MaxLength="50" />
-          <Property Name="otroap" Type="nchar" MaxLength="3" />
+          <Property Name="otroap" Type="nchar" MaxLength="25" />
           <Property Name="grh" Type="nchar" MaxLength="12" />
-          <Property Name="ntab" Type="nchar" MaxLength="3" />
-          <Property Name="nalco" Type="nchar" MaxLength="3" />
+          <Property Name="ntab" Type="nchar" MaxLength="15" />
+          <Property Name="nalco" Type="nchar" MaxLength="15" />
           <Property Name="ndroga" Type="nchar" MaxLength="25" />
           <Property Name="ppeso" Type="nchar" MaxLength="7" />
           <Property Name="ptalla" Type="nchar" MaxLength="7" />
@@ -103,7 +103,7 @@
           <Property Name="pfc" Type="nchar" MaxLength="7" />
           <Property Name="pto" Type="nchar" MaxLength="7" />
           <Property Name="pfr" Type="nchar" MaxLength="7" />
-          <Property Name="ppep" Type="nchar" MaxLength="3" />
+          <Property Name="ppep" Type="nchar" MaxLength="10" />
           <Property Name="QuienTuvo" Type="nchar" MaxLength="40" />
           <Property Name="AHFOtros" Type="nchar" MaxLength="50" />
         </EntityType>
@@ -1161,12 +1161,12 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
           <Property Name="palco" Type="Boolean" />
           <Property Name="pdroga" Type="Boolean" />
           <Property Name="pvacuna" Type="Boolean" />
-          <Property Name="potronopat" Type="Boolean" />
+          <Property Name="potronopat" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
           <Property Name="pdiaah" Type="Boolean" />
-          <Property Name="pcardioah" Type="Boolean" />
-          <Property Name="phipartah" Type="Boolean" />
-          <Property Name="penftiroah" Type="Boolean" />
-          <Property Name="penfrenalah" Type="Boolean" />
+          <Property Name="pcardioah" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="phipartah" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="penftiroah" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="penfrenalah" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
           <Property Name="potroanther" Type="Boolean" />
           <Property Name="pfpmens" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
           <Property Name="pfumens" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
@@ -1192,20 +1192,20 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
           <Property Name="pultpapa" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
           <Property Name="pultmasto" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
           <Property Name="potroagine" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="amiso" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="tdia" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
-          <Property Name="encar" Type="String" MaxLength="17" FixedLength="true" Unicode="true" />
-          <Property Name="enen" Type="String" MaxLength="33" FixedLength="true" Unicode="true" />
+          <Property Name="amiso" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="tdia" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="encar" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="enen" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
           <Property Name="tcan" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
-          <Property Name="coag" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="anemia" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="trans" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="coag" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="anemia" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="trans" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
           <Property Name="cirpre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="medact" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="otroap" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="otroap" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
           <Property Name="grh" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
-          <Property Name="ntab" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="nalco" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="ntab" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="nalco" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
           <Property Name="ndroga" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
           <Property Name="ppeso" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
           <Property Name="ptalla" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
@@ -1213,7 +1213,7 @@ warning 6002: The table/view 'cmmsystem.dbo.STAFF_VIEW' does not have a primary 
           <Property Name="pfc" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
           <Property Name="pto" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
           <Property Name="pfr" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
-          <Property Name="ppep" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="ppep" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="QuienTuvo" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
           <Property Name="AHFOtros" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Patient" Relationship="cmmsystemModel.FK_DatosConsulta_Patient" FromRole="DatosConsulta" ToRole="Patient" />
